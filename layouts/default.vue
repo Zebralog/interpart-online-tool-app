@@ -1,9 +1,18 @@
 <template>
   <div>
+    <main class="main">
+      <nuxt />
+    </main>
     <footer class="navbar">
-      <div class="navbar-item">Informationen</div>
-      <div class="navbar-item">Karte</div>
-      <div class="navbar-item">Diskussion</div>
+      <nuxt-link :to="{ name: 'information' }" class="navbar-link">
+        Informationen
+      </nuxt-link>
+      <nuxt-link :to="{ name: 'map' }" class="navbar-link">
+        Karte
+      </nuxt-link>
+      <nuxt-link :to="{ name: 'discussion' }" class="navbar-link">
+        Diskussion
+      </nuxt-link>
     </footer>
   </div>
 </template>

@@ -1,6 +1,59 @@
+html {
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+
+  .hero-top {
+    position: absolute;
+    top: 15%;
+    right: 10%;
+    text-align: right;
+  }
+
+  .hero-middle {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+  }
+
+  .hero-cta:after {
+    content: "";
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .hero-subtitle {
+
+    &.is-uppercase {
+      text-transform: uppercase;
+    }
+  }
+}
+
 .navbar {
   position: fixed;
   left: 0;
   bottom: 0;
   right: 0;
+  display: flex;
+  justify-content: space-around;
+
+  .navbar-link {
+    color: #666;
+    
+    &.is-active {
+      color: #000;
+    }
+  }
 }
