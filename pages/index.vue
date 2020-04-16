@@ -1,26 +1,20 @@
 <template>
-  <div class="hero">
-    <div class="hero-top">
-      <h1 class="hero-title">
-        Willkommen!
-      </h1>
-      <nuxt-link :to="{ name: 'tour' }" class="hero-subtitle hero-cta">
-        Los gehts
-      </nuxt-link>
-    </div>
-    <div class="hero-middle">
-      <div class="hero-title">
-        Wiesbaden
-      </div>
-      <div class="hero-subtitle is-uppercase">
-        Biebrich
-      </div>
-    </div>
-  </div>
+  <nuxt-link :to="{ name: 'tour' }" class="hero">
+    <img
+      :src="imageUrl"
+      alt="Willkommen bei Wiesbaden Biebrich! Los gehts"
+      class="hero-image"
+    />
+  </nuxt-link>
 </template>
 
 <script>
+import imageUrl from "@/assets/wiesbaden.png"
+
 export default {
   layout: "none",
+  computed: {
+    imageUrl: () => imageUrl,
+  },
 }
 </script>

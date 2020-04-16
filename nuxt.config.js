@@ -30,4 +30,5 @@ export default {
     routeNameSplitter: ".",
     linkActiveClass: "is-active",
   },
+  modules: ["nuxt-svg-loader"],
 }

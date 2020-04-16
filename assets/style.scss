@@ -1,3 +1,5 @@
+$shadow-sm: 0 0 6px 0 rgba(#000, .1);
+
 html {
   font-family: sans-serif;
 }
@@ -8,52 +10,96 @@ a {
 }
 
 .hero {
-  position: relative;
-  height: 100vh;
+  display: block;
 
-  .hero-top {
-    position: absolute;
-    top: 15%;
-    right: 10%;
-    text-align: right;
-  }
-
-  .hero-middle {
-    position: absolute;
-    top: 50%;
-    left: 10%;
-  }
-
-  .hero-cta:after {
-    content: "";
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-  }
-
-  .hero-subtitle {
-
-    &.is-uppercase {
-      text-transform: uppercase;
-    }
+  .hero-image {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
   }
 }
 
 .navbar {
   position: fixed;
-  left: 0;
   bottom: 0;
+  left: 0;
   right: 0;
   display: flex;
   justify-content: space-around;
-
+  background: #fff;
+  box-shadow: $shadow-sm;
+  
   .navbar-link {
-    color: #666;
+    padding: 1rem 0;
+    font-size: 2.5rem;
     
+    &:not(.is-active) {
+      color: #D1D1D1;
+    }
+
     &.is-active {
-      color: #000;
+      position: relative;
+      background: #fff;
+      color: #7E7E7E;
+
+      &:before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: -1rem;
+        width: 2rem;
+        height: 2rem;
+        transform: translate(-50%) rotate(45deg);
+        background: #fff;
+        box-shadow: $shadow-sm;
+        z-index: -1;
+      }
+    }
+
+    .icon {
+      display: block;
     }
   }
+}
+
+.is-size-1 {
+  font-size: 3rem;
+}
+
+.is-size-2 {
+  font-size: 2.5rem;
+}
+
+.is-size-3 {
+  font-size: 2rem;
+}
+
+.is-size-4 {
+  font-size: 1.5rem;
+}
+
+.is-size-5 {
+  font-size: 1.25rem;
+}
+
+.is-size-6 {
+  font-size: 1rem;
+}
+
+.is-size-7 {
+  font-size: .75rem;
+}
+
+.icon {
+  height: 1em;
+  fill: currentColor;
+}
+
+.dialog {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1rem;
+  background: #fff;
 }
