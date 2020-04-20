@@ -26,7 +26,8 @@ export default {
 .layout-map {
   transition: 0.2s all;
 
-  .dialog-container + & {
+  .dialog + &,
+  .overlay + & {
     filter: blur(0.5rem);
   }
 }

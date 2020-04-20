@@ -1,6 +1,6 @@
 <template>
-  <div class="dialog-container">
-    <div class="dialog">
+  <div class="dialog">
+    <div class="dialog-content">
       <slot />
     </div>
   </div>
@@ -9,7 +9,7 @@
 <style lang="scss" scoped>
 @import "@/assets/variables";
 
-.dialog-container {
+.dialog {
   position: absolute;
   left: 0;
   top: 0;
@@ -22,7 +22,7 @@
   background: rgba(#fff, 0.2);
 }
 
-.dialog {
+.dialog-content {
   padding: 2rem;
   border-radius: 0.4rem;
   background: #fff;

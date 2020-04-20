@@ -1,14 +1,13 @@
 <template>
-  <ui-dialog>Diskussion</ui-dialog>
+  <ui-overlay>Diskussion</ui-overlay>
 </template>
 
 <script>
-import UiDialog from "@/components/ui-dialog"
+import UiOverlay from "@/components/ui-overlay"
 
 export default {
-  transition: "slide-y-down",
   components: {
-    UiDialog,
+    UiOverlay,
   },
 }
 </script>
