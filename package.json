@@ -28,7 +28,8 @@
   "dependencies": {
     "nuxt": "^2.12.2",
     "nuxt-svg-loader": "^1.2.0",
-    "reset-css": "^5.0.1"
+    "reset-css": "^5.0.1",
+    "typeface-montserrat": "0.0.75"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",

@@ -25,7 +25,7 @@ export default {
       },
     ],
   },
-  css: ["reset-css", "assets/style.scss"],
+  css: ["reset-css", "typeface-montserrat", "assets/style.scss"],
   router: {
     routeNameSplitter: ".",
     linkActiveClass: "is-active",

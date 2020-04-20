@@ -15,6 +15,7 @@
   top: 0;
   right: 0;
   bottom: $navbar-height;
+  padding: 2rem;
   background: rgba(#fff, 0.6);
 }
 </style>
