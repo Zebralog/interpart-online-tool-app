@@ -1,5 +1,3 @@
-$shadow-sm: 0 0 6px 0 rgba(#000, .1);
-
 html {
   font-family: sans-serif;
 }
@@ -7,60 +5,6 @@ html {
 a {
   text-decoration: none;
   color: inherit;
-}
-
-.hero {
-  display: block;
-
-  .hero-image {
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
-    display: block;
-  }
-}
-
-.navbar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: space-around;
-  background: #fff;
-  box-shadow: $shadow-sm;
-  
-  .navbar-link {
-    padding: 1rem 0;
-    font-size: 2.5rem;
-    
-    &:not(.is-active) {
-      color: #D1D1D1;
-    }
-
-    &.is-active {
-      position: relative;
-      background: #fff;
-      color: #7E7E7E;
-
-      &:before {
-        content: "";
-        position: absolute;
-        left: 50%;
-        top: -1rem;
-        width: 2rem;
-        height: 2rem;
-        transform: translate(-50%) rotate(45deg);
-        background: #fff;
-        box-shadow: $shadow-sm;
-        z-index: -1;
-      }
-    }
-
-    .icon {
-      display: block;
-    }
-  }
 }
 
 .is-size-1 {
@@ -89,18 +33,4 @@ a {
 
 .is-size-7 {
   font-size: .75rem;
-}
-
-.icon {
-  height: 1em;
-  fill: currentColor;
-}
-
-.dialog {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  padding: 1rem;
-  background: #fff;
 }

@@ -1,36 +1,36 @@
 <template>
   <div>
-    <main class="hero">
-      <img :src="mapUrl" class="hero-image" />
-    </main>
-    <nuxt class="dialog" />
-    <footer class="navbar">
-      <nuxt-link
-        v-for="item in items"
-        :key="item.title"
-        :to="item.to"
-        class="navbar-link"
-      >
-        <component :is="item.icon" :aria-label="item.title" class="icon" />
-      </nuxt-link>
-    </footer>
+    <navbar />
+    <hero tag="main" :image-url="mapUrl" />
+    <div class="dialog">
+      <nuxt />
+    </div>
   </div>
 </template>
 
 <script>
-import NounInfo from "@/assets/noun-info.svg"
-import NounMap from "@/assets/noun-map.svg"
-import NounTalk from "@/assets/noun-talk.svg"
 import mapUrl from "!url-loader!@/assets/map.svg"
+import Hero from "@/components/hero"
+import Navbar from "@/components/navbar"
 
 export default {
+  components: {
+    Hero,
+    Navbar,
+  },
   computed: {
     mapUrl: () => mapUrl,
-    items: () => [
-      { icon: NounInfo, title: "Informationen", to: { name: "information" } },
-      { icon: NounMap, title: "Karte", to: { name: "map" } },
-      { icon: NounTalk, title: "Diskussion", to: { name: "discussion" } },
-    ],
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.dialog {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1rem;
+  background: #fff;
+}
+</style>
