@@ -1,5 +1,6 @@
-<template>
-  <div>
-    Karte
-  </div>
-</template>
+<script>
+export default {
+  layout: "map",
+  render: () => undefined,
+}
+</script>

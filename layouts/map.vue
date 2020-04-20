@@ -1,7 +1,7 @@
 <template>
   <div>
     <navbar />
-    <ui-map class="blur" />
+    <ui-map />
     <nuxt />
   </div>
 </template>

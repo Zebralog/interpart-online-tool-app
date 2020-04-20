@@ -39,14 +39,17 @@ export default {
   bottom: 0;
   left: 0;
   right: 0;
+  height: $navbar-height;
   display: flex;
   justify-content: space-around;
   background: #fff;
   box-shadow: $shadow-sm;
+  z-index: 1;
 }
 
 .navbar-item {
-  padding: 1rem 0;
+  display: flex;
+  align-items: center;
   font-size: 2.5rem;
 
   &:not(.is-active) {
