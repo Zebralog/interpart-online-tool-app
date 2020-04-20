@@ -35,6 +35,11 @@ a {
   font-size: .75rem;
 }
 
-.blur {
-  filter: blur(.5rem);
+.slide-y-down-enter-active, .slide-y-down-leave-active {
+  transition: .3s all;
+}
+
+.slide-y-down-enter, .slide-y-down-leave-to {
+  opacity: 0;
+  transform: translateY(15px) scale(.9);
 }
