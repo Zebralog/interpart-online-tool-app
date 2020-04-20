@@ -1,13 +1,10 @@
 <template>
-  <hero
-    :to="{ name: 'tour' }"
-    :image-url="imageUrl"
-    alt="Willkommen bei Wiesbaden Biebrich! Los gehts"
-  />
+  <hero :to="{ name: 'tour' }" :image-url="imageUrl" :image-alt="imageAlt" />
 </template>
 
 <script>
-import imageUrl from "@/assets/wiesbaden.png"
+import imageUrl from "@/config/hero.png"
+import config from "@/config"
 import Hero from "@/components/hero"
 
 export default {
@@ -17,6 +14,7 @@ export default {
   },
   computed: {
     imageUrl: () => imageUrl,
+    imageAlt: () => config.heroAlt,
   },
 }
 </script>

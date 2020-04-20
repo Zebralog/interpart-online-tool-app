@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import mapUrl from "!url-loader!@/assets/map.svg"
+import mapUrl from "!url-loader!@/config/map.svg"
 import Hero from "@/components/hero"
 import Navbar from "@/components/navbar"
 

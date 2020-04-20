@@ -1,6 +1,6 @@
 <template>
   <component :is="tag" :to="to" class="hero">
-    <img :src="imageUrl" :alt="alt" class="hero-image" />
+    <img :src="imageUrl" :alt="imageAlt" class="hero-image" />
   </component>
 </template>
 
@@ -10,7 +10,7 @@ export default {
     tag: { type: String, default: "nuxt-link" },
     to: { type: Object, default: undefined },
     imageUrl: { type: String, default: undefined },
-    alt: { type: String, default: undefined },
+    imageAlt: { type: String, default: undefined },
   },
 }
 </script>
