@@ -1,9 +1,7 @@
 <template>
   <div>
     <navbar />
-    <transition name="slide-y-down">
-      <nuxt class="layout-content" />
-    </transition>
+    <nuxt class="layout-content" />
     <ui-map class="layout-map" />
   </div>
 </template>

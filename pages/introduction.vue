@@ -6,6 +6,7 @@
 import UiDialog from "@/components/ui-dialog"
 
 export default {
+  transition: "slide-y-down",
   components: {
     UiDialog,
   },
