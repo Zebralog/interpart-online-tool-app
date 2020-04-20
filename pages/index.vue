@@ -1,5 +1,9 @@
 <template>
-  <hero :to="{ name: 'tour' }" :image-url="imageUrl" :image-alt="imageAlt" />
+  <hero
+    :to="{ name: 'introduction' }"
+    :image-url="imageUrl"
+    :image-alt="imageAlt"
+  />
 </template>
 
 <script>

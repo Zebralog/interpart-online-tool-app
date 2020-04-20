@@ -1,5 +1,5 @@
 <template>
   <div>
-    Willkommen zur Tour!
+    Willkommen zur Einführung!
   </div>
 </template>
