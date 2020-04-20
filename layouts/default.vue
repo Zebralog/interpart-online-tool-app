@@ -1,12 +1,8 @@
 <template>
   <div>
     <navbar />
-    <ui-map class="blur" />
-    <div class="dialog-container">
-      <div class="dialog">
-        <nuxt />
-      </div>
-    </div>
+    <nuxt class="layout-content" />
+    <ui-map class="layout-map" />
   </div>
 </template>
 
@@ -23,25 +19,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/variables";
-
-.dialog-container {
-  position: fixed;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: $navbar-height;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 2rem;
-  background: rgba(#fff, 0.2);
+.layout-content {
+  z-index: 1;
 }
 
-.dialog {
-  padding: 2rem;
-  border-radius: 0.4rem;
-  background: #fff;
-  box-shadow: 0 0.25rem 0.4rem 0 rgba(#000, 0.2);
+.layout-map {
+  transition: 0.2s all;
+
+  .dialog-container + & {
+    filter: blur(0.5rem);
+  }
 }
 </style>
