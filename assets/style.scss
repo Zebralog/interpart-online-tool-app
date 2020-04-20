@@ -5,6 +5,10 @@ html {
   color: $color-text;
 }
 
+body {
+  line-height: 1.5;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -36,6 +40,16 @@ a {
 
 .is-size-7 {
   font-size: .75rem;
+}
+
+.content {
+  p {
+    margin-bottom: 0.5rem;
+  }
+
+  strong {
+    font-weight: bold;
+  }
 }
 
 .fade-enter-active, .fade-leave-active {

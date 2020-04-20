@@ -2,5 +2,27 @@
   "heroAlt": "Willkommen bei Wiesbaden Biebrich! Los gehts",
   "places": [
     { "x": "10%", "y": "30%" }
+  ],
+  "informationItems": [
+    {
+      "name": "about",
+      "title": "Über das Projekt",
+      "content": "<p>Ich dann im hohen Grase am fallenden Bache liege, und näher an <strong>der Erde tausend</strong> mannigfaltige Gräschen mir merkwürdig werden;</p><p>Wenn ich das <strong>Wimmeln</strong> der kleinen Welt zwischen Halmen, die unzähligen, unergründlichen Gestalten der Würmchen, der Mückchen näher an meinem Herzen fühle, und fühle die Gegenwart.</p>"
+    },
+    {
+      "name": "goals",
+      "title": "Was wollen wir erreichen?",
+      "content": "<p>das Wehen des Alliebenden, der uns in ewiger <strong>Wonne schwebend</strong> trägt und erhält; mein Freund!</p><p>Wenn’s dann um meine Augen dämmert, und die Welt um mich her und der Himmel.</p>"
+    },
+    {
+      "name": "how-to",
+      "title": "Wie bediene ich das Tool?",
+      "content": "<p>das Wehen des Alliebenden, der uns in ewiger Wonne schwebend trägt und erhält; mein Freund! Aber ich gehe darüber zugrunde, ich erliege unter der <strong>Gewalt der Herrlichkeit</strong> dieser Erscheinungen.</p><p>Oder sieh dir einfach <strong>Tutorial</strong> an.</p>"
+    },
+    {
+      "name": "contact",
+      "title": "Kontakt",
+      "content": "<p><strong>Bürgerverein Biebrich e.V.</strong><br/>Gaugasse 12<br/>65203 Biebrich</p><p><strong>Interpart</strong><br/>Max Mustermann<br/>0657 5887462</p><p><strong>Zebralog</strong><br/>Omid Nowzamani<br/>0228 763706 14<br/>nowzamani@zebralog.de</p>"
+    }
   ]
 }
