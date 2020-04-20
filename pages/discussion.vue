@@ -1,15 +1,3 @@
 <template>
-  <ui-dialog>
-    Diskussion
-  </ui-dialog>
+  <div>Diskussion</div>
 </template>
-
-<script>
-import UiDialog from "@/components/ui-dialog"
-
-export default {
-  components: {
-    UiDialog,
-  },
-}
-</script>

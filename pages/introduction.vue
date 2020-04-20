@@ -1,15 +1,3 @@
 <template>
-  <ui-dialog>
-    Willkommen zur Einführung!
-  </ui-dialog>
+  <div>Willkommen zur Einführung!</div>
 </template>
-
-<script>
-import UiDialog from "@/components/ui-dialog"
-
-export default {
-  components: {
-    UiDialog,
-  },
-}
-</script>
