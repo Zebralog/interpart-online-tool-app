@@ -1,7 +1,82 @@
 {
   "heroAlt": "Willkommen bei Wiesbaden Biebrich! Los gehts",
   "places": [
-    { "x": "10%", "y": "30%" }
+    {
+      "id": "place-1",
+      "to": "#dialog-1",
+      "title": "Situation 1",
+      "position": {
+        "x": "10%",
+        "y": "20%"
+      },
+      "triggerArea": {
+        "from" : {
+          "x": "8%",
+          "y": "57%"
+        },
+        "width": "8rem",
+        "height": "8rem"
+      },
+      "subtitle": "Lorem Ipsum",
+      "color": "#47b9dd"
+    },
+    {
+      "id": "place-2",
+      "to": "#dialog-2",
+      "title": "Situation 2",
+      "position": {
+        "x": "52%",
+        "y": "0"
+      },
+      "triggerArea": {
+        "from" : {
+          "x": "2%",
+          "y": "100%"
+        },
+        "width": "7rem",
+        "height": "11rem"
+      },
+      "subtitle": "sicut dolor amet",
+      "color": "#cc76af"
+    },
+    {
+      "id": "place-3",
+      "to": "#dialog-3",
+      "title": "Situation 3",
+      "position": {
+        "x": "51%",
+        "y": "41%"
+      },
+      "triggerArea": {
+        "from" : {
+          "x": "-15%",
+          "y": "100%"
+        },
+        "width": "10rem",
+        "height": "12rem"
+      },
+      "subtitle": "",
+      "color": "#9199d6"
+    },
+    {
+      "id": "place-4",
+      "to": "#dialog-4",
+      "title": "Situation 4",
+      "position": {
+        "x": "19%",
+        "y": "32%"
+      },
+      "triggerArea": {
+        "from" : {
+          "x": "26%",
+          "y": "121%"
+        },
+        "width": "4rem",
+        "height": "6rem"
+      },
+      "subtitle": "",
+      "color": "#74ceb7"
+    }
   ],
   "informationItems": [
     {
