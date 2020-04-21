@@ -13,6 +13,7 @@ export default {
 <style lang="scss" scoped>
 .icon {
   height: 1em;
+  width: auto;
   fill: currentColor;
 }
 </style>

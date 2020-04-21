@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import imageUrl from "@/config/hero.png"
+import imageUrl from "@/config/hero.jpg"
 import config from "@/config"
 import Hero from "@/components/hero"
 

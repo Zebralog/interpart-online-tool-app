@@ -41,7 +41,6 @@ export default {
   right: 0;
   height: $navbar-height;
   display: flex;
-  justify-content: space-around;
   background: #fff;
   box-shadow: $shadow-sm;
   z-index: 1;
@@ -49,6 +48,8 @@ export default {
 
 .navbar-item {
   display: flex;
+  flex-grow: 1;
+  justify-content: center;
   align-items: center;
   font-size: 2.5rem;
 
