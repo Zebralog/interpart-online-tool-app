@@ -2,7 +2,9 @@
   <ui-overlay>
     <ui-title>Informationen</ui-title>
     <ui-subtitle>{{ item.title }}</ui-subtitle>
-    <ui-content v-html="item.content" />
+    <ui-content>
+      <div v-html="item.content" />
+    </ui-content>
     <ui-link :to="{ name: 'information' }">
       Zurück
     </ui-link>
