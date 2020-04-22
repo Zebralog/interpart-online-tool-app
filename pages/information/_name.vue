@@ -20,6 +20,10 @@ import UiLink from "@/components/ui-link"
 import config from "@/config"
 
 export default {
+  transition: {
+    mode: "",
+    name: "next",
+  },
   components: {
     UiOverlay,
     UiTitle,

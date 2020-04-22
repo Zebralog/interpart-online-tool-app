@@ -55,22 +55,25 @@ a {
 .fade-enter-active, .fade-leave-active {
   transition: opacity 8s;
 }
+
 .fade-enter, .fade-leave-to {
   opacity: 0;
 }
 
-.page-enter-active, .page-leave-active {
-  transition: opacity .5s
-}
-.page-enter, .page-leave-active {
-  opacity: 0
+.slide-up-enter-active, .slide-up-leave-active {
+  transition: .5s all;
 }
 
-.slide-y-down-enter-active, .slide-y-down-leave-active {
+.slide-up-enter, .slide-up-leave-to {
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+.popup-enter-active, .popup-leave-active {
   transition: .3s all;
 }
 
-.slide-y-down-enter, .slide-y-down-leave-to {
+.popup-enter, .popup-leave-to {
   opacity: 0;
   transform: translateY(15px) scale(.9);
 }
@@ -85,4 +88,65 @@ a {
 .slide-right-enter {
   opacity: 0;
   transform: translate(-30px, 0);
+}
+
+.next-leave-active {
+  animation: leaveToLeft 500ms both cubic-bezier(0.165, 0.84, 0.44, 1);
+  z-index: 0;
+}
+
+.next-enter-active {
+  animation: enterFromRight 500ms both cubic-bezier(0.165, 0.84, 0.44, 1);
+  z-index: 1;
+}
+
+.prev-leave-active {
+  animation: leaveToRight 500ms both cubic-bezier(0.165, 0.84, 0.44, 1);
+  z-index: 1;
+}
+
+.prev-enter-active {
+  animation: enterFromLeft 500ms both cubic-bezier(0.165, 0.84, 0.44, 1);
+  z-index: 0;
+}
+
+@keyframes leaveToLeft {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-25%);
+    opacity: 0;
+    filter: brightness(0.5);
+  }
+}
+
+@keyframes enterFromLeft {
+  from {
+    transform: translateX(-25%);
+    opacity: 0;
+    filter: brightness(0.5);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes leaveToRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes enterFromRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }

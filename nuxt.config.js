@@ -30,7 +30,9 @@ export default {
     routeNameSplitter: ".",
     linkActiveClass: "is-active",
   },
-  layoutTransition: "page",
-  pageTransition: "page",
+  layoutTransition: {
+    mode: "",
+    name: "next",
+  },
   modules: ["nuxt-svg-loader"],
 }

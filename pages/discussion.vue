@@ -9,6 +9,10 @@ import UiOverlay from "@/components/ui-overlay"
 import UiTitle from "@/components/ui-title"
 
 export default {
+  transition: {
+    mode: "",
+    name: "slide-up",
+  },
   components: {
     UiOverlay,
     UiTitle,
