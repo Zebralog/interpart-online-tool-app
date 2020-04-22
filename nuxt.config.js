@@ -35,4 +35,5 @@ export default {
     name: "next",
   },
   modules: ["nuxt-svg-loader"],
+  plugins: ["plugins/v-click-outside"],
 }

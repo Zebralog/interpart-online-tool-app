@@ -1,8 +1,8 @@
 <template>
   <div class="dialog">
-    <div class="dialog-box">
+    <div v-click-outside="close" class="dialog-box">
       <div class="dialog-title-bar">
-        <nuxt-link :to="{ name: 'map' }">
+        <nuxt-link :to="closeRoute">
           <icon :icon="NounClose" />
         </nuxt-link>
       </div>
@@ -23,6 +23,12 @@ export default {
   },
   computed: {
     NounClose: () => NounClose,
+    closeRoute: () => ({ name: "map" }),
+  },
+  methods: {
+    close() {
+      this.$router.push(this.closeRoute)
+    },
   },
 }
 </script>
