@@ -6,6 +6,10 @@
 import UiDialog from "@/components/ui-dialog"
 
 export default {
+  transition: {
+    mode: "",
+    name: "next",
+  },
   components: {
     UiDialog,
   },
