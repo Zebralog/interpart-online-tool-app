@@ -1,8 +1,6 @@
 <template>
   <div class="overlay">
-    <div class="dialog">
-      <slot />
-    </div>
+    <slot />
   </div>
 </template>
 
@@ -15,8 +13,9 @@
   top: 0;
   right: 0;
   bottom: $navbar-height;
-  padding: 2rem;
+  padding: 2rem 2rem 4rem 2rem;
   background: rgba(#fff, 0.6);
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 </style>

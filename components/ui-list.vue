@@ -20,6 +20,7 @@ export default {
 .list {
   margin-left: -2rem;
   margin-right: -2rem;
+  font-size: 1.2rem;
 }
 
 .list-item {

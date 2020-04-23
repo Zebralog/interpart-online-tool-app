@@ -1,5 +1,5 @@
 <template>
-  <div :style="elementStyle">
+  <div class="discussion">
     <Message v-for="message in messages" :key="message.id" :message="message" />
   </div>
 </template>
@@ -19,10 +19,12 @@ export default {
       },
     },
   },
-  computed: {
-    elementStyle: () => {
-      return {}
-    },
-  },
 }
 </script>
+
+<style lang="scss" scoped>
+.discussion {
+  margin-top: -3rem;
+  margin-bottom: -3rem;
+}
+</style>

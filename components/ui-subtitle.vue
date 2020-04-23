@@ -6,7 +6,7 @@
 
 <style lang="scss" scoped>
 .subtitle {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }

@@ -7,7 +7,7 @@
 <style lang="scss" scoped>
 .title {
   position: relative;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-weight: bold;
   padding-left: 2rem;
   padding-bottom: 2rem;

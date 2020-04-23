@@ -18,7 +18,6 @@
 
 <script>
 export default {
-  components: {},
   props: {
     message: { type: Object, required: true },
   },
@@ -68,16 +67,42 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/variables";
+
 .message-container {
-  margin-top: 10px;
-  margin-bottom: 35px;
-  text-align: right;
+  position: relative;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  border-radius: $border-radius;
+  border: $border;
+  background-color: #fff;
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0.1rem;
+    bottom: -0.6rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    border: $border;
+    background: #fff;
+    transform: rotate(15deg) skewY(-35deg);
+    z-index: -1;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 2.2rem;
+    height: 0.5rem;
+    background: #fff;
+  }
 }
 
 .content {
   padding: 1em;
-  background-color: #fff;
-  border: 1px solid #000;
 }
 
 .metadata {

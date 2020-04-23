@@ -1,6 +1,8 @@
 <template>
   <ui-overlay>
-    <ui-title>Diskussion</ui-title>
+    <ui-title class="is-sr-only">
+      Diskussion
+    </ui-title>
     <discussion :messages="messages" />
   </ui-overlay>
 </template>

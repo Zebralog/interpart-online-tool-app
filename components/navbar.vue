@@ -43,7 +43,7 @@ export default {
   display: flex;
   background: #fff;
   box-shadow: $shadow-sm;
-  z-index: 1;
+  z-index: 2;
 }
 
 .navbar-item {
@@ -51,7 +51,7 @@ export default {
   flex-grow: 1;
   justify-content: center;
   align-items: center;
-  font-size: 2.5rem;
+  font-size: 3rem;
 
   &:not(.is-active) {
     color: #d1d1d1;
@@ -66,9 +66,9 @@ export default {
       content: "";
       position: absolute;
       left: 50%;
-      top: -1rem;
-      width: 2rem;
-      height: 2rem;
+      top: -1.5rem;
+      width: 3rem;
+      height: 3rem;
       transform: translate(-50%) rotate(45deg);
       background: #fff;
       box-shadow: $shadow-sm;
