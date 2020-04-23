@@ -1,4 +1,7 @@
 export default {
+  server: {
+    host: "0.0.0.0",
+  },
   build: {
     extend(config, ctx) {
       if (ctx.isDev && ctx.isClient) {
