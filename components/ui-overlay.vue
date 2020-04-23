@@ -17,5 +17,6 @@
   bottom: $navbar-height;
   padding: 2rem;
   background: rgba(#fff, 0.6);
+  overflow-y: auto;
 }
 </style>
