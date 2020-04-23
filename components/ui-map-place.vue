@@ -1,6 +1,11 @@
 <template>
   <div v-if="place" :style="elementStyle">
-    <div class="popup" :style="popupStyle">
+    <div
+      :ref="place.id"
+      v-click-outside="toggle"
+      class="popup"
+      :style="popupStyle"
+    >
       <h2 class="title">
         {{ place.title }}
       </h2>
@@ -17,7 +22,6 @@
       </nuxt-link>
       <span class="dismiss" @click="popupClick" />
     </div>
-    <div class="trigger-area" :style="triggerAreaStyle" @click="popupClick" />
   </div>
 </template>
 
@@ -50,16 +54,6 @@ export default {
         visibility: this.popupVisible ? `visible` : "hidden",
       }
     },
-    triggerAreaStyle() {
-      return {
-        left: this.place.triggerArea.from.x,
-        top: this.place.triggerArea.from.y,
-        width: this.place.triggerArea.width,
-        height: this.place.triggerArea.height,
-        "min-width": this.place.triggerArea.width,
-        "min-height": this.place.triggerArea.height,
-      }
-    },
   },
   methods: {
     popupClick: function () {
@@ -69,6 +63,35 @@ export default {
       } else {
         this.$emit("popup-closed")
       }
+    },
+    toggle: function () {
+      this.popupVisible = !this.popupVisible
+    },
+    handleClickOutside: function () {
+      const pointX = event.touches[0].clientX
+      const pointY = event.touches[0].clientY
+      const element = this.$refs[this.place.id]
+      const rect = element.getBoundingClientRect()
+      const formatRect = {
+        min: {
+          x: rect.x,
+          y: rect.y,
+        },
+        max: {
+          x: rect.x + rect.width,
+          y: rect.y + rect.height,
+        },
+      }
+
+      const distance = this.distanceToRect(formatRect, { x: pointX, y: pointY })
+      console.log(this.place)
+      console.log(`'${this.place.id}': distance is ${distance}`)
+    },
+    distanceToRect(rect, p) {
+      const dx = Math.max(rect.min.x - p.x, 0, p.x - rect.max.x)
+      const dy = Math.max(rect.min.y - p.y, 0, p.y - rect.max.y)
+      console.log(`@distanceToRect distance line is (${dx},${dy})`)
+      return Math.sqrt(dx * dx + dy * dy)
     },
   },
 }
@@ -106,13 +129,5 @@ h3 {
       content: "x";
     }
   }
-}
-.trigger-area {
-  position: absolute;
-  display: inline-block;
-  visibility: visible;
-  border: 1px solid grey;
-  background-color: #fff;
-  opacity: 25%;
 }
 </style>
