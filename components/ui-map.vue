@@ -1,5 +1,5 @@
 <template>
-  <hero tag="main" :image-url="mapUrl" />
+  <hero tag="main" :image-url="mapUrl" position="50% 50%" />
 </template>
 
 <script>

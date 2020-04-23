@@ -1,5 +1,5 @@
 <template>
-  <footer class="navbar">
+  <header class="navbar">
     <nuxt-link
       v-for="item in items"
       :key="item.title"
@@ -8,7 +8,7 @@
     >
       <icon :icon="item.icon" :aria-label="item.title" />
     </nuxt-link>
-  </footer>
+  </header>
 </template>
 
 <script>

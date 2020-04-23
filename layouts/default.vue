@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="layout">
     <navbar />
     <nuxt class="layout-content" />
     <ui-map class="layout-map" />
@@ -19,6 +19,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.layout {
+  height: 100%;
+}
+
 .layout-content {
   z-index: 1;
 }

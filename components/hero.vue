@@ -1,6 +1,11 @@
 <template>
   <component :is="tag" :to="to" class="hero">
-    <img :src="imageUrl" :alt="imageAlt" class="hero-image" />
+    <img
+      :src="imageUrl"
+      :alt="imageAlt"
+      :style="{ objectPosition: position }"
+      class="hero-image"
+    />
   </component>
 </template>
 
@@ -11,6 +16,7 @@ export default {
     to: { type: Object, default: undefined },
     imageUrl: { type: String, default: undefined },
     imageAlt: { type: String, default: undefined },
+    position: { type: String, default: "50% 0" },
   },
 }
 </script>
@@ -18,12 +24,13 @@ export default {
 <style lang="scss" scoped>
 .hero {
   display: block;
+  height: 100%;
 }
 
 .hero-image {
-  width: 100%;
-  height: 100vh;
-  object-fit: cover;
   display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 </style>
