@@ -96,7 +96,6 @@
   "places": [
     {
       "id": "place-1",
-      "to": "#dialog-1",
       "title": "Situation 1",
       "position": {
         "x": "10%",
@@ -107,7 +106,6 @@
     },
     {
       "id": "place-2",
-      "to": "#dialog-2",
       "title": "Situation 2",
       "position": {
         "x": "52%",
@@ -118,7 +116,6 @@
     },
     {
       "id": "place-3",
-      "to": "#dialog-3",
       "title": "Situation 3",
       "position": {
         "x": "51%",
@@ -129,7 +126,6 @@
     },
     {
       "id": "place-4",
-      "to": "#dialog-4",
       "title": "Situation 4",
       "position": {
         "x": "19%",

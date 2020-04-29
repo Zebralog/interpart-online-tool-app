@@ -1,8 +1,8 @@
 <template>
   <div class="dialog">
-    <div v-click-outside="close" class="dialog-box">
+    <div class="dialog-box">
       <div class="dialog-title-bar">
-        <nuxt-link :to="closeRoute">
+        <nuxt-link v-if="to" :to="closeRoute">
           <icon :icon="NounClose" />
         </nuxt-link>
       </div>
@@ -21,9 +21,12 @@ export default {
   components: {
     Icon,
   },
+  props: {
+    to: { type: String, required: false, default: null },
+  },
   computed: {
     NounClose: () => NounClose,
-    closeRoute: () => ({ name: "map" }),
+    closeRoute: () => ({ name: this.to }),
   },
   methods: {
     close() {

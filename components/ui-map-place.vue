@@ -1,5 +1,5 @@
 <template>
-  <div v-if="place" :style="elementStyle">
+  <div v-if="place" :style="elementStyle" class="place-container">
     <div
       :ref="place.id"
       v-click-outside="toggle"
@@ -15,7 +15,7 @@
       <nuxt-link
         v-if="place"
         :key="place.id"
-        :to="place.to"
+        :to="place.id"
         class="action-link"
       >
         Los gehts >>
@@ -42,10 +42,8 @@ export default {
   computed: {
     elementStyle() {
       return {
-        position: `absolute`,
         left: this.place.position.x,
         top: this.place.position.y,
-        display: `inline-block`,
       }
     },
     popupStyle() {
@@ -98,35 +96,40 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-h2 {
-  font-size: 85%;
-  font-weight: bolder;
-}
-
-h3 {
-  font-size: 75%;
-}
-
-.action-link {
-  font-size: 75%;
-  font-style: italic;
-}
-
-.popup {
-  width: 6rem;
-  padding: 0.8rem;
+.place-container {
+  position: absolute;
   display: inline-block;
-  background-color: #ffffff;
-  border-radius: 1rem;
 
-  .dismiss {
-    position: absolute;
-    right: 8%;
-    top: 3%;
-    cursor: pointer;
+  .popup {
+    width: 6rem;
+    padding: 0.8rem;
+    display: inline-block;
+    background-color: #ffffff;
+    border-radius: 1rem;
 
-    &::after {
-      content: "x";
+    h2 {
+      font-size: 85%;
+      font-weight: bolder;
+    }
+
+    h3 {
+      font-size: 75%;
+    }
+
+    .action-link {
+      font-size: 75%;
+      font-style: italic;
+    }
+
+    .dismiss {
+      position: absolute;
+      right: 8%;
+      top: 3%;
+      cursor: pointer;
+
+      &::after {
+        content: "x";
+      }
     }
   }
 }

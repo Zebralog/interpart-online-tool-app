@@ -99,18 +99,21 @@ export default {
     height: 0.5rem;
     background: #fff;
   }
-}
 
-.content {
-  padding: 1em;
-}
+  .content {
+    padding: 1em;
+  }
 
-.metadata {
-  display: inline-block;
-  padding: 0.4rem;
-  background-color: #dedede;
-  opacity: 0.7;
-  border-radius: 9px;
-  font-size: 75%;
+  .metadata {
+    display: inline-block;
+    padding: 0.4rem;
+    background-color: #dedede;
+    opacity: 0.7;
+    border-radius: 9px;
+    font-size: 75%;
+    position: absolute;
+    top: 100%;
+    right: 0;
+  }
 }
 </style>
