@@ -1,28 +1,29 @@
 <template>
   <div class="paginator-container">
-    <span
-      v-for="i in pages"
-      :key="i"
-      :class="{ dot: true, active: current == i }"
-      @click="reportClick(i)"
-    />
+    <ui-link v-for="page in pages" :key="page.id" :to="page.to">
+      <span :class="{ dot: true, active: current == page.id }" />
+    </ui-link>
   </div>
 </template>
 
 <script>
+import UiLink from "@/components/ui-link"
+
 export default {
+  components: {
+    UiLink,
+  },
   props: {
-    position: { type: Number, default: 1 },
-    pages: { type: Number, default: 1 },
+    pages: {
+      type: Array,
+      default: function () {
+        return []
+      },
+    },
     current: { type: Number, default: 1 },
     loop: { type: Boolean, default: false },
   },
-  methods: {
-    reportClick(n) {
-      console.log(`slide ${this.position} page clicked ${n}`)
-      this.$emit("page-clicked", { slide: this.position, page: n })
-    },
-  },
+  methods: {},
 }
 </script>
 
@@ -42,6 +43,7 @@ export default {
     &::after {
     }
   }
+
   .active {
     color: #000;
     background-color: #000;

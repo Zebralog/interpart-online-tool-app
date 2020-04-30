@@ -30,7 +30,8 @@
     "nuxt-svg-loader": "^1.2.0",
     "reset-css": "^5.0.1",
     "typeface-montserrat": "0.0.75",
-    "v-click-outside": "^3.0.1"
+    "v-click-outside": "^3.0.1",
+    "vue2-touch-events": "^2.2.1"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",

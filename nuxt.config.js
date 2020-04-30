@@ -38,5 +38,5 @@ export default {
     name: "next",
   },
   modules: ["nuxt-svg-loader"],
-  plugins: ["plugins/v-click-outside"],
+  plugins: ["plugins/v-click-outside", "plugins/v-touch-events"],
 }

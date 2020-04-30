@@ -156,5 +156,37 @@
       "title": "Kontakt",
       "content": "<p><strong>Bürgerverein Biebrich e.V.</strong><br/>Gaugasse 12<br/>65203 Biebrich</p><p><strong>Interpart</strong><br/>Max Mustermann<br/>0657 5887462</p><p><strong>Zebralog</strong><br/>Omid Nowzamani<br/>0228 763706 14<br/>nowzamani@zebralog.de</p>"
     }
+  ],
+  "introductionItems": [
+    {
+      "id": 1,
+      "content": "Willkommen zur Einführung!",
+      "image": "/assets/slide-img1.svg"
+    },
+    {
+      "id": 2,
+      "content": "Lorem ipsum dolor sit amet, ex propriae quaerendum vim, his brute\n      dissentiunt at. Ad sale audiam philosophia nam, in vis nostrud fuisset\n      comprehensam. At vim veri insolens, ipsum viderer eu pri, vix hinc purto\n      commodo et. Pri cu illud laboramus complectitur, munere dolorum officiis\n      vix et, quo augue adipisci id. Dico prima vis ex. Ex tritani feugiat\n      comprehensam eum, mei ad animal alienum. Mea scaevola suscipiantur te, ius\n      ei agam legimus scripserit, dicit legimus concludaturque an vim.",
+      "image": "@/assets/slide-img2.svg"
+    },
+    {
+      "id": 3,
+      "content": "splendide mediocritatem eos, ex nec regione tacimates. Dolor everti\n      probatus ut sed. Corpora tincidunt ut pro, et movet constituam dissentiunt\n      sea, te vim sint tibique similique.",
+      "image": "@/assets/slide-img3.svg"
+    },
+    {
+      "id": 4,
+      "content": "Rebum principes incorrupte cu has, cu pri nisl molestie torquatos, id est\n      dicta maluisset reformidans. Harum platonem senserit ne pri, ad mel\n      suscipiantur conclusionemque, soleat aliquam delicatissimi vel cu. Duo\n      dictas oblique expetenda ei, qui graeco pertinax at. Idque inani meliore\n      cu eum, saepe scripta ceteros id sed. Vel quodsi equidem in, quo diceret\n      convenire ut. Amet postulant salutatus sed te, ne scaevola lucilius sed,\n      has an lucilius consequat.",
+      "image": "@/assets/slide-img4.svg"
+    },
+    {
+      "id": 5,
+      "content": "Ei cum officiis expetenda persequeris. Usu eu bonorum molestie, eos ne\n      convenire salutatus. Sed id doctus salutatus, ne suas inani aeterno pro.\n      Usu id tollit eruditi.",
+      "image": "@/assets/slide-img5.svg"
+    },
+    {
+      "id": 6,
+      "content": "<strong> alles gut?</strong> \n<button type='button'>Los gehts!</button>",
+      "image": "@/assets/slide-img5.svg"
+    }
   ]
 }
