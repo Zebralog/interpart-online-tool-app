@@ -57,6 +57,14 @@ button {
   font-size: .75rem;
 }
 
+.text-center {
+  text-align: center;
+}
+
+.pb-1 {
+  padding-bottom: 1rem;
+}
+
 .is-sr-only {
   border: none !important;
   clip: rect(0, 0, 0, 0) !important;
@@ -66,6 +74,14 @@ button {
   position: absolute !important;
   white-space: nowrap !important;
   width: 0.01em !important;
+}
+
+.button {
+  display: inline-block;
+  padding: 1rem;
+  border-radius: $border-radius-s;
+  border: 1px solid #bbb;
+  box-shadow: 0 0.125rem 0.4rem 0 rgba(#000, .15);
 }
 
 .content {

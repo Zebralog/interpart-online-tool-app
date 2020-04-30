@@ -1,4 +1,9 @@
-import NounInfo from "./noun-info.svg"
+import Introduction1 from "./introduction1.svg"
+import Introduction2 from "./introduction2.svg"
+import Introduction3 from "./introduction3.svg"
+import Introduction4 from "./introduction4.svg"
+import Introduction5 from "./introduction5.svg"
+import Introduction6 from "./introduction6.svg"
 
 export default {
   heroAlt: "Willkommen bei Wiesbaden Biebrich! Los gehts",
@@ -166,32 +171,32 @@ export default {
   introductionItems: [
     {
       content: "Willkommen zur Einführung!",
-      image: NounInfo,
+      image: Introduction1,
     },
     {
       content:
         "Lorem ipsum dolor sit amet, ex propriae quaerendum vim, his brute\n      dissentiunt at. Ad sale audiam philosophia nam, in vis nostrud fuisset\n      comprehensam. At vim veri insolens, ipsum viderer eu pri, vix hinc purto",
-      image: NounInfo,
+      image: Introduction2,
     },
     {
       content:
         "splendide mediocritatem eos, ex nec regione tacimates. Dolor everti\n      probatus ut sed. Corpora tincidunt ut pro, et movet constituam dissentiunt\n      sea, te vim sint tibique similique.",
-      image: NounInfo,
+      image: Introduction3,
     },
     {
       content:
         "Rebum principes incorrupte cu has, cu pri nisl molestie torquatos, id est\n      dicta maluisset reformidans. Harum platonem senserit ne pri, ad mel\n      suscipiantur conclusionemque, soleat aliquam delicatissimi vel cu.",
-      image: NounInfo,
+      image: Introduction4,
     },
     {
       content:
         "Ei cum officiis expetenda persequeris. Usu eu bonorum molestie, eos ne\n      convenire salutatus. Sed id doctus salutatus, ne suas inani aeterno pro.\n      Usu id tollit eruditi.",
-      image: NounInfo,
+      image: Introduction5,
     },
     {
       content:
-        "<strong> alles gut?</strong> \n<button type='button'>Los gehts!</button>",
-      image: NounInfo,
+        '<div class="is-size-5 text-center"><p class="pb-1"><strong>Alles verstanden?</strong><br/>Dann kann es ja losgehen</p><p><a class="button" href="/map">Los gehts!</a></p></div>',
+      image: Introduction6,
     },
   ],
 }

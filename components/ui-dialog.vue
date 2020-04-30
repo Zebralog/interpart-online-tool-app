@@ -2,7 +2,7 @@
   <div class="dialog">
     <div class="dialog-box">
       <div class="dialog-title-bar">
-        <nuxt-link v-if="to" :to="closeRoute">
+        <nuxt-link :to="closeRoute" class="is-size-4">
           <icon :icon="NounClose" />
         </nuxt-link>
       </div>
@@ -21,12 +21,9 @@ export default {
   components: {
     Icon,
   },
-  props: {
-    to: { type: String, required: false, default: null },
-  },
   computed: {
     NounClose: () => NounClose,
-    closeRoute: () => ({ name: this.to }),
+    closeRoute: () => ({ name: "map" }),
   },
   methods: {
     close() {
@@ -59,8 +56,9 @@ export default {
 }
 
 .dialog-title-bar {
-  padding: 0.5rem;
+  padding: 0.5rem 0.75rem 0 0.75rem;
   text-align: right;
+  color: #7e7e7e;
 }
 
 .dialog-content {

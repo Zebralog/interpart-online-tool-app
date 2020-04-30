@@ -1,12 +1,16 @@
 <template>
-  <div class="slider" @click="setIndex(nextIndex)">
+  <div class="slider">
     <transition :name="'slide-' + direction">
       <div :key="slideIndex" class="slide">
-        <div class="slide-content" v-html="slide.content" />
-        <component :is="slide.image" v-if="slide.image" class="slide-image" />
+        <div class="slide-content content" v-html="slide.content" />
+        <component
+          :is="slide.image"
+          class="slide-image"
+          @click="setIndex(nextIndex)"
+        />
       </div>
     </transition>
-    <div class="paginator" @click.stop>
+    <div class="paginator">
       <button
         v-for="(page, index) in slides"
         :key="index"
@@ -98,8 +102,8 @@ $image-height: 10rem;
     }
 
     &:not(.active):after {
-      width: 9px;
-      height: 9px;
+      width: 8px;
+      height: 8px;
       background: #d1d1d1;
     }
 
