@@ -1,3 +1,4 @@
+import endent from "endent"
 import Introduction1 from "./introduction1.svg"
 import Introduction2 from "./introduction2.svg"
 import Introduction3 from "./introduction3.svg"
@@ -170,32 +171,48 @@ export default {
   ],
   introductionItems: [
     {
-      content: "Willkommen zur Einführung!",
+      content: endent`
+        Hallo, hier ist studio biebrich – das Mitmachformat von INTERPART.<br/>
+        Wir wollen deine Meinung zu Sicherheit und Fortbewegung in Biebrich. So machst du mit!
+      `,
       image: Introduction1,
     },
     {
-      content:
-        "Lorem ipsum dolor sit amet, ex propriae quaerendum vim, his brute\n      dissentiunt at. Ad sale audiam philosophia nam, in vis nostrud fuisset\n      comprehensam. At vim veri insolens, ipsum viderer eu pri, vix hinc purto",
+      content: endent`
+        Gerne würden wir über die App deine Meinung zu Mobilität in Biebrich erfahren.
+        In mehreren Spaces kannst du deine Meinung sagen. 
+      `,
       image: Introduction2,
     },
     {
-      content:
-        "splendide mediocritatem eos, ex nec regione tacimates. Dolor everti\n      probatus ut sed. Corpora tincidunt ut pro, et movet constituam dissentiunt\n      sea, te vim sint tibique similique.",
+      content: endent`
+        In den Spaces findest du die jeweiligen Themenfelder, zu der wir dich brauchen.
+        Wo soll der neue Basketballplatz entstehen? Was brauchst du für Sportgeräte im Park?
+      `,
       image: Introduction3,
     },
     {
       content:
-        "Rebum principes incorrupte cu has, cu pri nisl molestie torquatos, id est\n      dicta maluisset reformidans. Harum platonem senserit ne pri, ad mel\n      suscipiantur conclusionemque, soleat aliquam delicatissimi vel cu.",
+        "Auf der Übersichtskarte von Moabit kannst du dich in die jeweiligen Spaces klicken und in mehreren Leveln, ganz unterschiedlich, deine Meinung sagen.",
       image: Introduction4,
     },
     {
-      content:
-        "Ei cum officiis expetenda persequeris. Usu eu bonorum molestie, eos ne\n      convenire salutatus. Sed id doctus salutatus, ne suas inani aeterno pro.\n      Usu id tollit eruditi.",
+      content: endent`
+        In der unteren Leiste hast du 3 Grundfunktionen.
+        Da findest du weitere Informationen zu unserem Projekt und die Kommentare der weiteren Nutzer.
+      `,
       image: Introduction5,
     },
     {
-      content:
-        '<div class="is-size-5 text-center"><p class="pb-1"><strong>Alles verstanden?</strong><br/>Dann kann es ja losgehen</p><p><a class="button" href="/map">Los gehts!</a></p></div>',
+      content: endent`
+        <div class="is-size-5 text-center">
+          <p class="pb-1">
+            <strong>Alles verstanden?</strong><br/>
+            Dann kann es ja losgehen
+          </p>
+          <p><a class="button" href="/map">Los gehts!</a></p>
+        </div>
+      `,
       image: Introduction6,
     },
   ],
