@@ -118,8 +118,8 @@
       "id": "place-3",
       "title": "Situation 3",
       "trigger": {
-        "x": "51%",
-        "y": "41%"
+        "x": "42%",
+        "y": "59%"
       },
       "subtitle": "",
       "color": "#9199d6"
@@ -128,10 +128,20 @@
       "id": "place-4",
       "title": "Situation 4",
       "trigger": {
-        "x": "19%",
-        "y": "32%"
+        "x": "21%",
+        "y": "41%"
       },
       "subtitle": "",
+      "color": "#74ceb7"
+    },
+    {
+      "id": "place-5",
+      "title": "Situation 5",
+      "trigger": {
+        "x": "-1%",
+        "y": "50%"
+      },
+      "subtitle": "Lorem Ipsum",
       "color": "#74ceb7"
     }
   ],

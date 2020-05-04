@@ -1,5 +1,10 @@
 <template>
-  <div v-if="place" :style="elementStyle" :data-id="place.id">
+  <div
+    v-if="place"
+    v-click-outside="handleClickOutside"
+    :style="elementStyle"
+    :data-id="place.id"
+  >
     <div :ref="place.id" class="popup" :style="popupStyle">
       <h2 class="title">
         {{ place.title }}
@@ -8,7 +13,7 @@
         {{ place.subtitle }}
       </h3>
       <button>Los gehts >></button>
-      <span class="dismiss" @click="popupClick" />
+      <span class="dismiss" @click="dismiss" />
     </div>
     <div
       class="popup-trigger-area"
@@ -58,43 +63,26 @@ export default {
     },
   },
   methods: {
-    popupClick: function () {
-      this.popupVisible = !this.popupVisible
-      if (this.popupVisible) {
-        this.$emit("popup-opened")
-      } else {
+    dismiss: function () {
+      if (this.popupVisible === true) {
+        this.popupVisible = false
         this.$emit("popup-closed")
       }
     },
     triggered: function () {
-      this.popupVisible = !this.popupVisible
-      console.log(`popup ${this.place.id} was triggered`)
+      if (this.popupVisible === false) {
+        this.popupVisible = true
+        this.$emit("popup-opened")
+      } else {
+        this.popupVisible = false
+        this.$emit("popup-closed")
+      }
     },
     handleClickOutside: function () {
-      const pointX = event.touches[0].clientX
-      const pointY = event.touches[0].clientY
-      const element = this.$refs[this.place.id]
-      const rect = element.getBoundingClientRect()
-      const formatRect = {
-        min: {
-          x: rect.x,
-          y: rect.y,
-        },
-        max: {
-          x: rect.x + rect.width,
-          y: rect.y + rect.height,
-        },
+      if (this.popupVisible === true) {
+        this.dismiss()
+        this.$emit("popup-closed")
       }
-
-      const distance = this.distanceToRect(formatRect, { x: pointX, y: pointY })
-      console.log(this.place)
-      console.log(`'${this.place.id}': distance is ${distance}`)
-    },
-    distanceToRect(rect, p) {
-      const dx = Math.max(rect.min.x - p.x, 0, p.x - rect.max.x)
-      const dy = Math.max(rect.min.y - p.y, 0, p.y - rect.max.y)
-      console.log(`@distanceToRect distance line is (${dx},${dy})`)
-      return Math.sqrt(dx * dx + dy * dy)
     },
   },
 }
