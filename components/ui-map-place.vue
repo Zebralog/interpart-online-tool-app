@@ -1,27 +1,20 @@
 <template>
-  <div v-if="place" :style="elementStyle">
-    <div
-      :ref="place.id"
-      v-click-outside="toggle"
-      class="popup"
-      :style="popupStyle"
-    >
+  <div v-if="place" :style="elementStyle" :data-id="place.id">
+    <div :ref="place.id" class="popup" :style="popupStyle">
       <h2 class="title">
         {{ place.title }}
       </h2>
       <h3 v-if="place.subtitle" class="subtitle">
         {{ place.subtitle }}
       </h3>
-      <nuxt-link
-        v-if="place"
-        :key="place.id"
-        :to="place.to"
-        class="action-link"
-      >
-        Los gehts >>
-      </nuxt-link>
+      <button>Los gehts >></button>
       <span class="dismiss" @click="popupClick" />
     </div>
+    <div
+      class="popup-trigger-area"
+      :style="triggerAreaStyle"
+      @click="triggered"
+    ></div>
   </div>
 </template>
 
@@ -43,9 +36,18 @@ export default {
     elementStyle() {
       return {
         position: `absolute`,
-        left: this.place.position.x,
-        top: this.place.position.y,
+        left: this.place.trigger.x,
+        top: this.place.trigger.y,
         display: `inline-block`,
+      }
+    },
+    triggerAreaStyle() {
+      return {
+        position: `absolute`,
+        display: `inline-block`,
+        border: `1px solid black`,
+        width: `20vw`,
+        height: `10vh`,
       }
     },
     popupStyle() {
@@ -64,8 +66,9 @@ export default {
         this.$emit("popup-closed")
       }
     },
-    toggle: function () {
+    triggered: function () {
       this.popupVisible = !this.popupVisible
+      console.log(`popup ${this.place.id} was triggered`)
     },
     handleClickOutside: function () {
       const pointX = event.touches[0].clientX

@@ -1,5 +1,5 @@
 <template>
-  <div :style="elementStyle">
+  <div v-if="places" :style="elementStyle">
     <Place v-for="place in places" :key="place.id" :place="place" />
   </div>
 </template>
@@ -29,6 +29,9 @@ export default {
         left: `0`,
       }
     },
+  },
+  mounted: function () {
+    console.log(this.places)
   },
 }
 </script>
