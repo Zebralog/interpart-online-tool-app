@@ -1,136 +1,47 @@
 <template>
-  <div v-if="place" :style="elementStyle" class="place-container">
-    <div
-      :ref="place.id"
-      v-click-outside="toggle"
-      class="popup"
-      :style="popupStyle"
-    >
-      <h2 class="title">
-        {{ place.title }}
-      </h2>
-      <h3 v-if="place.subtitle" class="subtitle">
-        {{ place.subtitle }}
-      </h3>
-      <nuxt-link
-        v-if="place"
-        :key="place.id"
-        :to="place.id"
-        class="action-link"
-      >
-        Los gehts >>
-      </nuxt-link>
-      <span class="dismiss" @click="popupClick" />
-    </div>
+  <div v-if="place" :style="elementStyle" :data-id="place.id" class="map-place">
+    <ui-popup
+      ref="popup"
+      :color="place.color"
+      :title="place.title"
+      :subtitle="place.subtitle"
+      link-title="Los gehts"
+    />
+    <div class="map-place-trigger-area" @click="$refs.popup.open()" />
   </div>
 </template>
 
 <script>
-import NounMap from "@/assets/noun-map.svg"
+import UiPopup from "@/components/ui-popup"
 
 export default {
-  components: {},
+  components: {
+    UiPopup,
+  },
   props: {
     place: { type: Object, required: true },
-  },
-  data: function () {
-    return {
-      icon: NounMap,
-      popupVisible: false,
-    }
   },
   computed: {
     elementStyle() {
       return {
-        left: this.place.position.x,
-        top: this.place.position.y,
+        left: `${this.place.trigger.x}%`,
+        top: `calc(50% - 52vw ${
+          this.place.trigger.y > 0 ? "+" : "-"
+        } ${Math.abs(this.place.trigger.y)}vw)`,
       }
-    },
-    popupStyle() {
-      return {
-        border: `4px solid ${this.place.color}`,
-        visibility: this.popupVisible ? `visible` : "hidden",
-      }
-    },
-  },
-  methods: {
-    popupClick: function () {
-      this.popupVisible = !this.popupVisible
-      if (this.popupVisible) {
-        this.$emit("popup-opened")
-      } else {
-        this.$emit("popup-closed")
-      }
-    },
-    toggle: function () {
-      this.popupVisible = !this.popupVisible
-    },
-    handleClickOutside: function () {
-      const pointX = event.touches[0].clientX
-      const pointY = event.touches[0].clientY
-      const element = this.$refs[this.place.id]
-      const rect = element.getBoundingClientRect()
-      const formatRect = {
-        min: {
-          x: rect.x,
-          y: rect.y,
-        },
-        max: {
-          x: rect.x + rect.width,
-          y: rect.y + rect.height,
-        },
-      }
-
-      const distance = this.distanceToRect(formatRect, { x: pointX, y: pointY })
-      console.log(this.place)
-      console.log(`'${this.place.id}': distance is ${distance}`)
-    },
-    distanceToRect(rect, p) {
-      const dx = Math.max(rect.min.x - p.x, 0, p.x - rect.max.x)
-      const dy = Math.max(rect.min.y - p.y, 0, p.y - rect.max.y)
-      console.log(`@distanceToRect distance line is (${dx},${dy})`)
-      return Math.sqrt(dx * dx + dy * dy)
     },
   },
 }
 </script>
 
 <style lang="scss" scoped>
-.place-container {
+.map-place {
   position: absolute;
-  display: inline-block;
+  transform: translate(-50%, -50%);
+}
 
-  .popup {
-    width: 6rem;
-    padding: 0.8rem;
-    display: inline-block;
-    background-color: #ffffff;
-    border-radius: 1rem;
-
-    h2 {
-      font-size: 85%;
-      font-weight: bolder;
-    }
-
-    h3 {
-      font-size: 75%;
-    }
-
-    .action-link {
-      font-size: 75%;
-      font-style: italic;
-    }
-
-    .dismiss {
-      position: absolute;
-      right: 8%;
-      top: 3%;
-      cursor: pointer;
-
-      &::after {
-        content: "x";
-      }
-    }
-  }
+.map-place-trigger-area {
+  width: 20vw;
+  height: 10vh;
 }
 </style>
