@@ -58,7 +58,7 @@ export default {
 .popup {
   position: absolute;
   left: 50%;
-  bottom: calc(50% + 3.5rem);
+  bottom: calc(100% + 1.5rem);
   width: 9rem;
   padding: 1rem;
   background: #fff;
