@@ -105,9 +105,9 @@ export default {
     {
       id: "place-1",
       title: "Situation 1",
-      position: {
-        x: "10%",
-        y: "20%",
+      trigger: {
+        x: 29,
+        y: 23,
       },
       subtitle: "Lorem Ipsum",
       color: "#47b9dd",
@@ -115,9 +115,9 @@ export default {
     {
       id: "place-2",
       title: "Situation 2",
-      position: {
-        x: "52%",
-        y: "0",
+      trigger: {
+        x: 63,
+        y: 0,
       },
       subtitle: "sicut dolor amet",
       color: "#cc76af",
@@ -125,9 +125,9 @@ export default {
     {
       id: "place-3",
       title: "Situation 3",
-      position: {
-        x: "51%",
-        y: "41%",
+      trigger: {
+        x: 78,
+        y: 66,
       },
       subtitle: "",
       color: "#9199d6",
@@ -135,11 +135,21 @@ export default {
     {
       id: "place-4",
       title: "Situation 4",
-      position: {
-        x: "19%",
-        y: "32%",
+      trigger: {
+        x: 56,
+        y: 38,
       },
       subtitle: "",
+      color: "#74ceb7",
+    },
+    {
+      id: "place-5",
+      title: "Situation 5",
+      trigger: {
+        x: 35,
+        y: 52,
+      },
+      subtitle: "Lorem Ipsum",
       color: "#74ceb7",
     },
   ],
