@@ -15,7 +15,7 @@
       <nuxt-link
         v-if="place"
         :key="place.id"
-        :to="place.id"
+        :to="dialogUrl(place.id)"
         class="action-link"
       >
         Los gehts >>
@@ -64,6 +64,9 @@ export default {
     },
     toggle: function () {
       this.popupVisible = !this.popupVisible
+    },
+    dialogUrl: function (placeId) {
+      return `/dialog/${placeId}`
     },
     handleClickOutside: function () {
       const pointX = event.touches[0].clientX

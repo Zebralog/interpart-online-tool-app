@@ -103,7 +103,7 @@ export default {
   ],
   places: [
     {
-      id: "place-1",
+      id: "1",
       title: "Situation 1",
       position: {
         x: "10%",
@@ -113,7 +113,7 @@ export default {
       color: "#47b9dd",
     },
     {
-      id: "place-2",
+      id: "2",
       title: "Situation 2",
       position: {
         x: "52%",
@@ -123,7 +123,7 @@ export default {
       color: "#cc76af",
     },
     {
-      id: "place-3",
+      id: "3",
       title: "Situation 3",
       position: {
         x: "51%",
@@ -133,7 +133,7 @@ export default {
       color: "#9199d6",
     },
     {
-      id: "place-4",
+      id: "4",
       title: "Situation 4",
       position: {
         x: "19%",
@@ -216,4 +216,55 @@ export default {
       image: Introduction6,
     },
   ],
+  dialogs: {
+    // for emoji codes look into plugin's collection data file, es. node_modules/emoji-mart-vue/data/apple.json
+    "1": {
+      title: "Situation 1 - Verkehr in Biebrich",
+      questions: [
+        {
+          type: "emoji",
+          image: "/img/dialogs/1/question1.png",
+          question: "Was denkst du, wenn du dieses Bield siehst?",
+          answers: [
+            { emoji: "angry", value: "angry" },
+            { emoji: "grimacing", value: "grimacing" },
+            { emoji: "confused", value: "confused" },
+            { emoji: "slightly_smiling_face", value: "slightly-smiling" },
+            {
+              emoji: "cold_sweat",
+              value: "cold-sweat",
+            },
+            { emoji: "heart_eyes", value: "love" },
+          ],
+        },
+        {
+          type: "radio",
+          image: null,
+          question: {
+            title: "Okay aber jetzt nochmal genau...",
+            content:
+              "stell dir vor, du sollst diese Straße uberqueren. Was ware dich wirtig?",
+          },
+          answers: [
+            {
+              key: "A",
+              content: "Gute Beleuchtung (z.B. fur abends)",
+              value: "good",
+            },
+            { key: "B", content: "Zebrastreifen", value: "zebra" },
+            {
+              key: "C",
+              content: "Weniger autos, mehr Fahrradwege",
+              value: "fahrradwege",
+            },
+            {
+              key: "D",
+              content: "Niedrige Bordsteinkanten",
+              value: "bordsteinkanten",
+            },
+          ],
+        },
+      ],
+    },
+  },
 }
