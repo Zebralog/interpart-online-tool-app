@@ -1,0 +1,29 @@
+@keyframes popupEnter {
+  from {
+    transform: translate(-50%, 15px) scale(.9);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-50%);
+    opacity: 1;
+  }
+}
+
+.popup-enter-active {
+  animation: popupEnter 150ms both;
+}
+
+@keyframes popupLeave {
+  from {
+    transform: translate(-50%);
+    opacity: 1;
+  }
+  to {
+    transform: translate(-50%, 15px) scale(.9);
+    opacity: 0;
+  }
+}
+
+.popup-leave-active {
+  animation: popupLeave 150ms both;
+}

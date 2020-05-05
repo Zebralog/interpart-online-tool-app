@@ -98,8 +98,8 @@
       "id": "place-1",
       "title": "Situation 1",
       "trigger": {
-        "x": "-7%",
-        "y": "31%"
+        "x": 29,
+        "y": 23
       },
       "subtitle": "Lorem Ipsum",
       "color": "#47b9dd"
@@ -108,8 +108,8 @@
       "id": "place-2",
       "title": "Situation 2",
       "trigger": {
-        "x": "27%",
-        "y": "17%"
+        "x": 63,
+        "y": 0
       },
       "subtitle": "sicut dolor amet",
       "color": "#cc76af"
@@ -118,8 +118,8 @@
       "id": "place-3",
       "title": "Situation 3",
       "trigger": {
-        "x": "42%",
-        "y": "59%"
+        "x": 78,
+        "y": 66
       },
       "subtitle": "",
       "color": "#9199d6"
@@ -128,8 +128,8 @@
       "id": "place-4",
       "title": "Situation 4",
       "trigger": {
-        "x": "21%",
-        "y": "41%"
+        "x": 56,
+        "y": 38
       },
       "subtitle": "",
       "color": "#74ceb7"
@@ -138,8 +138,8 @@
       "id": "place-5",
       "title": "Situation 5",
       "trigger": {
-        "x": "-1%",
-        "y": "50%"
+        "x": 35,
+        "y": 52
       },
       "subtitle": "Lorem Ipsum",
       "color": "#74ceb7"

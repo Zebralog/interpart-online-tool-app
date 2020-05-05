@@ -50,9 +50,9 @@ export default {
 }
 
 .dialog-box {
-  border-radius: $border-radius;
+  border-radius: $border-radius-sm;
   background: #fff;
-  box-shadow: 0 0.25rem 0.4rem 0 rgba(#000, 0.2);
+  box-shadow: $shadow-md;
 }
 
 .dialog-title-bar {

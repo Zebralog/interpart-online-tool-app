@@ -1,5 +1,5 @@
 <template>
-  <component :is="icon" class="icon" />
+  <component :is="icon" aria-hidden class="icon" />
 </template>
 
 <script>
@@ -15,5 +15,6 @@ export default {
   height: 1em;
   width: auto;
   fill: currentColor;
+  vertical-align: middle;
 }
 </style>

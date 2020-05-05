@@ -1,0 +1,28 @@
+@keyframes nextEnter {
+  from {
+    transform: translate(100%);
+  }
+  to {
+    transform: translate(0);
+  }
+}
+
+.next-enter-active {
+  animation: nextEnter $transition-duration-long;
+}
+
+@keyframes nextLeave {
+  from {
+    transform: translate(0);
+    opacity: 1;
+  }
+  to {
+    transform: translate(-25%);
+    opacity: 0;
+    filter: brightness(0.5);
+  }
+}
+
+.next-leave-active {
+  animation: nextLeave $transition-duration-long;
+}

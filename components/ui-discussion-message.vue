@@ -73,7 +73,7 @@ export default {
   position: relative;
   margin-top: 3rem;
   margin-bottom: 3rem;
-  border-radius: $border-radius;
+  border-radius: $border-radius-sm;
   border: $border;
   background-color: #fff;
 
