@@ -13,9 +13,9 @@ export default {
   },
   props: {
     places: {
-      type: Array,
+      type: Object,
       default: function () {
-        return []
+        return {}
       },
     },
   },

@@ -17,10 +17,10 @@
         <h3 v-if="subtitle" class="subtitle">
           {{ subtitle }}
         </h3>
-        <a class="action-link" :href="linkUrl ? linkUrl : `#`">
+        <nuxt-link v-if="linkRoute" class="action-link" :to="linkRoute">
           {{ linkTitle }}
           <icon :icon="AngleRightCircle" />
-        </a>
+        </nuxt-link>
       </div>
     </div>
   </transition>
@@ -39,7 +39,7 @@ export default {
     title: { type: String, required: true },
     subtitle: { type: String, default: "" },
     linkTitle: { type: String, default: "" },
-    linkUrl: { type: String, default: null },
+    linkRoute: { type: Object, default: undefined },
   },
   data: () => ({
     isOpen: false,

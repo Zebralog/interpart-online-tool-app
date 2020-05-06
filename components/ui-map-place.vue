@@ -1,12 +1,12 @@
 <template>
-  <div v-if="place" :style="elementStyle" :data-id="place.id" class="map-place">
+  <div v-if="place" :style="elementStyle" class="map-place">
     <ui-popup
       ref="popup"
       :color="place.color"
       :title="place.title"
       :subtitle="place.subtitle"
       :link-title="`Los gehts`"
-      :link-url="getPlaceDetailsUrl"
+      :link-route="{ name: 'dialog.id', params: { id: place.id } }"
     />
     <div class="map-place-trigger-area" @click="$refs.popup.open()" />
   </div>
@@ -14,7 +14,6 @@
 
 <script>
 import UiPopup from "@/components/ui-popup"
-import config from "@/config"
 
 export default {
   components: {
@@ -31,17 +30,6 @@ export default {
           this.place.trigger.y > 0 ? "+" : "-"
         } ${Math.abs(this.place.trigger.y)}vw)`,
       }
-    },
-    getPlaceDetailsUrl() {
-      return this.place && this.dialog(this.place.id)
-        ? `/dialog/${this.place.id}`
-        : `#`
-    },
-  },
-  methods: {
-    dialog(id) {
-      const _dialog = id in config.dialogs ? config.dialogs[id] : null
-      return _dialog
     },
   },
 }

@@ -2,7 +2,7 @@
   <div class="dialog" @click="close">
     <div class="dialog-box" @click.stop>
       <div class="dialog-title-bar" :style="titleStyle">
-        <span v-if="title" class="dialog-title" v-html="title" />
+        <span v-if="title" class="dialog-title">{{ title }}</span>
         <nuxt-link :to="closeRoute" class="is-size-4">
           <icon :icon="NounClose" />
         </nuxt-link>
@@ -32,7 +32,7 @@ export default {
     closeRoute: () => ({ name: "map" }),
     titleStyle() {
       return {
-        "background-color": this.bgcolor ? this.bgcolor : `#fff`,
+        backgroundColor: this.bgcolor ? this.bgcolor : `#fff`,
         color: this.color ? this.color : `inherit`,
       }
     },
@@ -60,16 +60,11 @@ export default {
   padding: 2rem;
   background: rgba(#fff, 0.2);
 
-  .dialog-title-bar {
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-
-    .dialog-title {
-      display: inline-block;
-      width: 90%;
-      text-align: center;
-      font-weight: bold;
-    }
+  .dialog-title-bar .dialog-title {
+    display: inline-block;
+    width: 90%;
+    text-align: center;
+    font-weight: bold;
   }
 }
 
@@ -77,6 +72,7 @@ export default {
   border-radius: $border-radius-md;
   background: #fff;
   box-shadow: $shadow-md;
+  overflow: hidden;
 }
 
 .dialog-title-bar {

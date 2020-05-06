@@ -1,5 +1,5 @@
 <template>
-  <Places :places="places" />
+  <Places :places="dialogs" />
 </template>
 
 <script>
@@ -14,7 +14,7 @@ export default {
     return {}
   },
   computed: {
-    places: () => config.places,
+    dialogs: () => config.dialogs,
   },
   render: () => undefined,
 }

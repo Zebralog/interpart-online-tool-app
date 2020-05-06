@@ -18,31 +18,16 @@ export default {
     dialogProps() {
       return {
         title: this.dialog && this.dialog.title ? this.dialog.title : ``,
-        bgcolor: this.place && this.place.color ? this.place.color : ``,
-        color: this.place && this.place.color ? `#fff` : `inherit`,
+        bgcolor: this.dialog && this.dialog.color ? this.dialog.color : ``,
+        color: this.dialog && this.dialog.color ? `#fff` : `inherit`,
       }
     },
 
     dialog() {
-      if (this.$route.params.id) {
-        const _dialog = config.dialogs[this.$route.params.id]
-        return _dialog
-      }
-      return null
-    },
-    place() {
-      if (this.$route.params.id) {
-        return config.places.find(({ id }) => id === this.$route.params.id)
-      }
-      return null
+      return config.dialogs[this.$route.params.id]
     },
     questions() {
-      if (this.dialog) {
-        return this.dialog.questions
-      } else {
-        console.log(this.dialog)
-      }
-      return []
+      return this.dialog.questions || []
     },
   },
 }
