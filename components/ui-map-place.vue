@@ -13,6 +13,7 @@
       :style="{ fontSize: '4.5rem', color: place.color }"
       aria-label="place.title"
       tabindex="0"
+      class="map-place-pin"
       @click="$refs.popup.open()"
     />
   </div>
@@ -49,5 +50,9 @@ export default {
 .map-place {
   position: absolute;
   transform: translate(-50%, -100%);
+}
+
+.map-place-pin {
+  outline: none;
 }
 </style>
