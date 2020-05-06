@@ -3,8 +3,11 @@
     <div
       v-if="isOpen"
       v-click-outside="close"
-      :style="{ borderColor: color }"
-      class="popup"
+      :style="{
+        borderColor: color,
+        [isBottom ? 'top' : 'bottom']: 'calc(100% + 1.5rem)',
+      }"
+      :class="{ popup: true, 'is-bottom': isBottom }"
     >
       <div class="popup-triangle" :style="{ borderColor: color }" />
       <div class="popup-content">
@@ -38,16 +41,26 @@ export default {
     linkTitle: { type: String, default: "" },
     linkUrl: { type: String, default: null },
   },
-  data: () => ({ isOpen: false }),
+  data: () => ({
+    isOpen: false,
+    isBottom: false,
+  }),
   computed: {
     AngleRightCircle: () => AngleRightCircle,
   },
   methods: {
     open() {
       this.isOpen = true
+      this.$nextTick(() => {
+        this.$el.style.animation = "none"
+        const { y } = this.$el.getBoundingClientRect()
+        this.isBottom = y < 0
+        this.$el.style.animation = ""
+      })
     },
     close() {
       this.isOpen = false
+      this.isBottom = false
     },
   },
 }
@@ -59,7 +72,6 @@ export default {
 .popup {
   position: absolute;
   left: 50%;
-  bottom: calc(100% + 1.5rem);
   width: 9rem;
   padding: 1rem;
   background: #fff;
@@ -84,14 +96,23 @@ export default {
   .popup-triangle {
     content: "";
     position: absolute;
-    bottom: -1.3rem;
     left: 50%;
     width: 2rem;
     height: 2rem;
     transform: translate(-50%) scaleX(0.7) rotate(45deg);
+    background: #fff;
+  }
+
+  &:not(.is-bottom) .popup-triangle {
+    bottom: -1.3rem;
     border-right: 3px solid;
     border-bottom: 3px solid;
-    background: #fff;
+  }
+
+  &.is-bottom .popup-triangle {
+    top: -1.3rem;
+    border-left: 3px solid;
+    border-top: 3px solid;
   }
 }
 </style>

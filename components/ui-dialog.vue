@@ -1,6 +1,6 @@
 <template>
-  <div class="dialog">
-    <div class="dialog-box">
+  <div class="dialog" @click="close">
+    <div class="dialog-box" @click.stop>
       <div class="dialog-title-bar" :style="titleStyle">
         <span v-if="title" class="dialog-title" v-html="title" />
         <nuxt-link :to="closeRoute" class="is-size-4">
