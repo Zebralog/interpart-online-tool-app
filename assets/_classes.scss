@@ -46,3 +46,10 @@
     font-weight: bold;
   }
 }
+
+.button {
+  padding: 1rem;
+  border-radius: $border-radius-md;
+  border: 1px solid #ccc;
+  box-shadow: $shadow-md;
+}
