@@ -5,8 +5,7 @@
       v-click-outside="close"
       :style="{
         borderColor: color,
-        bottom: !isBottom ? 'calc(100% + 1.5rem)' : '',
-        top: isBottom ? 'calc(100% + 1.5rem)' : '',
+        [isBottom ? 'top' : 'bottom']: 'calc(100% + 1.5rem)',
       }"
       :class="{ popup: true, 'is-bottom': isBottom }"
     >
