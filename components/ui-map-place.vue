@@ -12,6 +12,7 @@
       :icon="Pin"
       :style="{ fontSize: '4.5rem', color: place.color }"
       aria-label="place.title"
+      tabindex="0"
       @click="$refs.popup.open()"
     />
   </div>
