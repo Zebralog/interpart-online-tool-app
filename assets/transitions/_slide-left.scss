@@ -1,0 +1,29 @@
+@keyframes slideLeftEnter {
+  from {
+    transform: translate(-200%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+
+.slide-left-enter-active {
+  animation: slideLeftEnter $transition-duration-long;
+}
+
+@keyframes slideLeftLeave {
+  from {
+    transform: translate(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+
+.slide-left-leave-active {
+  animation: slideLeftLeave $transition-duration-long;
+}

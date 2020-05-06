@@ -1,0 +1,27 @@
+@keyframes slideRightEnter {
+  from {
+    transform: translate(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.slide-right-enter-active {
+  animation: slideRightEnter $transition-duration-long;
+}
+
+@keyframes slideRightLeave {
+  from {
+    transform: translate(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+.slide-right-leave-active {
+  animation: slideRightLeave $transition-duration-long;
+}

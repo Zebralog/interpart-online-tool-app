@@ -11,9 +11,10 @@ export default {
     Places,
   },
   data: function () {
-    return {
-      places: config.places,
-    }
+    return {}
+  },
+  computed: {
+    places: () => config.places,
   },
   render: () => undefined,
 }

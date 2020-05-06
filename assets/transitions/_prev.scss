@@ -1,0 +1,30 @@
+@keyframes prevEnter {
+  from {
+    transform: translate(-100%);
+  }
+  to {
+    transform: translate(0);
+  }
+}
+
+.prev-enter-active {
+  animation: prevEnter $transition-duration-long;
+  z-index: 0;
+}
+
+@keyframes prevLeave {
+  from {
+    transform: translate(0);
+    opacity: 1;
+  }
+  to {
+    transform: translate(25%);
+    opacity: 0;
+    filter: brightness(0.5);
+  }
+}
+
+.prev-leave-active {
+  animation: prevLeave $transition-duration-long;
+  z-index: 1;
+}
