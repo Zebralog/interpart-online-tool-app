@@ -2,9 +2,23 @@
   <div class="slider">
     <transition :name="'slide-' + direction">
       <div v-if="question" :key="questionIndex" class="slide">
-        <div class="question-progress">
-          {{ questionIndex + 1 }} / {{ questions.length }}
+        <div class="question-top-header">
+          <span
+            :class="{ 'answer-back-link': true, hidden: questionIndex == 0 }"
+          >
+            <button
+              type="button"
+              class="answer-back-link-button button"
+              @click="goBack"
+            >
+              Zurück
+            </button>
+          </span>
+          <div class="question-progress">
+            {{ questionIndex + 1 }} / {{ questions.length }}
+          </div>
         </div>
+
         <img v-if="question.image" :src="question.image" class="slide-image" />
 
         <div
@@ -87,6 +101,17 @@ export default {
         alert(`out of questions!`)
       }
     },
+    goBack() {
+      if (this.questionIndex > 0) {
+        const next = this.questionIndex - 1
+        console.log(`moving to question ${next} of ${this.questions.length}`)
+        this.setIndex(next)
+      } else {
+        console.warn(
+          `already on first question, this button should not be visible.`
+        )
+      }
+    },
   },
 }
 </script>
@@ -100,40 +125,52 @@ $image-height: 10rem;
   min-height: 28rem;
   overflow: hidden;
 
-  .question-progress {
-    text-align: center;
-  }
+  .slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    flex-shrink: 0;
 
-  .slide-question {
-    text-align: center;
-    margin-bottom: 2rem;
+    .slide-content {
+      margin-top: 5rem;
+    }
 
-    .question-title {
-      font-weight: bold;
-      font-size: 120%;
+    .slide-image {
+      align-self: center;
+      height: $image-height;
+      width: auto;
+    }
+
+    .question-top-header {
+      padding-top: 5px;
+
+      .answer-back-link {
+        padding: 0.5rem;
+        border: 1px solid #000;
+      }
+      .answer-back-link.hidden {
+        visibility: hidden;
+      }
+    }
+
+    .question-progress {
+      text-align: center;
+    }
+
+    .slide-question {
+      text-align: center;
+      margin-bottom: 2rem;
+
+      .question-title {
+        font-weight: bold;
+        font-size: 120%;
+      }
+    }
+
+    .social-bar {
+      text-align: center;
     }
   }
-
-  .social-bar {
-    text-align: center;
-  }
-}
-
-.slide {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  width: 100%;
-  flex-shrink: 0;
-}
-
-.slide-content {
-  margin-top: 5rem;
-}
-
-.slide-image {
-  align-self: center;
-  height: $image-height;
-  width: auto;
 }
 </style>

@@ -1,7 +1,8 @@
 <template>
   <div class="dialog">
     <div class="dialog-box">
-      <div class="dialog-title-bar">
+      <div class="dialog-title-bar" :style="titleStyle">
+        <span v-if="title" class="dialog-title" v-html="title" />
         <nuxt-link :to="closeRoute" class="is-size-4">
           <icon :icon="NounClose" />
         </nuxt-link>
@@ -21,9 +22,20 @@ export default {
   components: {
     Icon,
   },
+  props: {
+    title: { type: String, required: false, default: null },
+    color: { type: String, required: false, default: null },
+    bgcolor: { type: String, required: false, default: null },
+  },
   computed: {
     NounClose: () => NounClose,
     closeRoute: () => ({ name: "map" }),
+    titleStyle() {
+      return {
+        "background-color": this.bgcolor ? this.bgcolor : `#fff`,
+        color: this.color ? this.color : `inherit`,
+      }
+    },
   },
   methods: {
     close() {
@@ -47,6 +59,18 @@ export default {
   justify-content: center;
   padding: 2rem;
   background: rgba(#fff, 0.2);
+
+  .dialog-title-bar {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+    .dialog-title {
+      display: inline-block;
+      width: 90%;
+      text-align: center;
+      font-weight: bold;
+    }
+  }
 }
 
 .dialog-box {
