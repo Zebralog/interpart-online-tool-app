@@ -1,6 +1,6 @@
 <template>
-  <div class="dialog">
-    <div class="dialog-box">
+  <div class="dialog" @click="close">
+    <div class="dialog-box" @click.stop>
       <div class="dialog-title-bar">
         <nuxt-link :to="closeRoute" class="is-size-4">
           <icon :icon="NounClose" />
