@@ -14,7 +14,7 @@
         <h3 v-if="subtitle" class="subtitle">
           {{ subtitle }}
         </h3>
-        <a class="action-link">
+        <a class="action-link" :href="linkUrl ? linkUrl : `#`">
           {{ linkTitle }}
           <icon :icon="AngleRightCircle" />
         </a>
@@ -36,6 +36,7 @@ export default {
     title: { type: String, required: true },
     subtitle: { type: String, default: "" },
     linkTitle: { type: String, default: "" },
+    linkUrl: { type: String, default: null },
   },
   data: () => ({ isOpen: false }),
   computed: {

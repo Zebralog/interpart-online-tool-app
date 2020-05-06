@@ -143,7 +143,7 @@ export default {
       color: "#74ceb7",
     },
     {
-      id: "place-5",
+      id: "5",
       title: "Situation 5",
       trigger: {
         x: 35,
@@ -267,6 +267,54 @@ export default {
               content: "Weniger autos, mehr Fahrradwege",
               value: "fahrradwege",
             },
+            {
+              key: "D",
+              content: "Niedrige Bordsteinkanten",
+              value: "bordsteinkanten",
+            },
+          ],
+        },
+      ],
+    },
+    "5": {
+      title: "Situation 5 - Lorem Ipsum III",
+      questions: [
+        {
+          type: "emoji",
+          image: "/img/dialogs/1/question1.png",
+          question: "Was denkst du, wenn du dieses Bield siehst?",
+          answers: [
+            { emoji: "grimacing", value: "grimacing" },
+            { emoji: "angry", value: "angry" },
+            { emoji: "slightly_smiling_face", value: "slightly-smiling" },
+            {
+              emoji: "cold_sweat",
+              value: "cold-sweat",
+            },
+            { emoji: "heart_eyes", value: "love" },
+            { emoji: "confused", value: "confused" },
+          ],
+        },
+        {
+          type: "radio",
+          image: null,
+          question: {
+            title: "Okay aber jetzt nochmal genau...",
+            content:
+              "stell dir vor, du sollst diese Straße uberqueren. Was ware dich wirtig?",
+          },
+          answers: [
+            {
+              key: "A",
+              content: "Gute Beleuchtung (z.B. fur abends)",
+              value: "good",
+            },
+            {
+              key: "B",
+              content: "Weniger autos, mehr Fahrradwege",
+              value: "fahrradwege",
+            },
+            { key: "C", content: "Zebrastreifen", value: "zebra" },
             {
               key: "D",
               content: "Niedrige Bordsteinkanten",
