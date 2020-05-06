@@ -2,8 +2,8 @@
   <div class="dialog" @click="close">
     <div class="dialog-box" @click.stop>
       <div class="dialog-title-bar" :style="titleStyle">
-        <span v-if="title" class="dialog-title">{{ title }}</span>
-        <nuxt-link :to="closeRoute" class="is-size-4">
+        {{ title }}
+        <nuxt-link :to="closeRoute" class="dialog-close is-size-4">
           <icon :icon="NounClose" />
         </nuxt-link>
       </div>
@@ -17,6 +17,7 @@
 <script>
 import Icon from "@/components/icon"
 import NounClose from "@/assets/noun-close.svg"
+import hexContrastColor from "hex-contrast-color"
 
 export default {
   components: {
@@ -33,7 +34,7 @@ export default {
     titleStyle() {
       return {
         backgroundColor: this.bgcolor ? this.bgcolor : `#fff`,
-        color: this.color ? this.color : `inherit`,
+        color: this.bgcolor ? hexContrastColor(this.bgcolor) : "#7e7e7e",
       }
     },
   },
@@ -59,13 +60,6 @@ export default {
   justify-content: center;
   padding: 2rem;
   background: rgba(#fff, 0.2);
-
-  .dialog-title-bar .dialog-title {
-    display: inline-block;
-    width: 90%;
-    text-align: center;
-    font-weight: bold;
-  }
 }
 
 .dialog-box {
@@ -76,9 +70,16 @@ export default {
 }
 
 .dialog-title-bar {
-  padding: 0.5rem 0.75rem 0 0.75rem;
-  text-align: right;
-  color: #7e7e7e;
+  padding: 0.5rem 2rem;
+  position: relative;
+  text-align: center;
+  font-weight: 500;
+}
+
+.dialog-close {
+  position: absolute;
+  top: 0;
+  right: 0.75rem;
 }
 
 .dialog-content {

@@ -26,8 +26,8 @@
     }
   },
   "dependencies": {
-    "emoji-mart-vue": "^2.6.6",
     "endent": "^2.0.1",
+    "hex-contrast-color": "^1.0.1",
     "nuxt": "^2.12.2",
     "nuxt-svg-loader": "^1.2.0",
     "reset-css": "^5.0.1",
