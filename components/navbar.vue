@@ -52,11 +52,10 @@ export default {
   justify-content: center;
   align-items: center;
   font-size: 3rem;
+  color: #d1d1d1;
 
-  &:not(.is-active) {
-    color: #d1d1d1;
-  }
-
+  &:hover,
+  &:focus,
   &.is-active {
     position: relative;
     background: #fff;

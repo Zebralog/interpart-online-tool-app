@@ -181,7 +181,7 @@ export default {
       title: "Situation 1 - Verkehr in Biebrich",
       trigger: {
         x: 29,
-        y: 23,
+        y: 30,
       },
       subtitle: "Lorem Ipsum",
       color: "#47b9dd",
@@ -191,15 +191,15 @@ export default {
           image: "/img/dialogs/1/question1.png",
           question: "Was denkst du, wenn du dieses Bield siehst?",
           answers: [
-            { emoji: "angry", value: "angry" },
-            { emoji: "grimacing", value: "grimacing" },
-            { emoji: "confused", value: "confused" },
-            { emoji: "slightly_smiling_face", value: "slightly-smiling" },
+            { emoji: "😬", value: "grimacing" },
+            { emoji: "😠", value: "angry" },
+            { emoji: "🙂", value: "slightly-smiling" },
             {
-              emoji: "cold_sweat",
+              emoji: "😰",
               value: "cold-sweat",
             },
-            { emoji: "heart_eyes", value: "love" },
+            { emoji: "😍", value: "love" },
+            { emoji: "😕", value: "confused" },
           ],
         },
         {
@@ -238,7 +238,7 @@ export default {
       title: "Situation 2",
       trigger: {
         x: 63,
-        y: 0,
+        y: 7,
       },
       subtitle: "sicut dolor amet",
       color: "#cc76af",
@@ -248,15 +248,15 @@ export default {
           image: "/img/dialogs/1/question1.png",
           question: "Was denkst du, wenn du dieses Bield siehst?",
           answers: [
-            { emoji: "grimacing", value: "grimacing" },
-            { emoji: "angry", value: "angry" },
-            { emoji: "slightly_smiling_face", value: "slightly-smiling" },
+            { emoji: "😬", value: "grimacing" },
+            { emoji: "😠", value: "angry" },
+            { emoji: "🙂", value: "slightly-smiling" },
             {
-              emoji: "cold_sweat",
+              emoji: "😰",
               value: "cold-sweat",
             },
-            { emoji: "heart_eyes", value: "love" },
-            { emoji: "confused", value: "confused" },
+            { emoji: "😍", value: "love" },
+            { emoji: "😕", value: "confused" },
           ],
         },
         {
@@ -293,25 +293,25 @@ export default {
       title: "Situation 3",
       trigger: {
         x: 78,
-        y: 66,
+        y: 75,
       },
       subtitle: "",
-      color: "#9199d6",
+      color: "#7681CA",
       questions: [
         {
           type: "emoji",
           image: "/img/dialogs/1/question1.png",
           question: "Was denkst du, wenn du dieses Bield siehst?",
           answers: [
-            { emoji: "grimacing", value: "grimacing" },
-            { emoji: "angry", value: "angry" },
-            { emoji: "slightly_smiling_face", value: "slightly-smiling" },
+            { emoji: "😬", value: "grimacing" },
+            { emoji: "😠", value: "angry" },
+            { emoji: "🙂", value: "slightly-smiling" },
             {
-              emoji: "cold_sweat",
+              emoji: "😰",
               value: "cold-sweat",
             },
-            { emoji: "heart_eyes", value: "love" },
-            { emoji: "confused", value: "confused" },
+            { emoji: "😍", value: "love" },
+            { emoji: "😕", value: "confused" },
           ],
         },
         {
@@ -348,25 +348,25 @@ export default {
       title: "Situation 4",
       trigger: {
         x: 56,
-        y: 38,
+        y: 45,
       },
       subtitle: "",
-      color: "#74ceb7",
+      color: "#A9D9E7",
       questions: [
         {
           type: "emoji",
           image: "/img/dialogs/1/question1.png",
           question: "Was denkst du, wenn du dieses Bield siehst?",
           answers: [
-            { emoji: "grimacing", value: "grimacing" },
-            { emoji: "angry", value: "angry" },
-            { emoji: "slightly_smiling_face", value: "slightly-smiling" },
+            { emoji: "😬", value: "grimacing" },
+            { emoji: "😠", value: "angry" },
+            { emoji: "🙂", value: "slightly-smiling" },
             {
-              emoji: "cold_sweat",
+              emoji: "😰",
               value: "cold-sweat",
             },
-            { emoji: "heart_eyes", value: "love" },
-            { emoji: "confused", value: "confused" },
+            { emoji: "😍", value: "love" },
+            { emoji: "😕", value: "confused" },
           ],
         },
         {
@@ -403,7 +403,7 @@ export default {
       title: "Situation 5 - Lorem Ipsum III",
       trigger: {
         x: 35,
-        y: 52,
+        y: 58,
       },
       subtitle: "Lorem Ipsum",
       color: "#74ceb7",
@@ -413,15 +413,15 @@ export default {
           image: "/img/dialogs/1/question1.png",
           question: "Was denkst du, wenn du dieses Bield siehst?",
           answers: [
-            { emoji: "grimacing", value: "grimacing" },
-            { emoji: "angry", value: "angry" },
-            { emoji: "slightly_smiling_face", value: "slightly-smiling" },
+            { emoji: "😬", value: "grimacing" },
+            { emoji: "😠", value: "angry" },
+            { emoji: "🙂", value: "slightly-smiling" },
             {
-              emoji: "cold_sweat",
+              emoji: "😰",
               value: "cold-sweat",
             },
-            { emoji: "heart_eyes", value: "love" },
-            { emoji: "confused", value: "confused" },
+            { emoji: "😍", value: "love" },
+            { emoji: "😕", value: "confused" },
           ],
         },
         {

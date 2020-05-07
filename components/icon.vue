@@ -1,5 +1,5 @@
 <template>
-  <component :is="icon" aria-hidden class="icon" />
+  <component :is="icon" aria-hidden class="icon" v-on="$listeners" />
 </template>
 
 <script>
@@ -10,11 +10,15 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .icon {
   height: 1em;
   width: auto;
-  fill: currentColor;
   vertical-align: middle;
+
+  &,
+  path {
+    fill: currentColor;
+  }
 }
 </style>

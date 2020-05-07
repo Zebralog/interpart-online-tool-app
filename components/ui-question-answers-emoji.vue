@@ -1,22 +1,25 @@
 <template>
   <div v-if="answers" class="answers emojis">
-    <div v-for="(answer, index) in answers" :key="index" class="answer emoji">
-      <emoji
-        :emoji="answer.emoji"
-        set="apple"
-        :size="48"
-        @click="saveAndNext(answer.emoji)"
-      />
+    <div class="inside">
+      <ui-button
+        v-for="(answer, index) in answers"
+        :key="index"
+        :style="{ fontSize: '2.5rem' }"
+        class="answer emoji"
+        @click="saveAndNext(answer.value)"
+      >
+        {{ answer.emoji }}
+      </ui-button>
     </div>
   </div>
 </template>
 
 <script>
-import { Emoji } from "emoji-mart-vue"
+import UiButton from "@/components/ui-button"
 
 export default {
   components: {
-    Emoji,
+    UiButton,
   },
   props: {
     answers: { type: Array, required: true },
@@ -36,12 +39,19 @@ export default {
 
 <style lang="scss" scoped>
 .answers.emojis {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  text-align: center;
+  max-width: 19rem;
+  margin-left: auto;
+  margin-right: auto;
 
-  .answer.emoji:hover {
-    background-color: lightgray;
+  .inside {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: -1rem;
+  }
+
+  .answer {
+    margin: 1rem;
   }
 }
 </style>

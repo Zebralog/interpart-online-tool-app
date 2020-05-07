@@ -8,21 +8,32 @@
       :link-title="`Los gehts`"
       :link-route="{ name: 'dialog.id', params: { id: place.id } }"
     />
-    <div class="map-place-trigger-area" @click="$refs.popup.open()" />
+    <icon
+      :icon="Pin"
+      :style="{ fontSize: '4.5rem', color: place.color }"
+      aria-label="place.title"
+      tabindex="0"
+      class="map-place-pin"
+      @click="$refs.popup.open()"
+    />
   </div>
 </template>
 
 <script>
+import Icon from "@/components/icon"
+import Pin from "@/assets/pin.svg"
 import UiPopup from "@/components/ui-popup"
 
 export default {
   components: {
+    Icon,
     UiPopup,
   },
   props: {
     place: { type: Object, required: true },
   },
   computed: {
+    Pin: () => Pin,
     elementStyle() {
       return {
         left: `${this.place.trigger.x}%`,
@@ -38,11 +49,10 @@ export default {
 <style lang="scss" scoped>
 .map-place {
   position: absolute;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -100%);
 }
 
-.map-place-trigger-area {
-  width: 20vw;
-  height: 10vh;
+.map-place-pin {
+  outline: none;
 }
 </style>
