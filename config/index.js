@@ -230,6 +230,8 @@ export default {
           ],
         },
       ],
+      completionMessage: "",
+      askForMessage: true,
     },
     "2": {
       id: "2",

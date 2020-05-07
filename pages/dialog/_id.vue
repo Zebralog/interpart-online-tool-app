@@ -1,6 +1,6 @@
 <template>
   <ui-dialog v-bind="dialogProps">
-    <ui-question-slider v-if="dialog" :questions="questions" />
+    <ui-question-slider v-if="dialog" :questions="questions" :dialog="dialog" />
   </ui-dialog>
 </template>
 

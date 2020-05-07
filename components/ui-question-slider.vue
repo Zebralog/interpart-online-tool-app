@@ -49,6 +49,65 @@
           <span class="share twitter">T</span>
         </div>
       </div>
+      <div
+        v-else-if="completionState == 'thanks'"
+        class="dialog-completion-view"
+      >
+        <div class="thanks">
+          <img class="icon-check" src="/img/green-check-mark.png" />
+          <h2>Danke</h2>
+          <div class="subtitle">
+            für deine Teilnahme!
+          </div>
+
+          <nuxt-link :to="{ name: `map` }">
+            <button type="button" class="back-to-map button icon-button">
+              Zurück zu Karte <icon :icon="NounMap" />
+            </button>
+          </nuxt-link>
+        </div>
+        <div
+          v-if="dialog && dialog.askForMessage"
+          class="free-contribution-selection"
+        >
+          Dir liegt noch etwas auf dem Herzen?<br />Dann teil es uns mit!
+          <br />
+          <button
+            type="button"
+            class="free-contribution button icon-button big"
+            @click="next(`free-contribution-choice`)"
+          >
+            Weiter <icon :icon="AngleRightCircle" />
+          </button>
+        </div>
+      </div>
+      <div
+        v-else-if="completionState == 'free-contribution-choice'"
+        class="dialog-free-contribution-select"
+      >
+        <div class="audio" @click="next(`free-contribution-audio`)">
+          audio
+          <img class="icon-check" src="/img/green-check-mark.png" />
+        </div>
+        <div class="text" @click="next(`free-contribution-text`)">
+          text
+          <nuxt-link :to="{ name: `map` }">
+            <img class="icon-check" src="/img/green-check-mark.png" />
+          </nuxt-link>
+        </div>
+      </div>
+      <div
+        v-else-if="completionState == 'free-contribution-text'"
+        class="dialog-free-contribution-text"
+      >
+        TEXT FREE CONTRIBUTION
+      </div>
+      <div
+        v-else-if="completionState == 'free-contribution-audio'"
+        class="dialog-free-contribution-audio"
+      >
+        AUDIO FREE CONTRIBUTION
+      </div>
     </transition>
   </div>
 </template>
@@ -56,21 +115,29 @@
 <script>
 import AnswersEmoji from "@/components/ui-question-answers-emoji"
 import AnswersRadio from "@/components/ui-question-answers-radio"
+import Icon from "@/components/icon"
+import AngleRightCircle from "@/assets/angle-right-circle.svg"
+import NounMap from "@/assets/noun-map.svg"
 
 export default {
   components: {
     AnswersEmoji,
     AnswersRadio,
+    Icon,
   },
   props: {
     questions: { type: Array, required: true },
+    dialog: { type: Object, required: false, default: null },
   },
   data: () => ({
+    completionState: null,
     questionIndex: 0,
     direction: undefined,
     answer: null,
   }),
   computed: {
+    AngleRightCircle: () => AngleRightCircle,
+    NounMap: () => NounMap,
     question() {
       return this.questionIndex in this.questions
         ? this.questions[this.questionIndex]
@@ -93,13 +160,27 @@ export default {
     saveAndNext(value) {
       this.answer = value
       const next = this.questionIndex + 1
-      console.log(`saveAndNext ${value} >> ${next}`)
-      if (this.questions.length > next) {
+      if (next < this.questions.length) {
+        console.log(`saveAndNext ${value} >> ${next}`)
         console.log(`moving to question ${next} of ${this.questions.length}`)
         this.setIndex(next)
-      } else {
-        alert(`out of questions!`)
+      } else if (next == this.questions.length) {
+        this.completionState = "thanks"
+        this.questionIndex += 1
+      } else if (this.completionState == "thanks") {
+        this.completionState = "free-contribution-choice"
+        this.questionIndex += 1
+      } else if (this.completionState == "free-contribution-text") {
+        this.completionState = "final-thanks"
+        this.questionIndex += 1
+      } else if (this.completionState == "free-contribution-audio") {
+        this.completionState = "final-thanks"
+        this.questionIndex += 1
       }
+    },
+    next(state) {
+      this.questionIndex += 1
+      this.completionState = state
     },
     goBack() {
       if (this.questionIndex > 0) {
@@ -170,6 +251,47 @@ $image-height: 10rem;
 
     .social-bar {
       text-align: center;
+    }
+  }
+
+  .dialog-completion-view {
+    width: 100%;
+    text-align: center;
+
+    .thanks {
+      img.icon-check {
+        max-width: 50vw;
+      }
+    }
+    .free-contribution {
+      margin-top: 5vh;
+    }
+
+    .icon-button {
+      padding: 2vw;
+      border: 1px solid #00000033;
+
+      -webkit-box-shadow: 0 10px 6px -6px #777;
+      -moz-box-shadow: 0 10px 6px -6px #777;
+      box-shadow: 0 10px 6px -6px #777;
+
+      &.big {
+        font-size: 1.5rem;
+        padding: 0.75rem;
+      }
+    }
+  }
+  .dialog-free-contribution-select {
+    width: 100%;
+    text-align: center;
+
+    .audio,
+    .text {
+      height: 30vh;
+
+      img.icon-check {
+        max-width: 50vw;
+      }
     }
   }
 }
