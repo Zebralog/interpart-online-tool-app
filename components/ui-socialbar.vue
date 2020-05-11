@@ -34,10 +34,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/variables";
+
 .socialbar {
   display: flex;
   justify-content: center;
   margin: -1rem;
+  color: $color-text-light;
 }
 
 .socialbar-link {

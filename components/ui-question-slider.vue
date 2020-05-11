@@ -4,13 +4,13 @@
       <ui-button
         v-if="questionIndex !== 0"
         variant="light"
-        class="slider-back-button"
+        class="slider-back-button is-size-7"
         @click="goBack"
       >
         Zurück
       </ui-button>
     </transition>
-    <div class="slider-progress">
+    <div class="slider-progress is-size-7">
       {{ questionIndex + 1 }} / {{ questions.length }}
     </div>
     <div class="slider-content">
@@ -145,9 +145,9 @@ $image-height: 10rem;
   .slider-content {
     display: flex;
     position: relative;
-    min-height: 34rem;
+    min-height: 32rem;
     overflow: hidden;
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
   }
 
   .slide {
