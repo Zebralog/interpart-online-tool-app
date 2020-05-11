@@ -50,35 +50,43 @@
         </div>
       </div>
       <div
-        v-else-if="completionState == 'thanks'"
+        v-else-if="
+          ['thanks', 'free-contribution-done'].indexOf(completionState) > -1
+        "
         class="dialog-completion-view"
       >
         <div class="thanks">
           <img class="icon-check" src="/img/green-check-mark.png" />
-          <h2>Danke</h2>
-          <div class="subtitle">
+          <h2>Danke!</h2>
+          <div
+            v-if="completionState == 'free-contribution-done'"
+            class="subtitle"
+          >
+            Deine Nachricht
+            <br />
+            wurde gesendet.
+          </div>
+          <div v-else class="subtitle">
             für deine Teilnahme!
           </div>
 
           <nuxt-link :to="{ name: `map` }">
             <button type="button" class="back-to-map button icon-button">
-              Zurück zu Karte <icon :icon="NounMap" />
+              Zurück zu Karte
+              <icon :icon="NounMap" />
             </button>
           </nuxt-link>
         </div>
         <div
-          v-if="dialog && dialog.askForMessage"
+          v-if="completionState == 'thanks' && dialog && dialog.askForMessage"
           class="free-contribution-selection"
         >
           Dir liegt noch etwas auf dem Herzen?<br />Dann teil es uns mit!
           <br />
-          <button
-            type="button"
+          <button-weiter
             class="free-contribution button icon-button big"
             @click="next(`free-contribution-choice`)"
-          >
-            Weiter <icon :icon="AngleRightCircle" />
-          </button>
+          />
         </div>
       </div>
       <div
@@ -108,25 +116,47 @@
         </div>
         <div class="mid">
           <strong>Was möchtest du uns noch mitteilen?</strong>
-          <textarea class="bigarea"></textarea>
+          <textarea v-model="textMessage" class="bigarea" />
+          <span id="textarea-counter" :class="textareaCounterClasses">
+            <span class="counter-container" v-html="charsLeft" />
+            Zeichen
+          </span>
         </div>
 
         <div class="bottom">
           <br />
-          <button
-            type="button"
+
+          <button-weiter
             class="free-contribution button icon-button big"
-            @click="next(`free-contribution-choice`)"
-          >
-            Weiter <icon :icon="AngleRightCircle" />
-          </button>
+            @click="next(`free-contribution-done`)"
+          />
         </div>
       </div>
       <div
         v-else-if="completionState == 'free-contribution-audio'"
         class="dialog-free-contribution-audio"
       >
-        AUDIO FREE CONTRIBUTION
+        <div class="pre">
+          <img
+            class="icon-check big-message-icon"
+            src="/img/green-check-mark.png"
+          />
+          <br />
+          <strong>AUDIO MESSAGE</strong>
+        </div>
+        <div class="mid">
+          <strong>Please leave an audio message</strong>
+          <small>(secretely listening to your phone mic...)</small>
+        </div>
+
+        <div class="bottom">
+          <br />
+
+          <button-weiter
+            class="free-contribution button icon-button big"
+            @click="next(`free-contribution-done`)"
+          />
+        </div>
       </div>
     </transition>
   </div>
@@ -135,14 +165,15 @@
 <script>
 import AnswersEmoji from "@/components/ui-question-answers-emoji"
 import AnswersRadio from "@/components/ui-question-answers-radio"
-import Icon from "@/components/icon"
-import AngleRightCircle from "@/assets/angle-right-circle.svg"
+import ButtonWeiter from "@/components/ui-button-weiter"
 import NounMap from "@/assets/noun-map.svg"
+import Icon from "@/components/icon"
 
 export default {
   components: {
     AnswersEmoji,
     AnswersRadio,
+    ButtonWeiter,
     Icon,
   },
   props: {
@@ -153,15 +184,21 @@ export default {
     completionState: null,
     questionIndex: 0,
     direction: undefined,
+    textMessage: undefined,
     answer: null,
+    maxTextMessageLenght: 250,
   }),
   computed: {
-    AngleRightCircle: () => AngleRightCircle,
     NounMap: () => NounMap,
     question() {
       return this.questionIndex in this.questions
         ? this.questions[this.questionIndex]
         : null
+    },
+    charsLeft() {
+      return this.textMessage
+        ? this.maxTextMessageLenght - this.textMessage.length
+        : this.maxTextMessageLenght
     },
     prevIndex() {
       return this.questionIndex > 0
@@ -170,6 +207,13 @@ export default {
     },
     nextIndex() {
       return (this.questionIndex + 1) % this.questions.length
+    },
+    textareaCounterClasses() {
+      return {
+        textareaCounter: true,
+        alert: this.charsLeft < 50 && this.charsLeft > 0,
+        error: this.charsLeft <= 0,
+      }
     },
   },
   methods: {
@@ -199,6 +243,13 @@ export default {
       }
     },
     next(state) {
+      if (this.completionState === `free-contribution-text`) {
+        // let's check the message before submitting
+        if (this.charsLeft < 0) {
+          alert(`Your message is too long.`)
+          return
+        }
+      }
       this.questionIndex += 1
       this.completionState = state
     },
@@ -219,6 +270,11 @@ export default {
 
 <style lang="scss" scoped>
 $image-height: 10rem;
+
+h2,
+strong {
+  font-weight: bold;
+}
 
 .slider {
   display: flex;
@@ -250,6 +306,7 @@ $image-height: 10rem;
         padding: 0.5rem;
         border: 1px solid #000;
       }
+
       .answer-back-link.hidden {
         visibility: hidden;
       }
@@ -283,6 +340,7 @@ $image-height: 10rem;
         max-width: 50vw;
       }
     }
+
     .free-contribution {
       margin-top: 5vh;
     }
@@ -301,6 +359,7 @@ $image-height: 10rem;
       }
     }
   }
+
   .dialog-free-contribution-select {
     width: 100%;
     text-align: center;
@@ -311,6 +370,56 @@ $image-height: 10rem;
 
       img.icon-check {
         max-width: 50vw;
+      }
+    }
+  }
+
+  .dialog-free-contribution-text,
+  .dialog-free-contribution-audio {
+    width: 100%;
+    text-align: center;
+
+    img.icon-check {
+      max-width: 30vw;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .mid {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+
+      .bigarea {
+        width: 91%;
+        min-height: 15vh;
+        border-radius: 3px;
+        margin: 5px 1px 3px 0;
+
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        outline: none;
+        padding: 3px 0 3px 3px;
+        border: 1px solid #dddddd;
+      }
+
+      #textarea-counter {
+        color: #888888dd;
+        font-size: 0.9rem;
+        display: inline-block;
+        padding: 0.5rem;
+      }
+
+      #textarea-counter.alert {
+        background-color: lightyellow;
+        color: #000;
+      }
+
+      #textarea-counter.error {
+        background-color: lightsalmon;
+        color: #000;
       }
     }
   }
