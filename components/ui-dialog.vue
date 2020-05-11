@@ -1,9 +1,9 @@
 <template>
   <div class="dialog" @click="close">
     <div class="dialog-box" @click.stop>
-      <div class="dialog-title-bar" :style="titleStyle">
+      <div class="dialog-title-bar is-size-7" :style="titleStyle">
         {{ title }}
-        <nuxt-link :to="closeRoute" class="dialog-close is-size-4">
+        <nuxt-link :to="closeRoute" class="dialog-close is-size-5">
           <icon :icon="NounClose" />
         </nuxt-link>
       </div>
@@ -57,9 +57,10 @@ export default {
   bottom: $navbar-height;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   padding: 2rem;
   background: rgba(#fff, 0.2);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .dialog-box {
@@ -67,6 +68,9 @@ export default {
   background: #fff;
   box-shadow: $shadow-md;
   overflow: hidden;
+  flex-shrink: 0;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .dialog-title-bar {
@@ -78,11 +82,11 @@ export default {
 
 .dialog-close {
   position: absolute;
-  top: 0;
+  top: 0.1rem;
   right: 0.75rem;
 }
 
 .dialog-content {
-  padding: 1.5rem;
+  padding: 1rem 1.5rem;
 }
 </style>

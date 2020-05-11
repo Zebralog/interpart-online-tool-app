@@ -23,7 +23,7 @@
 }
 
 .is-size-7 {
-  font-size: .75rem;
+  font-size: .9rem;
 }
 
 .is-sr-only {
@@ -48,8 +48,21 @@
 }
 
 .button {
-  padding: 1rem;
-  border-radius: $border-radius-md;
-  border: 1px solid #ccc;
-  box-shadow: $shadow-md;
+  border: 1px solid $grey-lighter;
+
+  &:hover, &:focus, &.is-active {
+    background: #fafafa;
+  }
+
+  &:not(.is-light) {
+    padding: 1rem;
+    border-radius: $border-radius-md;
+    box-shadow: $shadow-md;
+  }
+
+  &.is-light {
+    padding: 0.35rem .8rem;
+    border-radius: $border-radius-sm;
+    color: $color-text-light;
+  }
 }

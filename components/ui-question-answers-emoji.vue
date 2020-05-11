@@ -38,8 +38,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/variables";
+
 .answers.emojis {
-  max-width: 19rem;
+  max-width: $max-width-narrow;
   margin-left: auto;
   margin-right: auto;
 
@@ -52,6 +54,7 @@ export default {
 
   .answer {
     margin: 1rem;
+    line-height: 1;
   }
 }
 </style>

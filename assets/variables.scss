@@ -1,10 +1,14 @@
 $color-text: #333;
+$color-text-light: #999;
 $navbar-height: 5rem;
 $shadow-lg: 0 0 2rem 0 rgba(#000, 0.1);
-$shadow-md: 0 0.25rem 0.4rem 0 rgba(#000, 0.2);
+$shadow-md: 0 0.2rem 0.4rem 0 rgba(#000, 0.1);
 $shadow-sm: 0 0 4px 0 rgba(#000, .3);
-$border-radius-lg: 1rem;
+$border-radius-xl: 1rem;
+$border-radius-lg: .6rem;
 $border-radius-md: .4rem;
 $border-radius-sm: .25rem;
 $border: 1px solid #bbb;
 $transition-duration-long: .4s;
+$grey-lighter: #ccc;
+$max-width-narrow: 19rem;

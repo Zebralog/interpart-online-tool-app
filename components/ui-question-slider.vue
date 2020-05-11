@@ -1,170 +1,179 @@
 <template>
   <div class="slider">
-    <transition :name="'slide-' + direction">
-      <div v-if="question" :key="questionIndex" class="slide">
-        <div class="question-top-header">
-          <span
-            :class="{ 'answer-back-link': true, hidden: questionIndex == 0 }"
-          >
-            <button
-              type="button"
-              class="answer-back-link-button button"
-              @click="goBack"
-            >
-              Zurück
-            </button>
-          </span>
-          <div class="question-progress">
-            {{ questionIndex + 1 }} / {{ questions.length }}
-          </div>
-        </div>
-
-        <img v-if="question.image" :src="question.image" class="slide-image" />
-
-        <div
-          v-if="typeof question.question == 'string'"
-          class="slide-question"
-          v-html="question.question"
-        />
-        <div
-          v-else-if="typeof question.question == 'object'"
-          class="slide-question"
-        >
-          <h2 class="question-title" v-html="question.question.title" />
-          <small class="question-content" v-html="question.question.content" />
-        </div>
-        <AnswersEmoji
-          v-if="question && question.answers && question.type == 'emoji'"
-          :answers="question.answers"
-          @answer-selected="saveAndNext"
-        />
-        <AnswersRadio
-          v-else-if="question && question.answers && question.type == 'radio'"
-          :answers="question.answers"
-          @answer-selected="saveAndNext"
-        />
-        <div class="social-bar">
-          <span class="share facebook">F</span>
-          <span class="share instagram">I</span>
-          <span class="share twitter">T</span>
-        </div>
-      </div>
-      <div
-        v-else-if="
-          ['thanks', 'free-contribution-done'].indexOf(completionState) > -1
-        "
-        class="dialog-completion-view"
+    <transition name="fade">
+      <ui-button
+        v-if="questionIndex !== 0"
+        variant="light"
+        class="slider-back-button is-size-7"
+        @click="goBack"
       >
-        <div class="thanks">
-          <img class="icon-check" src="/img/green-check-mark.png" />
-          <h2>Danke!</h2>
-          <div
-            v-if="completionState == 'free-contribution-done'"
-            class="subtitle"
-          >
-            Deine Nachricht
-            <br />
-            wurde gesendet.
-          </div>
-          <div v-else class="subtitle">
-            für deine Teilnahme!
-          </div>
-
-          <nuxt-link :to="{ name: `map` }">
-            <button type="button" class="back-to-map button icon-button">
-              Zurück zu Karte
-              <icon :icon="NounMap" />
-            </button>
-          </nuxt-link>
-        </div>
-        <div
-          v-if="completionState == 'thanks' && dialog && dialog.askForMessage"
-          class="free-contribution-selection"
-        >
-          Dir liegt noch etwas auf dem Herzen?<br />Dann teil es uns mit!
-          <br />
-          <button-weiter
-            class="free-contribution button icon-button big"
-            @click="next(`free-contribution-choice`)"
-          />
-        </div>
-      </div>
-      <div
-        v-else-if="completionState == 'free-contribution-choice'"
-        class="dialog-free-contribution-select"
-      >
-        <div class="audio" @click="next(`free-contribution-audio`)">
-          audio
-          <img class="icon-check" src="/img/green-check-mark.png" />
-        </div>
-        <div class="text" @click="next(`free-contribution-text`)">
-          text
-          <img class="icon-check" src="/img/green-check-mark.png" />
-        </div>
-      </div>
-      <div
-        v-else-if="completionState == 'free-contribution-text'"
-        class="dialog-free-contribution-text"
-      >
-        <div class="pre">
-          <img
-            class="icon-check big-message-icon"
-            src="/img/green-check-mark.png"
-          />
-          Schreibe eine <br />
-          <strong>Nachricht</strong>
-        </div>
-        <div class="mid">
-          <strong>Was möchtest du uns noch mitteilen?</strong>
-          <textarea v-model="textMessage" class="bigarea" />
-          <span id="textarea-counter" :class="textareaCounterClasses">
-            <span class="counter-container" v-html="charsLeft" />
-            Zeichen
-          </span>
-        </div>
-
-        <div class="bottom">
-          <br />
-
-          <button-weiter
-            class="free-contribution button icon-button big"
-            @click="next(`free-contribution-done`)"
-          />
-        </div>
-      </div>
-      <div
-        v-else-if="completionState == 'free-contribution-audio'"
-        class="dialog-free-contribution-audio"
-      >
-        <div class="pre">
-          <img
-            class="icon-check big-message-icon"
-            src="/img/green-check-mark.png"
-          />
-          <br />
-          <strong>AUDIO MESSAGE</strong>
-        </div>
-        <div class="mid">
-          <strong>Please leave an audio message</strong>
-          <small>(secretely listening to your phone mic...)</small>
-        </div>
-
-        <div class="bottom">
-          <br />
-
-          <button-weiter
-            class="free-contribution button icon-button big"
-            @click="next(`free-contribution-done`)"
-          />
-        </div>
-      </div>
+        Zurück
+      </ui-button>
     </transition>
+    <div class="slider-progress is-size-7">
+      {{ questionIndex + 1 }} / {{ questions.length }}
+    </div>
+    <div class="slider-content">
+      <transition :name="'slide-' + direction">
+        <div v-if="question" :key="questionIndex" class="slide">
+          <img
+            v-if="question.image"
+            :src="question.image"
+            class="slide-image"
+          />
+
+          <div
+            v-if="typeof question.question == 'string'"
+            class="slide-question"
+            v-html="question.question"
+          />
+          <div
+            v-else-if="typeof question.question == 'object'"
+            class="slide-question"
+          >
+            <h2 class="question-title" v-html="question.question.title" />
+            <small
+              class="question-content"
+              v-html="question.question.content"
+            />
+          </div>
+          <AnswersEmoji
+            v-if="question && question.answers && question.type == 'emoji'"
+            :answers="question.answers"
+            @answer-selected="saveAndNext"
+          />
+          <AnswersRadio
+            v-else-if="question && question.answers && question.type == 'radio'"
+            :answers="question.answers"
+            @answer-selected="saveAndNext"
+          />
+          <div class="social-bar">
+            <span class="share facebook">F</span>
+            <span class="share instagram">I</span>
+            <span class="share twitter">T</span>
+          </div>
+        </div>
+        <div
+          v-else-if="
+            ['thanks', 'free-contribution-done'].indexOf(completionState) > -1
+          "
+          class="dialog-completion-view"
+        >
+          <div class="thanks">
+            <img class="icon-check" src="/img/green-check-mark.png" />
+            <h2>Danke!</h2>
+            <div
+              v-if="completionState == 'free-contribution-done'"
+              class="subtitle"
+            >
+              Deine Nachricht
+              <br />
+              wurde gesendet.
+            </div>
+            <div v-else class="subtitle">
+              für deine Teilnahme!
+            </div>
+
+            <nuxt-link :to="{ name: `map` }">
+              <button type="button" class="back-to-map button icon-button">
+                Zurück zu Karte
+                <icon :icon="NounMap" />
+              </button>
+            </nuxt-link>
+          </div>
+          <div
+            v-if="completionState == 'thanks' && dialog && dialog.askForMessage"
+            class="free-contribution-selection"
+          >
+            Dir liegt noch etwas auf dem Herzen?<br />Dann teil es uns mit!
+            <br />
+            <button-weiter
+              class="free-contribution button icon-button big"
+              @click="next(`free-contribution-choice`)"
+            />
+          </div>
+        </div>
+        <div
+          v-else-if="completionState == 'free-contribution-choice'"
+          class="dialog-free-contribution-select"
+        >
+          <div class="audio" @click="next(`free-contribution-audio`)">
+            audio
+            <img class="icon-check" src="/img/green-check-mark.png" />
+          </div>
+          <div class="text" @click="next(`free-contribution-text`)">
+            text
+            <img class="icon-check" src="/img/green-check-mark.png" />
+          </div>
+        </div>
+        <div
+          v-else-if="completionState == 'free-contribution-text'"
+          class="dialog-free-contribution-text"
+        >
+          <div class="pre">
+            <img
+              class="icon-check big-message-icon"
+              src="/img/green-check-mark.png"
+            />
+            Schreibe eine <br />
+            <strong>Nachricht</strong>
+          </div>
+          <div class="mid">
+            <strong>Was möchtest du uns noch mitteilen?</strong>
+            <textarea v-model="textMessage" class="bigarea" />
+            <span id="textarea-counter" :class="textareaCounterClasses">
+              <span class="counter-container" v-html="charsLeft" />
+              Zeichen
+            </span>
+          </div>
+
+          <div class="bottom">
+            <br />
+
+            <button-weiter
+              class="free-contribution button icon-button big"
+              @click="next(`free-contribution-done`)"
+            />
+          </div>
+        </div>
+        <div
+          v-else-if="completionState == 'free-contribution-audio'"
+          class="dialog-free-contribution-audio"
+        >
+          <div class="pre">
+            <img
+              class="icon-check big-message-icon"
+              src="/img/green-check-mark.png"
+            />
+            <br />
+            <strong>AUDIO MESSAGE</strong>
+          </div>
+          <div class="mid">
+            <strong>Please leave an audio message</strong>
+            <small>(secretely listening to your phone mic...)</small>
+          </div>
+
+          <div class="bottom">
+            <br />
+
+            <button-weiter
+              class="free-contribution button icon-button big"
+              @click="next(`free-contribution-done`)"
+            />
+            />
+          </div>
+        </div>
+      </transition>
+      <ui-socialbar />
+    </div>
   </div>
 </template>
 
 <script>
 import AnswersEmoji from "@/components/ui-question-answers-emoji"
 import AnswersRadio from "@/components/ui-question-answers-radio"
+import UiButton from "@/components/ui-button"
+import UiSocialbar from "@/components/ui-socialbar"
 import ButtonWeiter from "@/components/ui-button-weiter"
 import NounMap from "@/assets/noun-map.svg"
 import Icon from "@/components/icon"
@@ -173,6 +182,8 @@ export default {
   components: {
     AnswersEmoji,
     AnswersRadio,
+    UiButton,
+    UiSocialbar,
     ButtonWeiter,
     Icon,
   },
@@ -269,6 +280,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/variables";
+
 $image-height: 10rem;
 
 h2,
@@ -277,15 +290,32 @@ strong {
 }
 
 .slider {
-  display: flex;
   position: relative;
-  min-height: 28rem;
-  overflow: hidden;
+  padding-top: 1.5rem;
+
+  .slider-back-button {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .slider-progress {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: $color-text-light;
+  }
+
+  .slider-content {
+    display: flex;
+    position: relative;
+    min-height: 32rem;
+    overflow: hidden;
+    padding-bottom: 0.5rem;
+  }
 
   .slide {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
     width: 100%;
     flex-shrink: 0;
 
@@ -294,40 +324,18 @@ strong {
     }
 
     .slide-image {
-      align-self: center;
-      height: $image-height;
-      width: auto;
-    }
-
-    .question-top-header {
-      padding-top: 5px;
-
-      .answer-back-link {
-        padding: 0.5rem;
-        border: 1px solid #000;
-      }
-
-      .answer-back-link.hidden {
-        visibility: hidden;
-      }
-    }
-
-    .question-progress {
-      text-align: center;
+      border-radius: $border-radius-lg;
+      box-shadow: $shadow-lg;
+      margin-bottom: 1.5rem;
     }
 
     .slide-question {
+      max-width: $max-width-narrow;
+      margin-left: auto;
+      margin-right: auto;
       text-align: center;
-      margin-bottom: 2rem;
-
-      .question-title {
-        font-weight: bold;
-        font-size: 120%;
-      }
-    }
-
-    .social-bar {
-      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.25rem;
     }
   }
 
