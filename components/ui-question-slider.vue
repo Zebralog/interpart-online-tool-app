@@ -47,14 +47,10 @@
             :answers="question.answers"
             @answer-selected="saveAndNext"
           />
-          <div class="social-bar">
-            <span class="share facebook">F</span>
-            <span class="share instagram">I</span>
-            <span class="share twitter">T</span>
-          </div>
         </div>
       </transition>
     </div>
+    <ui-socialbar />
   </div>
 </template>
 
@@ -62,12 +58,14 @@
 import AnswersEmoji from "@/components/ui-question-answers-emoji"
 import AnswersRadio from "@/components/ui-question-answers-radio"
 import UiButton from "@/components/ui-button"
+import UiSocialbar from "@/components/ui-socialbar"
 
 export default {
   components: {
     AnswersEmoji,
     AnswersRadio,
     UiButton,
+    UiSocialbar,
   },
   props: {
     questions: { type: Array, required: true },
@@ -147,8 +145,9 @@ $image-height: 10rem;
   .slider-content {
     display: flex;
     position: relative;
-    min-height: 36rem;
+    min-height: 34rem;
     overflow: hidden;
+    margin-bottom: 0.5rem;
   }
 
   .slide {
@@ -174,10 +173,6 @@ $image-height: 10rem;
       text-align: center;
       margin-bottom: 1.5rem;
       font-size: 1.25rem;
-    }
-
-    .social-bar {
-      text-align: center;
     }
   }
 }
