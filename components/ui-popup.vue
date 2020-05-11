@@ -76,7 +76,7 @@ export default {
   padding: 1rem;
   background: #fff;
   border: 3px solid;
-  border-radius: $border-radius-lg;
+  border-radius: $border-radius-xl;
   font-size: 0.85rem;
   transform: translate(-50%);
   box-shadow: $shadow-lg;

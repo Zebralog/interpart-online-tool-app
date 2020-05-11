@@ -1,5 +1,5 @@
 .fade-enter-active, .fade-leave-active {
-  transition: opacity 8s;
+  transition: opacity $transition-duration-long;
 }
 
 .fade-enter, .fade-leave-to {

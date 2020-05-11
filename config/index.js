@@ -5,6 +5,7 @@ import Introduction3 from "./introduction3.svg"
 import Introduction4 from "./introduction4.svg"
 import Introduction5 from "./introduction5.svg"
 import Introduction6 from "./introduction6.svg"
+import question1Url from "./question1.jpg"
 
 export default {
   heroAlt: "Willkommen bei Wiesbaden Biebrich! Los gehts",
@@ -188,7 +189,7 @@ export default {
       questions: [
         {
           type: "emoji",
-          image: "/img/dialogs/1/question1.png",
+          image: question1Url,
           question: "Was denkst du, wenn du dieses Bield siehst?",
           answers: [
             { emoji: "😬", value: "grimacing" },
@@ -243,7 +244,7 @@ export default {
       questions: [
         {
           type: "emoji",
-          image: "/img/dialogs/1/question1.png",
+          image: question1Url,
           question: "Was denkst du, wenn du dieses Bield siehst?",
           answers: [
             { emoji: "😬", value: "grimacing" },
@@ -298,7 +299,7 @@ export default {
       questions: [
         {
           type: "emoji",
-          image: "/img/dialogs/1/question1.png",
+          image: question1Url,
           question: "Was denkst du, wenn du dieses Bield siehst?",
           answers: [
             { emoji: "😬", value: "grimacing" },
@@ -353,7 +354,7 @@ export default {
       questions: [
         {
           type: "emoji",
-          image: "/img/dialogs/1/question1.png",
+          image: question1Url,
           question: "Was denkst du, wenn du dieses Bield siehst?",
           answers: [
             { emoji: "😬", value: "grimacing" },
@@ -408,7 +409,7 @@ export default {
       questions: [
         {
           type: "emoji",
-          image: "/img/dialogs/1/question1.png",
+          image: question1Url,
           question: "Was denkst du, wenn du dieses Bield siehst?",
           answers: [
             { emoji: "😬", value: "grimacing" },

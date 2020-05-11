@@ -1,66 +1,73 @@
 <template>
   <div class="slider">
-    <transition :name="'slide-' + direction">
-      <div v-if="question" :key="questionIndex" class="slide">
-        <div class="question-top-header">
-          <span
-            :class="{ 'answer-back-link': true, hidden: questionIndex == 0 }"
+    <transition name="fade">
+      <ui-button
+        v-if="questionIndex !== 0"
+        variant="light"
+        class="slider-back-button"
+        @click="goBack"
+      >
+        Zurück
+      </ui-button>
+    </transition>
+    <div class="slider-progress">
+      {{ questionIndex + 1 }} / {{ questions.length }}
+    </div>
+    <div class="slider-content">
+      <transition :name="'slide-' + direction">
+        <div v-if="question" :key="questionIndex" class="slide">
+          <img
+            v-if="question.image"
+            :src="question.image"
+            class="slide-image"
+          />
+
+          <div
+            v-if="typeof question.question == 'string'"
+            class="slide-question"
+            v-html="question.question"
+          />
+          <div
+            v-else-if="typeof question.question == 'object'"
+            class="slide-question"
           >
-            <button
-              type="button"
-              class="answer-back-link-button button"
-              @click="goBack"
-            >
-              Zurück
-            </button>
-          </span>
-          <div class="question-progress">
-            {{ questionIndex + 1 }} / {{ questions.length }}
+            <h2 class="question-title" v-html="question.question.title" />
+            <small
+              class="question-content"
+              v-html="question.question.content"
+            />
+          </div>
+          <AnswersEmoji
+            v-if="question && question.answers && question.type == 'emoji'"
+            :answers="question.answers"
+            @answer-selected="saveAndNext"
+          />
+          <AnswersRadio
+            v-else-if="question && question.answers && question.type == 'radio'"
+            :answers="question.answers"
+            @answer-selected="saveAndNext"
+          />
+          <div class="social-bar">
+            <span class="share facebook">F</span>
+            <span class="share instagram">I</span>
+            <span class="share twitter">T</span>
           </div>
         </div>
-
-        <img v-if="question.image" :src="question.image" class="slide-image" />
-
-        <div
-          v-if="typeof question.question == 'string'"
-          class="slide-question"
-          v-html="question.question"
-        />
-        <div
-          v-else-if="typeof question.question == 'object'"
-          class="slide-question"
-        >
-          <h2 class="question-title" v-html="question.question.title" />
-          <small class="question-content" v-html="question.question.content" />
-        </div>
-        <AnswersEmoji
-          v-if="question && question.answers && question.type == 'emoji'"
-          :answers="question.answers"
-          @answer-selected="saveAndNext"
-        />
-        <AnswersRadio
-          v-else-if="question && question.answers && question.type == 'radio'"
-          :answers="question.answers"
-          @answer-selected="saveAndNext"
-        />
-        <div class="social-bar">
-          <span class="share facebook">F</span>
-          <span class="share instagram">I</span>
-          <span class="share twitter">T</span>
-        </div>
-      </div>
-    </transition>
+      </transition>
+    </div>
   </div>
 </template>
 
 <script>
 import AnswersEmoji from "@/components/ui-question-answers-emoji"
 import AnswersRadio from "@/components/ui-question-answers-radio"
+import UiButton from "@/components/ui-button"
 
 export default {
   components: {
     AnswersEmoji,
     AnswersRadio,
+    UiButton,
   },
   props: {
     questions: { type: Array, required: true },
@@ -117,18 +124,36 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/variables";
+
 $image-height: 10rem;
 
 .slider {
-  display: flex;
   position: relative;
-  min-height: 28rem;
-  overflow: hidden;
+  padding-top: 1.5rem;
+
+  .slider-back-button {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .slider-progress {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: $color-text-light;
+  }
+
+  .slider-content {
+    display: flex;
+    position: relative;
+    min-height: 36rem;
+    overflow: hidden;
+  }
 
   .slide {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
     width: 100%;
     flex-shrink: 0;
 
@@ -137,35 +162,18 @@ $image-height: 10rem;
     }
 
     .slide-image {
-      align-self: center;
-      height: $image-height;
-      width: auto;
-    }
-
-    .question-top-header {
-      padding-top: 5px;
-
-      .answer-back-link {
-        padding: 0.5rem;
-        border: 1px solid #000;
-      }
-      .answer-back-link.hidden {
-        visibility: hidden;
-      }
-    }
-
-    .question-progress {
-      text-align: center;
+      border-radius: $border-radius-lg;
+      box-shadow: $shadow-lg;
+      margin-bottom: 1.5rem;
     }
 
     .slide-question {
+      max-width: $max-width-narrow;
+      margin-left: auto;
+      margin-right: auto;
       text-align: center;
-      margin-bottom: 2rem;
-
-      .question-title {
-        font-weight: bold;
-        font-size: 120%;
-      }
+      margin-bottom: 1.5rem;
+      font-size: 1.25rem;
     }
 
     .social-bar {
