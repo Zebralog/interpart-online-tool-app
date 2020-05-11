@@ -214,7 +214,7 @@ export default {
           answers: [
             {
               key: "A",
-              content: "Gute Beleuchtung (z.B. fur abends)",
+              content: "Gute Beleuchtung",
               value: "good",
             },
             { key: "B", content: "Zebrastreifen", value: "zebra" },
@@ -269,7 +269,7 @@ export default {
           answers: [
             {
               key: "A",
-              content: "Gute Beleuchtung (z.B. fur abends)",
+              content: "Gute Beleuchtung",
               value: "good",
             },
             {
@@ -324,7 +324,7 @@ export default {
           answers: [
             {
               key: "A",
-              content: "Gute Beleuchtung (z.B. fur abends)",
+              content: "Gute Beleuchtung",
               value: "good",
             },
             {
@@ -379,7 +379,7 @@ export default {
           answers: [
             {
               key: "A",
-              content: "Gute Beleuchtung (z.B. fur abends)",
+              content: "Gute Beleuchtung",
               value: "good",
             },
             {
@@ -434,7 +434,7 @@ export default {
           answers: [
             {
               key: "A",
-              content: "Gute Beleuchtung (z.B. fur abends)",
+              content: "Gute Beleuchtung",
               value: "good",
             },
             {

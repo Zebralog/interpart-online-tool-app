@@ -1,5 +1,13 @@
-$color-text: #333;
-$color-text-light: #999;
+$black-light: #333;
+$grey-dark: #999;
+$grey: #aaa;
+$grey-light: #ccc;
+$grey-lighter: #ddd;
+$grey-lightest: #eaeaea;
+
+$color-text: $black-light;
+$color-text-light: $grey-dark;
+
 $navbar-height: 5rem;
 $shadow-lg: 0 0 2rem 0 rgba(#000, 0.1);
 $shadow-md: 0 0.2rem 0.4rem 0 rgba(#000, 0.1);
@@ -10,5 +18,4 @@ $border-radius-md: .4rem;
 $border-radius-sm: .25rem;
 $border: 1px solid #bbb;
 $transition-duration-long: .4s;
-$grey-lighter: #ccc;
 $max-width-narrow: 19rem;
