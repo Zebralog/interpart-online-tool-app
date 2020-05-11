@@ -91,16 +91,36 @@
         </div>
         <div class="text" @click="next(`free-contribution-text`)">
           text
-          <nuxt-link :to="{ name: `map` }">
-            <img class="icon-check" src="/img/green-check-mark.png" />
-          </nuxt-link>
+          <img class="icon-check" src="/img/green-check-mark.png" />
         </div>
       </div>
       <div
         v-else-if="completionState == 'free-contribution-text'"
         class="dialog-free-contribution-text"
       >
-        TEXT FREE CONTRIBUTION
+        <div class="pre">
+          <img
+            class="icon-check big-message-icon"
+            src="/img/green-check-mark.png"
+          />
+          Schreibe eine <br />
+          <strong>Nachricht</strong>
+        </div>
+        <div class="mid">
+          <strong>Was möchtest du uns noch mitteilen?</strong>
+          <textarea class="bigarea"></textarea>
+        </div>
+
+        <div class="bottom">
+          <br />
+          <button
+            type="button"
+            class="free-contribution button icon-button big"
+            @click="next(`free-contribution-choice`)"
+          >
+            Weiter <icon :icon="AngleRightCircle" />
+          </button>
+        </div>
       </div>
       <div
         v-else-if="completionState == 'free-contribution-audio'"
