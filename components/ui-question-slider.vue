@@ -10,7 +10,10 @@
         Zurück
       </ui-button>
     </transition>
-    <div class="slider-progress is-size-7">
+    <div
+      v-if="questionIndex < questions.length"
+      class="slider-progress is-size-7"
+    >
       {{ questionIndex + 1 }} / {{ questions.length }}
     </div>
     <div class="slider-content">
@@ -47,11 +50,7 @@
             :answers="question.answers"
             @answer-selected="saveAndNext"
           />
-          <div class="social-bar">
-            <span class="share facebook">F</span>
-            <span class="share instagram">I</span>
-            <span class="share twitter">T</span>
-          </div>
+          <ui-socialbar />
         </div>
         <div
           v-else-if="
@@ -160,11 +159,9 @@
               class="free-contribution button icon-button big"
               @click="next(`free-contribution-done`)"
             />
-            />
           </div>
         </div>
       </transition>
-      <ui-socialbar />
     </div>
   </div>
 </template>
@@ -197,7 +194,7 @@ export default {
     direction: undefined,
     textMessage: undefined,
     answer: null,
-    maxTextMessageLenght: 250,
+    maxTextMessageLength: 250,
   }),
   computed: {
     NounMap: () => NounMap,
@@ -208,8 +205,8 @@ export default {
     },
     charsLeft() {
       return this.textMessage
-        ? this.maxTextMessageLenght - this.textMessage.length
-        : this.maxTextMessageLenght
+        ? this.maxTextMessageLength - this.textMessage.length
+        : this.maxTextMessageLength
     },
     prevIndex() {
       return this.questionIndex > 0
