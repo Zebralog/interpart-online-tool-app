@@ -28,8 +28,9 @@
           <div
             v-if="typeof question.question == 'string'"
             class="slide-question"
-            v-html="question.question"
-          />
+          >
+            <div class="question-title" v-html="question.question" />
+          </div>
           <div
             v-else-if="typeof question.question == 'object'"
             class="slide-question"
@@ -332,6 +333,9 @@ strong {
       margin-right: auto;
       text-align: center;
       margin-bottom: 1.5rem;
+    }
+
+    .question-title {
       font-size: 1.25rem;
     }
   }

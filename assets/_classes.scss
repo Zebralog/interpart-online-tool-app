@@ -49,9 +49,14 @@
 
 .button {
   border: 1px solid $grey-lighter;
+  cursor: pointer;
 
-  &:hover, &:focus, &.is-active {
+  &:hover {
     background: #fafafa;
+  }
+
+  &:focus, &.is-active, input:checked + &, input:focus + & {
+    border: 1px solid $grey-light;
   }
 
   &:not(.is-light) {
