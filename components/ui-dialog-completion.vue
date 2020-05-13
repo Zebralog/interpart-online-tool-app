@@ -24,7 +24,7 @@
       <br />
       <button-weiter
         class="free-contribution button icon-button big"
-        @click="$emit('answer-selected', 'contribution-choice')"
+        @click="$emit('answer-selected', 'contribution')"
       />
     </div>
   </div>

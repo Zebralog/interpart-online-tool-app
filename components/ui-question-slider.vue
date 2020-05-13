@@ -31,9 +31,7 @@
 <script>
 import UiQuestion from "@/components/ui-question"
 import UiDialogCompletion from "@/components/ui-dialog-completion"
-import UiFreeContributionChoice from "@/components/ui-free-contribution-choice"
-import UiFreeContributionText from "@/components/ui-free-contribution-text"
-import UiFreeContributionAudio from "@/components/ui-free-contribution-audio"
+import UiFreeContribution from "@/components/ui-free-contribution"
 import UiButton from "@/components/ui-button"
 import UiSocialbar from "@/components/ui-socialbar"
 import ButtonWeiter from "@/components/ui-button-weiter"
@@ -69,16 +67,8 @@ export default {
           props: { askForMessage: this.dialog.askForMessage },
         },
         {
-          name: "contribution-choice",
-          component: UiFreeContributionChoice,
-        },
-        {
-          name: "contribution-text",
-          component: UiFreeContributionText,
-        },
-        {
-          name: "contribution-audio",
-          component: UiFreeContributionAudio,
+          name: "contribution",
+          component: UiFreeContribution,
         },
         {
           name: "contribution-done",

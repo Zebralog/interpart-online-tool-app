@@ -1,5 +1,5 @@
 <template>
-  <div class="dialog-free-contribution-text">
+  <div class="dialog-free-contribution">
     <div class="pre">
       <img
         class="icon-check big-message-icon"
@@ -65,7 +65,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.dialog-free-contribution-text {
+.dialog-free-contribution {
   width: 100%;
   text-align: center;
 
