@@ -75,7 +75,6 @@ export default {
 
   .checkmark {
     height: auto;
-    margin-top: 1rem;
     margin-bottom: 1rem;
     max-height: 9rem;
   }

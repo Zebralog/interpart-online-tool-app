@@ -9,10 +9,10 @@
       >
         Zurück
       </ui-button>
+      <div v-if="slideIndex < questions.length" class="slider-progress">
+        {{ slideIndex + 1 }} / {{ questions.length }}
+      </div>
     </transition>
-    <div v-if="slideIndex < questions.length" class="slider-progress">
-      {{ slideIndex + 1 }} / {{ questions.length }}
-    </div>
     <div class="slider-content">
       <transition :name="'slide-' + direction">
         <component
@@ -125,7 +125,7 @@ strong {
 
 .slider {
   position: relative;
-  padding-top: 1.5rem;
+  padding-top: 4rem;
 
   .slider-back-button {
     position: absolute;
@@ -134,8 +134,10 @@ strong {
   }
 
   .slider-progress {
-    margin-bottom: 1.5rem;
-    text-align: center;
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translate(-50%);
     color: $color-text-light;
     font-size: $font-size-7;
   }
@@ -143,7 +145,6 @@ strong {
   .slider-content {
     display: flex;
     position: relative;
-    min-height: 32.5rem;
     overflow: hidden;
     padding-bottom: 0.5rem;
   }
@@ -153,6 +154,7 @@ strong {
     flex-direction: column;
     width: 100%;
     flex-shrink: 0;
+    min-height: 31.5rem;
   }
 }
 </style>

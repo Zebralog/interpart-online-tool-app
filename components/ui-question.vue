@@ -58,12 +58,12 @@ export default {
 }
 
 .question-question {
-  max-width: $max-width-narrow;
-  margin-left: auto;
-  margin-right: auto;
   margin-bottom: 1.5rem;
 
   &:not(.has-content) {
+    max-width: $max-width-narrow;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
   }
 }
