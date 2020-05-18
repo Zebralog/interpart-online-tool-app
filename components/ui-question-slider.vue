@@ -3,14 +3,14 @@
     <transition name="fade">
       <ui-button
         v-if="slideIndex !== 0"
-        variant="light"
-        class="slider-back-button is-size-7"
+        variant="extra-small"
+        class="slider-back-button"
         @click="goBack"
       >
         Zurück
       </ui-button>
     </transition>
-    <div v-if="slideIndex < questions.length" class="slider-progress is-size-7">
+    <div v-if="slideIndex < questions.length" class="slider-progress">
       {{ slideIndex + 1 }} / {{ questions.length }}
     </div>
     <div class="slider-content">
@@ -64,7 +64,10 @@ export default {
         {
           name: "completion",
           component: UiDialogCompletion,
-          props: { askForMessage: this.dialog.askForMessage },
+          props: {
+            dialog: this.dialog,
+            askForMessage: this.dialog.askForMessage,
+          },
         },
         {
           name: "contribution",
@@ -134,6 +137,7 @@ strong {
     margin-bottom: 1.5rem;
     text-align: center;
     color: $color-text-light;
+    font-size: $font-size-7;
   }
 
   .slider-content {

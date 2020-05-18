@@ -6,7 +6,7 @@
       :aria-label="item.name"
       :href="item.link"
       target="_blank"
-      class="socialbar-link is-size-4"
+      class="socialbar-link"
     >
       <icon :icon="item.icon" aria-hidden />
     </a>
@@ -45,5 +45,6 @@ export default {
 
 .socialbar-link {
   margin: 1rem;
+  font-size: $font-size-4;
 }
 </style>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="150.39" height="130.775" viewBox="0 0 150.39 130.775">
+  <defs>
+    <filter id="Pfad_1014" x="0" y="0" width="150.39" height="130.775" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Pfad_1014)">
+    <path id="Pfad_1014-2" data-name="Pfad 1014" d="M178.878,296.514a3.17,3.17,0,0,0-4.4-.834,2.676,2.676,0,0,0-.221.165c-34.793,28.622-66.939,62.992-77.815,84.178l-28.166-31.9a6.405,6.405,0,0,0-9.023-.578l-6.428,5.63a6.407,6.407,0,0,0-.711,8.907l36.14,43.6a6.138,6.138,0,0,0,4.726,2.221h8.757a6.167,6.167,0,0,0,5.452-3.33c23.008-44.181,43.738-69.188,74.845-98.7a3.173,3.173,0,0,0,.453-4.084Z" transform="translate(-41.64 -289.13)" fill="#cc76af"/>
+  </g>
+</svg>

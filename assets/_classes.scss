@@ -1,29 +1,29 @@
 .is-size-1 {
-  font-size: 3rem;
+  font-size: $font-size-1;
 }
 
 .is-size-2 {
-  font-size: 2.5rem;
+  font-size: $font-size-2;
 }
 
 .is-size-3 {
-  font-size: 2rem;
+  font-size: $font-size-3;
 }
 
 .is-size-4 {
-  font-size: 1.5rem;
+  font-size: $font-size-4;
 }
 
 .is-size-5 {
-  font-size: 1.25rem;
+  font-size: $font-size-5;
 }
 
 .is-size-6 {
-  font-size: 1rem;
+  font-size: $font-size-6;
 }
 
 .is-size-7 {
-  font-size: .9rem;
+  font-size: $font-size-7;
 }
 
 .is-sr-only {
@@ -37,17 +37,9 @@
   width: 0.01em !important;
 }
 
-.content {
-  p {
-    margin-bottom: 0.5rem;
-  }
-
-  strong {
-    font-weight: bold;
-  }
-}
-
 .button {
+  display: inline-flex;
+  align-items: center;
   border: 1px solid $grey-lighter;
   cursor: pointer;
 
@@ -59,8 +51,8 @@
     border: 1px solid $grey-light;
   }
 
-  &:not(.is-light) {
-    padding: 1rem;
+  &:not(.is-light):not(.is-small):not(.is-extra-small) {
+    padding: 1rem 1.1rem;
     border-radius: $border-radius-md;
     box-shadow: $shadow-md;
   }
@@ -69,5 +61,19 @@
     padding: 0.35rem .8rem;
     border-radius: $border-radius-sm;
     color: $color-text-light;
+  }
+
+  &.is-small {
+    padding: 0.6rem .8rem;
+    border-radius: $border-radius-md;
+    box-shadow: $shadow-md;
+    font-size: $font-size-7;
+  }
+
+  &.is-extra-small {
+    padding: 0.35rem .8rem;
+    border-radius: $border-radius-sm;
+    color: $color-text-light;
+    font-size: $font-size-7;
   }
 }

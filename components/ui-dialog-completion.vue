@@ -1,80 +1,95 @@
 <template>
   <div class="dialog-completion">
-    <div class="thanks">
-      <img class="icon-check" src="/img/green-check-mark.png" />
-      <h2>Danke!</h2>
-      <div v-if="isDone" class="subtitle">
+    <icon
+      class="checkmark"
+      :icon="CheckmarkBig"
+      :style="{ color: dialog.color }"
+    />
+    <div class="confirmation">
+      <template v-if="isDone">
+        <div><strong>Danke!</strong></div>
         Deine Nachricht
         <br />
         wurde gesendet.
-      </div>
-      <div v-else class="subtitle">
+      </template>
+      <template v-else>
+        <div><strong>Danke</strong></div>
         für deine Teilnahme!
-      </div>
-
-      <nuxt-link :to="{ name: `map` }">
-        <button type="button" class="back-to-map button icon-button">
-          Zurück zu Karte
-          <icon :icon="NounMap" />
-        </button>
-      </nuxt-link>
+      </template>
     </div>
-    <div v-if="askForMessage" class="free-contribution-selection">
-      Dir liegt noch etwas auf dem Herzen?<br />Dann teil es uns mit!
-      <br />
-      <button-weiter
-        class="free-contribution button icon-button big"
+
+    <div>
+      <ui-button
+        tag="nuxt-link"
+        variant="small"
+        :to="{ name: `map` }"
+        :icon-right="NounMap"
+      >
+        Zurück zu Karte
+      </ui-button>
+    </div>
+    <div v-if="askForMessage">
+      <div class="contribution">
+        Dir liegt noch etwas auf dem Herzen?<br />Dann teil es uns mit!
+      </div>
+      <ui-button
+        :icon-right="AngleRight"
         @click="$emit('answer-selected', 'contribution')"
-      />
+      >
+        Weiter
+      </ui-button>
     </div>
   </div>
 </template>
 
 <script>
 import Icon from "@/components/icon"
-import ButtonWeiter from "@/components/ui-button-weiter"
+import UiButton from "@/components/ui-button"
 import NounMap from "@/assets/noun-map.svg"
+import CheckmarkBig from "@/assets/checkmark-big.svg"
+import AngleRight from "@/assets/angle-right.svg"
 
 export default {
   components: {
     Icon,
-    ButtonWeiter,
+    UiButton,
   },
   props: {
+    dialog: { type: Object, required: true },
     askForMessage: { type: Boolean, default: false },
     isDone: { type: Boolean, default: false },
   },
   computed: {
+    CheckmarkBig: () => CheckmarkBig,
+    AngleRight: () => AngleRight,
     NounMap: () => NounMap,
   },
 }
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/variables";
+
 .dialog-completion {
-  width: 100%;
   text-align: center;
 
-  .thanks {
-    img.icon-check {
-      max-width: 50vw;
-    }
+  .checkmark {
+    height: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    max-height: 9rem;
   }
 
-  .free-contribution {
-    margin-top: 5vh;
+  .contribution {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    font-size: $font-size-6;
+    font-weight: 500;
   }
 
-  .icon-button {
-    padding: 2vw;
-    border: 1px solid #00000033;
-
-    box-shadow: 0 10px 6px -6px #777;
-
-    &.big {
-      font-size: 1.5rem;
-      padding: 0.75rem;
-    }
+  .confirmation {
+    margin-bottom: 1rem;
+    font-size: $font-size-4;
   }
 }
 </style>

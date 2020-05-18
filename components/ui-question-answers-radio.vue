@@ -8,7 +8,7 @@
     >
       <input class="input" type="radio" name="answer" />
       <span class="button">
-        <span class="key is-size-4">{{ answer.key }}</span>
+        <span class="key">{{ answer.key }}</span>
         <span class="content">{{ answer.content }}</span>
       </span>
     </label>
@@ -53,6 +53,7 @@ export default {
     }
     .key {
       min-width: 2.5rem;
+      font-size: $font-size-4;
     }
     .content {
       flex-grow: 1;

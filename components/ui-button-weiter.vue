@@ -1,6 +1,5 @@
 <template>
   <button type="button" @click="emitClick">
-    Weiter
     <icon :icon="AngleRightCircle" />
   </button>
 </template>

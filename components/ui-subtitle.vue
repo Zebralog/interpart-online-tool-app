@@ -5,8 +5,10 @@
 </template>
 
 <style lang="scss" scoped>
+@import "@/assets/variables";
+
 .subtitle {
-  font-size: 1.2rem;
+  font-size: $font-size-5;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }

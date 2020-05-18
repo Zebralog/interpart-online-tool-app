@@ -1,16 +1,14 @@
 <template>
   <div>
-    <img v-if="question.image" :src="question.image" class="question-image" />
-    <div class="question-question">
-      <div
-        v-if="typeof question.question == 'string'"
-        class="question-title"
-        v-html="question.question"
-      />
-      <template v-else>
-        <h2 class="question-title" v-html="question.question.title" />
-        <small class="question-content" v-html="question.question.content" />
-      </template>
+    <ui-image
+      v-if="question.image"
+      variant="exposed"
+      :src="question.image"
+      class="question-image"
+    />
+    <div :class="['question-question', { 'has-content': content }]">
+      <h2 v-if="title" class="question-title" v-html="title" />
+      <small v-if="content" class="question-content" v-html="content" />
     </div>
     <component
       :is="answerComponents[question.type]"
@@ -22,14 +20,28 @@
 </template>
 
 <script>
+import UiImage from "@/components/ui-image"
 import AnswersEmoji from "@/components/ui-question-answers-emoji"
 import AnswersRadio from "@/components/ui-question-answers-radio"
 
 export default {
+  components: {
+    UiImage,
+  },
   props: {
     question: { type: Object, required: true },
   },
   computed: {
+    title() {
+      return typeof this.question.question === "string"
+        ? this.question.question
+        : this.question.question.title
+    },
+    content() {
+      return typeof this.question.question !== "string"
+        ? this.question.question.content
+        : undefined
+    },
     answerComponents: () => ({
       emoji: AnswersEmoji,
       radio: AnswersRadio,
@@ -42,8 +54,6 @@ export default {
 @import "@/assets/variables";
 
 .question-image {
-  border-radius: $border-radius-lg;
-  box-shadow: $shadow-lg;
   margin-bottom: 1.5rem;
 }
 
@@ -51,11 +61,15 @@ export default {
   max-width: $max-width-narrow;
   margin-left: auto;
   margin-right: auto;
-  text-align: center;
   margin-bottom: 1.5rem;
+
+  &:not(.has-content) {
+    text-align: center;
+  }
 }
 
 .question-title {
-  font-size: 1.25rem;
+  font-size: $font-size-5;
+  font-weight: 500;
 }
 </style>

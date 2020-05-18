@@ -66,7 +66,6 @@ export default {
 
 <style lang="scss" scoped>
 .dialog-free-contribution {
-  width: 100%;
   text-align: center;
 
   img.icon-check {

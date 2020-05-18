@@ -29,6 +29,7 @@ button {
   padding: 0;
   border: none;
   background: none;
+  color: inherit;
 }
 
 img {
@@ -38,4 +39,12 @@ img {
 
 input[type=radio] {
   margin: 0;
+}
+
+strong {
+  font-weight: bold;
+}
+
+p {
+  margin-bottom: 0.5rem;
 }
