@@ -1,21 +1,22 @@
 <template>
   <div class="dialog-free-contribution">
-    <div class="pre">
-      <img
-        class="icon-check big-message-icon"
-        src="/img/green-check-mark.png"
-      />
+    <icon
+      class="speech-bubble"
+      :icon="SpeechBubble"
+      :style="{ color: dialog.color }"
+    />
+    <div class="subtitle">
       Schreibe eine <br />
       <strong>Nachricht</strong>
     </div>
-    <div class="mid">
-      <strong>Was möchtest du uns noch mitteilen?</strong>
-      <textarea v-model="textMessage" class="bigarea" />
-      <span id="textarea-counter" :class="textareaCounterClasses">
-        <span class="counter-container" v-html="charsLeft" />
-        Zeichen
-      </span>
+    <div class="call-to-action">
+      Was möchtest du uns noch mitteilen?
     </div>
+    <textarea v-model="textMessage" class="bigarea" />
+    <span id="textarea-counter" :class="textareaCounterClasses">
+      <span class="counter-container" v-html="charsLeft" />
+      Zeichen
+    </span>
 
     <div class="bottom">
       <br />
@@ -29,18 +30,25 @@
 </template>
 
 <script>
+import SpeechBubble from "@/assets/speech-bubble.svg"
 import ButtonWeiter from "@/components/ui-button-weiter"
+import Icon from "@/components/icon"
 
 const maxTextMessageLength = 250
 
 export default {
   components: {
+    Icon,
     ButtonWeiter,
+  },
+  props: {
+    dialog: { type: Object, required: true },
   },
   data: () => ({
     textMessage: "",
   }),
   computed: {
+    SpeechBubble: () => SpeechBubble,
     charsLeft() {
       return maxTextMessageLength - this.textMessage.length
     },
@@ -68,48 +76,49 @@ export default {
 .dialog-free-contribution {
   text-align: center;
 
-  img.icon-check {
-    max-width: 30vw;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  .speech-bubble {
+    height: auto;
   }
 
-  .mid {
-    margin-top: 2rem;
+  .subtitle {
     margin-bottom: 2rem;
+  }
 
-    .bigarea {
-      width: 91%;
-      min-height: 15vh;
-      border-radius: 3px;
-      margin: 5px 1px 3px 0;
+  .call-to-action {
+    text-align: left;
+    font-weight: 500;
+  }
 
-      -webkit-transition: all 0.3s ease-in-out;
-      -moz-transition: all 0.3s ease-in-out;
-      -ms-transition: all 0.3s ease-in-out;
-      -o-transition: all 0.3s ease-in-out;
-      outline: none;
-      padding: 3px 0 3px 3px;
-      border: 1px solid #dddddd;
-    }
+  .bigarea {
+    width: 91%;
+    min-height: 15vh;
+    border-radius: 3px;
+    margin: 5px 1px 3px 0;
 
-    #textarea-counter {
-      color: #888888dd;
-      font-size: 0.9rem;
-      display: inline-block;
-      padding: 0.5rem;
-    }
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    outline: none;
+    padding: 3px 0 3px 3px;
+    border: 1px solid #dddddd;
+  }
 
-    #textarea-counter.alert {
-      background-color: lightyellow;
-      color: #000;
-    }
+  #textarea-counter {
+    color: #888888dd;
+    font-size: 0.9rem;
+    display: inline-block;
+    padding: 0.5rem;
+  }
 
-    #textarea-counter.error {
-      background-color: lightsalmon;
-      color: #000;
-    }
+  #textarea-counter.alert {
+    background-color: lightyellow;
+    color: #000;
+  }
+
+  #textarea-counter.error {
+    background-color: lightsalmon;
+    color: #000;
   }
 }
 </style>

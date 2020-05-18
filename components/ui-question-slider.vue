@@ -9,6 +9,8 @@
       >
         Zurück
       </ui-button>
+    </transition>
+    <transition name="fade">
       <div v-if="slideIndex < questions.length" class="slider-progress">
         {{ slideIndex + 1 }} / {{ questions.length }}
       </div>
@@ -72,6 +74,9 @@ export default {
         {
           name: "contribution",
           component: UiFreeContribution,
+          props: {
+            dialog: this.dialog,
+          },
         },
         {
           name: "contribution-done",

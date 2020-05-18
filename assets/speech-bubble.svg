@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="108.198" height="99.114" viewBox="0 0 108.198 99.114">
+  <defs>
+    <filter id="Pfad_564" x="0" y="0" width="108.198" height="99.114" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="noun_text_message_439626" data-name="noun_text message_439626" transform="translate(9 6)">
+    <g id="Gruppe_65" data-name="Gruppe 65" transform="translate(0 0)">
+      <rect id="Rechteck_47" data-name="Rechteck 47" width="37.069" height="5.637" transform="translate(13.84 21.695)" fill="#cc76af"/>
+      <rect id="Rechteck_48" data-name="Rechteck 48" width="62.304" height="5.637" transform="translate(13.84 35.487)" fill="#cc76af"/>
+      <g transform="matrix(1, 0, 0, 1, -9, -6)" filter="url(#Pfad_564)">
+        <path id="Pfad_564-2" data-name="Pfad 564" d="M0,64.445H20.261V82.725l22.5-18.279H90.2V1.611H0Zm5.637-57.2H84.561v51.56h-43.8L25.9,70.883V58.808H5.637Z" transform="translate(9 4.39)" fill="#cc76af"/>
+      </g>
+    </g>
+  </g>
+</svg>
