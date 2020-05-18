@@ -47,7 +47,7 @@ export default {
   margin-bottom: 1.5rem;
 }
 
-.slide-question {
+.question-question {
   max-width: $max-width-narrow;
   margin-left: auto;
   margin-right: auto;

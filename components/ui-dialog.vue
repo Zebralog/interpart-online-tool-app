@@ -38,6 +38,12 @@ export default {
       }
     },
   },
+  mounted() {
+    this.$store.dispatch("modal/create")
+  },
+  destroyed() {
+    this.$store.dispatch("modal/destroy")
+  },
   methods: {
     close() {
       this.$router.push(this.closeRoute)

@@ -11,6 +11,7 @@ export default {
           loader: "eslint-loader",
           exclude: /(node_modules)/,
           options: {
+            failOnWarning: true,
             fix: true,
           },
         })

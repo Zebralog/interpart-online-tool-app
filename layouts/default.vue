@@ -1,7 +1,12 @@
 <template>
   <div class="layout">
     <navbar />
-    <nuxt class="layout-content" />
+    <nuxt
+      :class="[
+        'layout-content',
+        ...($store.getters['modal/exists'] ? ['dialog'] : []),
+      ]"
+    />
     <ui-map class="layout-map" />
   </div>
 </template>
@@ -30,8 +35,7 @@ export default {
 .layout-map {
   transition: 0.2s all;
 
-  .dialog + &,
-  .overlay + & {
+  .dialog + & {
     filter: blur(0.5rem);
   }
 }

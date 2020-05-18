@@ -55,8 +55,7 @@ export default {
   color: #d1d1d1;
 
   &:hover,
-  &:focus,
-  &.is-active {
+  &:focus {
     position: relative;
     background: #fff;
     color: #7e7e7e;
@@ -73,10 +72,6 @@ export default {
       box-shadow: $shadow-sm;
       z-index: -1;
     }
-  }
-
-  .icon {
-    display: block;
   }
 }
 </style>

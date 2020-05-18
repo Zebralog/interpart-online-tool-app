@@ -10,14 +10,14 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .icon {
   height: 1em;
   width: auto;
   vertical-align: middle;
 
   &,
-  path {
+  /deep/ path {
     fill: currentColor;
   }
 }
