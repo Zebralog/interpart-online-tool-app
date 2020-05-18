@@ -1,3 +1,5 @@
+import Vue from "vue"
+
 export const state = () => ({ exists: false })
 
 export const getters = {
@@ -5,11 +7,11 @@ export const getters = {
 }
 
 export const mutations = {
-  create: (state) => (state.exists = true),
-  destroy: (state) => (state.exists = false),
+  create: (state) => Vue.set(state, "exists", true),
+  destroy: (state) => Vue.set(state, "exists", false),
 }
 
 export const actions = {
-  create: ({ dispatch }) => dispatch("create"),
-  destroy: ({ dispatch }) => dispatch("destroy"),
+  create: ({ commit }) => commit("create"),
+  destroy: ({ commit }) => commit("destroy"),
 }
