@@ -55,7 +55,8 @@ export default {
   color: #d1d1d1;
 
   &:hover,
-  &:focus {
+  &:focus,
+  &::v-deep.is-active {
     position: relative;
     background: #fff;
     color: #7e7e7e;
