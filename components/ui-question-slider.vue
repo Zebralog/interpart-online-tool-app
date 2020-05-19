@@ -82,6 +82,7 @@ export default {
           name: "contribution-done",
           component: UiDialogCompletion,
           props: {
+            dialog: this.dialog,
             isDone: true,
           },
         },
@@ -159,7 +160,7 @@ strong {
     flex-direction: column;
     width: 100%;
     flex-shrink: 0;
-    min-height: 31.5rem;
+    min-height: 62vh;
   }
 }
 </style>
