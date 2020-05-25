@@ -12,11 +12,7 @@
     <div class="call-to-action">
       Was möchtest du uns noch mitteilen?
     </div>
-    <textarea v-model="textMessage" class="bigarea" />
-    <span id="textarea-counter" :class="textareaCounterClasses">
-      <span class="counter-container" v-html="charsLeft" />
-      Zeichen
-    </span>
+    <ui-textarea v-model="textMessage" :max-length="maxTextMessageLength" />
 
     <div class="bottom">
       <br />
@@ -33,13 +29,13 @@
 import SpeechBubble from "@/assets/speech-bubble.svg"
 import ButtonWeiter from "@/components/ui-button-weiter"
 import Icon from "@/components/icon"
-
-const maxTextMessageLength = 250
+import UiTextarea from "@/components/ui-textarea"
 
 export default {
   components: {
     Icon,
     ButtonWeiter,
+    UiTextarea,
   },
   props: {
     dialog: { type: Object, required: true },
@@ -49,16 +45,7 @@ export default {
   }),
   computed: {
     SpeechBubble: () => SpeechBubble,
-    charsLeft() {
-      return maxTextMessageLength - this.textMessage.length
-    },
-    textareaCounterClasses() {
-      return {
-        textareaCounter: true,
-        alert: this.charsLeft < 50 && this.charsLeft > 0,
-        error: this.charsLeft <= 0,
-      }
-    },
+    maxTextMessageLength: () => 250,
   },
   methods: {
     next() {
@@ -87,38 +74,6 @@ export default {
   .call-to-action {
     text-align: left;
     font-weight: 500;
-  }
-
-  .bigarea {
-    width: 91%;
-    min-height: 15vh;
-    border-radius: 3px;
-    margin: 5px 1px 3px 0;
-
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    outline: none;
-    padding: 3px 0 3px 3px;
-    border: 1px solid #dddddd;
-  }
-
-  #textarea-counter {
-    color: #888888dd;
-    font-size: 0.9rem;
-    display: inline-block;
-    padding: 0.5rem;
-  }
-
-  #textarea-counter.alert {
-    background-color: lightyellow;
-    color: #000;
-  }
-
-  #textarea-counter.error {
-    background-color: lightsalmon;
-    color: #000;
   }
 }
 </style>

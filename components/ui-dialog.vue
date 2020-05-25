@@ -95,6 +95,6 @@ export default {
 }
 
 .dialog-content {
-  padding: 1rem 1.5rem;
+  padding: 1rem 2rem;
 }
 </style>
