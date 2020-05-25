@@ -26,6 +26,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/variables";
+
 .icon-right {
   margin-left: 0.5rem;
   font-size: 1.3em;

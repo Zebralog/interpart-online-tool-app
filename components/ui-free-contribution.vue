@@ -12,54 +12,56 @@
     <div class="call-to-action">
       Was möchtest du uns noch mitteilen?
     </div>
-    <ui-textarea v-model="textMessage" :max-length="maxTextMessageLength" />
+    <ui-textarea
+      v-model="textMessage"
+      class="textarea"
+      :max-length="maxTextMessageLength"
+      @valid-change="isValid = $event"
+    />
 
-    <div class="bottom">
-      <br />
-
-      <button-weiter
-        class="free-contribution button icon-button big"
-        @click="next"
-      />
+    <div>
+      <ui-button
+        :icon-right="AngleRight"
+        :disabled="!isValid"
+        @click="$emit('answer-selected', 'contribution-done')"
+      >
+        Weiter
+      </ui-button>
     </div>
   </div>
 </template>
 
 <script>
 import SpeechBubble from "@/assets/speech-bubble.svg"
-import ButtonWeiter from "@/components/ui-button-weiter"
+import AngleRight from "@/assets/angle-right.svg"
 import Icon from "@/components/icon"
 import UiTextarea from "@/components/ui-textarea"
+import UiButton from "@/components/ui-button"
 
 export default {
   components: {
     Icon,
-    ButtonWeiter,
     UiTextarea,
+    UiButton,
   },
   props: {
     dialog: { type: Object, required: true },
   },
   data: () => ({
     textMessage: "",
+    isValid: true,
   }),
   computed: {
+    AngleRight: () => AngleRight,
     SpeechBubble: () => SpeechBubble,
     maxTextMessageLength: () => 250,
-  },
-  methods: {
-    next() {
-      if (this.charsLeft < 0) {
-        alert(`Your message is too long.`)
-        return
-      }
-      this.$emit("answer-selected", "contribution-done")
-    },
   },
 }
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/variables";
+
 .dialog-free-contribution {
   text-align: center;
 
@@ -72,8 +74,14 @@ export default {
   }
 
   .call-to-action {
+    font-size: $font-size-5;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .textarea {
     text-align: left;
-    font-weight: 500;
+    margin-bottom: 2rem;
   }
 }
 </style>

@@ -82,7 +82,6 @@ export default {
   .contribution {
     margin-top: 3rem;
     margin-bottom: 1rem;
-    font-size: $font-size-6;
     font-weight: 500;
   }
 

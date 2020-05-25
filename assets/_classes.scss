@@ -43,6 +43,10 @@
   border: 1px solid $grey-lighter;
   cursor: pointer;
 
+  &[disabled] {
+    color: #aaa;
+  }
+
   &:hover {
     background: #fafafa;
   }
@@ -55,6 +59,8 @@
     padding: 1rem 1.1rem;
     border-radius: $border-radius-md;
     box-shadow: $shadow-md;
+    font-size: $font-size-5;
+    font-weight: 500;
   }
 
   &.is-light {

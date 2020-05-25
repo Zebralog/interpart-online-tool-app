@@ -67,7 +67,6 @@ export default {
   background: rgba(#fff, 0.2);
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  font-size: $font-size-7;
 }
 
 .dialog-box {

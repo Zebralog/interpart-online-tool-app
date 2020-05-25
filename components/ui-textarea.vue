@@ -9,7 +9,7 @@
       class="textarea-counter"
       :class="[
         'textarea-counter',
-        { alert: charsLeft < 50 && charsLeft > 0, error: charsLeft <= 0 },
+        { alert: charsLeft < 50 && charsLeft > 0, error: !isValid },
       ]"
     >
       {{ charsLeft }} Zeichen
@@ -26,6 +26,17 @@ export default {
   computed: {
     charsLeft() {
       return this.maxLength - this.value.length
+    },
+    isValid() {
+      return this.charsLeft >= 0
+    },
+  },
+  watch: {
+    isValid: {
+      immediate: true,
+      handler() {
+        this.$emit("valid-change", this.isValid)
+      },
     },
   },
 }
