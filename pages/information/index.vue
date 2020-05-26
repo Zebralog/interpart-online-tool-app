@@ -11,10 +11,6 @@ import UiList from "@/components/ui-list"
 import config from "@/config"
 
 export default {
-  /*transition: (to, from) => ({
-    mode: "",
-    name: from?.name === "information.name" ? "prev" : "slide-up",
-  }),*/
   components: {
     UiTitle,
     UiList,

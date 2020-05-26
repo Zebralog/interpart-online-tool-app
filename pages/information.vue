@@ -8,10 +8,6 @@
 import UiOverlay from "@/components/ui-overlay"
 
 export default {
-  /*transition: (to, from) => ({
-    mode: "",
-    name: from?.name === "information.name" ? "prev" : "slide-up",
-  }),*/
   components: {
     UiOverlay,
   },
