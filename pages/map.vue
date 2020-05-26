@@ -1,5 +1,9 @@
 <template>
-  <Places :places="dialogs" />
+  <div>
+    <transition name="fade" appear>
+      <Places :places="dialogs" />
+    </transition>
+  </div>
 </template>
 
 <script>
