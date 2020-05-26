@@ -9,7 +9,7 @@
       class="textarea-counter"
       :class="[
         'textarea-counter',
-        { alert: charsLeft < 50 && charsLeft > 0, error: !isValid },
+        { alert: charsLeft < 50 && charsLeft > 0, error: charsLeft < 0 },
       ]"
     >
       {{ charsLeft }} Zeichen
@@ -28,7 +28,7 @@ export default {
       return this.maxLength - this.value.length
     },
     isValid() {
-      return this.charsLeft >= 0
+      return this.value.length > 0 && this.charsLeft >= 0
     },
   },
   watch: {
@@ -47,17 +47,19 @@ export default {
 
 .textarea {
   position: relative;
-  border: $border;
-  border-radius: $border-radius-md;
-  overflow: hidden;
-  padding: 1rem;
-  box-shadow: $shadow-md;
 
   textarea {
     display: block;
     resize: none;
     width: 100%;
     border: none;
+    padding: 1rem;
+    box-shadow: $shadow-md;
+    border: $border;
+    border-radius: $border-radius-md;
+    font-family: inherit;
+    font-size: inherit;
+    appearance: none;
 
     &:focus {
       outline: none;
@@ -72,7 +74,7 @@ export default {
   color: #888888dd;
   font-size: 0.8rem;
   display: inline-block;
-  padding: 0.5rem;
+  padding: 0.5rem 0.75rem;
 
   &.alert {
     color: orange;
