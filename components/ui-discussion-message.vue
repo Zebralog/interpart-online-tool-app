@@ -1,10 +1,5 @@
 <template>
-  <div
-    v-if="message"
-    :style="elementStyle"
-    :data-type="message.type"
-    class="message-container"
-  >
+  <div v-if="message" :data-type="message.type" class="message-container">
     <div class="content" @click="toggleMetaInfo">
       {{ message.content }}
     </div>
@@ -27,9 +22,6 @@ export default {
     }
   },
   computed: {
-    elementStyle() {
-      return {}
-    },
     metaStyle() {
       return {
         display: this.showMeta ? `inline-block` : `none`,
@@ -75,7 +67,6 @@ export default {
   margin-bottom: 3rem;
   border-radius: $border-radius-md;
   border: $border;
-  background-color: #fff;
 
   &:before {
     content: "";
@@ -87,7 +78,6 @@ export default {
     border: $border;
     background: #fff;
     transform: rotate(15deg) skewY(-35deg);
-    z-index: -1;
   }
 
   &:after {
@@ -95,13 +85,16 @@ export default {
     position: absolute;
     left: 0;
     bottom: -1px;
-    width: 2.2rem;
+    width: 2.15rem;
     height: 0.5rem;
     background: #fff;
   }
 
   .content {
+    position: relative;
     padding: 1em;
+    border-radius: $border-radius-md;
+    background-color: #fff;
   }
 
   .metadata {
