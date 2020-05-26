@@ -1,6 +1,11 @@
 <template>
   <ui-dialog v-bind="dialogProps">
-    <ui-question-slider v-if="dialog" :questions="questions" :dialog="dialog" />
+    <ui-question-slider
+      v-if="dialog"
+      :questions="questions"
+      :dialog="dialog"
+      class="question-slider"
+    />
   </ui-dialog>
 </template>
 
@@ -32,3 +37,10 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.question-slider {
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+</style>
