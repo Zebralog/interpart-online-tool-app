@@ -1,5 +1,5 @@
 <template>
-  <ui-overlay>
+  <div>
     <ui-title>Informationen</ui-title>
     <ui-subtitle>{{ item.title }}</ui-subtitle>
     <ui-content>
@@ -8,11 +8,10 @@
     <ui-link :to="{ name: 'information' }">
       Zurück
     </ui-link>
-  </ui-overlay>
+  </div>
 </template>
 
 <script>
-import UiOverlay from "@/components/ui-overlay"
 import UiTitle from "@/components/ui-title"
 import UiSubtitle from "@/components/ui-subtitle"
 import UiContent from "@/components/ui-content"
@@ -25,7 +24,6 @@ export default {
     name: "next",
   },
   components: {
-    UiOverlay,
     UiTitle,
     UiSubtitle,
     UiContent,

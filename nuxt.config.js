@@ -21,7 +21,11 @@ export default {
   head: {
     meta: [
       { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      {
+        name: "viewport",
+        content:
+          "width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0",
+      },
       {
         hid: "description",
         name: "description",
@@ -33,10 +37,6 @@ export default {
   router: {
     routeNameSplitter: ".",
     linkActiveClass: "is-active",
-  },
-  layoutTransition: {
-    mode: "",
-    name: "next",
   },
   modules: ["nuxt-svg-loader"],
   plugins: ["plugins/v-click-outside", "plugins/v-touch-events"],

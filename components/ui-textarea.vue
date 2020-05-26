@@ -51,11 +51,13 @@ export default {
   border-radius: $border-radius-md;
   overflow: hidden;
   padding: 1rem;
+  box-shadow: $shadow-md;
 
   textarea {
     display: block;
     resize: none;
     width: 100%;
+    border: none;
 
     &:focus {
       outline: none;

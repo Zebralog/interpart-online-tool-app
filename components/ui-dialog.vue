@@ -1,16 +1,18 @@
 <template>
   <div class="dialog" @click="close">
-    <div class="dialog-box" @click.stop>
-      <div class="dialog-title-bar" :style="titleStyle">
-        {{ title }}
-        <nuxt-link :to="closeRoute" class="dialog-close">
-          <icon :icon="NounClose" />
-        </nuxt-link>
+    <transition name="dialog" appear>
+      <div class="dialog-box" @click.stop>
+        <div class="dialog-title-bar" :style="titleStyle">
+          {{ title }}
+          <nuxt-link :to="closeRoute" class="dialog-close">
+            <icon :icon="NounClose" />
+          </nuxt-link>
+        </div>
+        <div class="dialog-content">
+          <slot />
+        </div>
       </div>
-      <div class="dialog-content">
-        <slot />
-      </div>
-    </div>
+    </transition>
   </div>
 </template>
 

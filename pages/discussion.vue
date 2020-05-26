@@ -14,10 +14,10 @@ import Discussion from "@/components/ui-discussion"
 import config from "@/config"
 
 export default {
-  transition: {
+  /*transition: {
     mode: "",
     name: "slide-up",
-  },
+  },*/
   components: {
     UiOverlay,
     UiTitle,

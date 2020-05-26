@@ -1,0 +1,29 @@
+@keyframes dialogEnter {
+  from {
+    transform: translateY(15px) scale(.9);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.dialog-enter-active {
+  animation: dialogEnter $transition-duration-long both;
+}
+
+@keyframes dialogLeave {
+  from {
+    transform: none;
+    opacity: 1;
+  }
+  to {
+    transform: translateY(15px) scale(.9);
+    opacity: 0;
+  }
+}
+
+.dialog-leave-active {
+  animation: dialogLeave $transition-duration-long both;
+}
