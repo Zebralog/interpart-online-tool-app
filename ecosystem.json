@@ -1,0 +1,9 @@
+{
+  "apps": [
+    {
+      "name": "interpart-mobile-prototype",
+      "script": "npm",
+      "args" : "start"
+    }
+  ]
+}
