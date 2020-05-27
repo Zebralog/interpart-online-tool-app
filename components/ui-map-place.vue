@@ -1,21 +1,26 @@
 <template>
-  <div v-if="place" :style="elementStyle" class="map-place">
+  <div
+    v-if="place"
+    :style="elementStyle"
+    :class="['map-place', { 'is-popup-open': isPopupOpen }]"
+  >
     <ui-popup
-      ref="popup"
+      v-model="isPopupOpen"
       :color="place.color"
       :title="place.title"
       :subtitle="place.subtitle"
       :link-title="`Los gehts`"
       :link-route="{ name: 'dialog.id', params: { id: place.id } }"
     />
-    <icon
-      :icon="Pin"
+    <button
+      type="button"
+      class="map-place-button"
+      :aria-label="place.title"
       :style="{ fontSize: '4.5rem', color: place.color }"
-      aria-label="place.title"
-      tabindex="0"
-      class="map-place-pin"
-      @click="$refs.popup.open()"
-    />
+      @click="isPopupOpen = true"
+    >
+      <icon :icon="Pin" />
+    </button>
   </div>
 </template>
 
@@ -32,6 +37,9 @@ export default {
   props: {
     place: { type: Object, required: true },
   },
+  data: () => ({
+    isPopupOpen: false,
+  }),
   computed: {
     Pin: () => Pin,
     elementStyle() {
@@ -50,9 +58,15 @@ export default {
 .map-place {
   position: absolute;
   transform: translate(-50%, -100%);
+
+  &.is-popup-open {
+    z-index: 1;
+  }
 }
 
-.map-place-pin {
-  outline: none;
+.map-place-button {
+  &:focus {
+    outline: none;
+  }
 }
 </style>

@@ -1,8 +1,8 @@
 <template>
   <transition name="popup">
     <div
-      v-if="isOpen"
-      v-click-outside="close"
+      v-if="value"
+      v-click-outside="clickOutsideOptions"
       :style="{
         borderColor: color,
         [isBottom ? 'top' : 'bottom']: 'calc(100% + 1.5rem)',
@@ -35,6 +35,7 @@ export default {
     Icon,
   },
   props: {
+    value: { type: Boolean },
     color: { type: String, required: true },
     title: { type: String, required: true },
     subtitle: { type: String, default: "" },
@@ -42,25 +43,32 @@ export default {
     linkRoute: { type: Object, default: undefined },
   },
   data: () => ({
-    isOpen: false,
     isBottom: false,
+    clickOutsideActive: false,
   }),
   computed: {
     AngleRightCircle: () => AngleRightCircle,
-  },
-  methods: {
-    open() {
-      this.isOpen = true
-      this.$nextTick(() => {
-        this.$el.style.animation = "none"
-        const { y } = this.$el.getBoundingClientRect()
-        this.isBottom = y < 0
-        this.$el.style.animation = ""
-      })
+    clickOutsideOptions() {
+      return {
+        isActive: this.clickOutsideActive,
+        handler: () => this.$emit("input", false),
+      }
     },
-    close() {
-      this.isOpen = false
-      this.isBottom = false
+  },
+  watch: {
+    value() {
+      if (this.value) {
+        this.$nextTick(() => {
+          this.$el.style.animation = "none"
+          const { y } = this.$el.getBoundingClientRect()
+          this.isBottom = y < 0
+          this.$el.style.animation = ""
+          this.clickOutsideActive = true
+        })
+      } else {
+        this.isBottom = false
+        this.clickOutsideActive = false
+      }
     },
   },
 }
