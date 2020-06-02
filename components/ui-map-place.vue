@@ -65,6 +65,8 @@ export default {
 }
 
 .map-place-button {
+  display: flex;
+
   &:focus {
     outline: none;
   }
