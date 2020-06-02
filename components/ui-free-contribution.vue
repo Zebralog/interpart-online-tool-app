@@ -1,5 +1,5 @@
 <template>
-  <div class="dialog-free-contribution">
+  <form class="dialog-free-contribution" @submit.prevent="submit">
     <icon
       class="speech-bubble"
       :icon="SpeechBubble"
@@ -20,15 +20,11 @@
     />
 
     <div>
-      <ui-button
-        :icon-right="AngleRight"
-        :disabled="!isValid"
-        @click="$emit('answer-selected', 'contribution-done')"
-      >
+      <ui-button :icon-right="AngleRight" :disabled="!isValid">
         Weiter
       </ui-button>
     </div>
-  </div>
+  </form>
 </template>
 
 <script>
@@ -55,6 +51,18 @@ export default {
     AngleRight: () => AngleRight,
     SpeechBubble: () => SpeechBubble,
     maxTextMessageLength: () => 250,
+  },
+  methods: {
+    submit() {
+      this.$store.dispatch("messages/add", {
+        dialogId: this.dialog.id,
+        type: "text",
+        author: "Ich",
+        date: new Date(),
+        content: this.textMessage,
+      })
+      this.$emit("answer-selected", "contribution-done")
+    },
   },
 }
 </script>

@@ -27,6 +27,7 @@
     }
   },
   "dependencies": {
+    "date-fns": "^2.14.0",
     "endent": "^2.0.1",
     "hex-contrast-color": "^1.0.1",
     "nuxt": "^2.12.2",

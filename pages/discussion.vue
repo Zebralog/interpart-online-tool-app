@@ -11,7 +11,6 @@
 import UiOverlay from "@/components/ui-overlay"
 import UiTitle from "@/components/ui-title"
 import Discussion from "@/components/ui-discussion"
-import config from "@/config"
 
 export default {
   components: {
@@ -19,10 +18,10 @@ export default {
     UiTitle,
     Discussion,
   },
-  data: function () {
-    return {
-      messages: config.discussion,
-    }
+  computed: {
+    messages() {
+      return this.$store.getters["messages/all"]
+    },
   },
 }
 </script>

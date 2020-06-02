@@ -1,18 +1,34 @@
 <template>
-  <div v-if="message" :data-type="message.type" class="message-container">
-    <div class="content" @click="toggleMetaInfo">
+  <div
+    v-if="message"
+    :data-type="message.type"
+    :class="['message-container', { 'is-me': isMe }]"
+  >
+    <span class="date">{{ message.date | formatDate }}</span>
+    <span v-if="author" class="author">{{ author }}</span>
+    <div class="content">
       {{ message.content }}
-    </div>
-    <div class="metadata" :style="metaStyle">
-      <span class="author">{{ message.author }}</span>
-      <span class="timestamp">{{ formatDate(message.timestamp) }}</span>
-      <span class="id">#{{ message.id }}</span>
     </div>
   </div>
 </template>
 
 <script>
+import { LOGGED_IN_AUTHOR } from "@/model/constants"
+import { format, isSameDay } from "date-fns"
+
 export default {
+  filters: {
+    formatDate: (date) => {
+      const today = new Date()
+      if (isSameDay(date, today)) {
+        return format(date, "HH:mm")
+      } else if (today.getFullYear() == date.getFullYear()) {
+        return `${date.getDate()}/${date.getMonth()} - ${date.toLocaleTimeString()}`
+      } else {
+        return `${date.toLocaleDateString()} - ${date.toLocaleTimeString()}`
+      }
+    },
+  },
   props: {
     message: { type: Object, required: true },
   },
@@ -27,25 +43,14 @@ export default {
         display: this.showMeta ? `inline-block` : `none`,
       }
     },
+    author() {
+      return this.isMe ? undefined : this.message.author
+    },
+    isMe() {
+      return this.message.author === LOGGED_IN_AUTHOR
+    },
   },
   methods: {
-    formatDate(date) {
-      const ts = new Date(date)
-      const today = new Date()
-      if (ts) {
-        if (
-          today.getFullYear() == ts.getFullYear() &&
-          today.getMonth() == ts.getMonth() &&
-          today.getDate() == ts.getDate()
-        ) {
-          return `${ts.toLocaleTimeString()}`
-        } else if (today.getFullYear() == ts.getFullYear()) {
-          return `${ts.getDate()}/${ts.getMonth()} - ${ts.toLocaleTimeString()}`
-        } else {
-          return `${ts.toLocaleDateString()} - ${ts.toLocaleTimeString()}`
-        }
-      }
-    },
     toggleMetaInfo() {
       this.showMeta = !this.showMeta
       if (this.showMeta) {
@@ -68,45 +73,86 @@ export default {
   border-radius: $border-radius-md;
   border: $border;
 
+  &:not(.is-me) {
+    margin-right: 15%;
+
+    &:before {
+      left: 0;
+      transform: rotate(15deg) skewY(-35deg);
+    }
+
+    &:after {
+      left: 0;
+    }
+
+    .content {
+      padding-top: 1.5rem;
+    }
+  }
+
+  &.is-me {
+    margin-left: 15%;
+
+    &:before {
+      right: 0;
+      transform: rotate(-15deg) skewY(35deg);
+    }
+
+    &:after {
+      right: 0;
+    }
+
+    .content {
+      padding-top: 1rem;
+    }
+  }
+
   &:before {
     content: "";
     position: absolute;
-    left: 0.1rem;
-    bottom: -0.6rem;
-    width: 2.25rem;
-    height: 2.25rem;
+    bottom: -8px;
+    width: 30px;
+    height: 30px;
     border: $border;
     background: #fff;
-    transform: rotate(15deg) skewY(-35deg);
+    pointer-events: none;
   }
 
   &:after {
     content: "";
     position: absolute;
-    left: 0;
     bottom: -1px;
-    width: 2.15rem;
-    height: 0.5rem;
+    width: 27px;
+    height: 1px;
     background: #fff;
+    pointer-events: none;
   }
 
   .content {
     position: relative;
-    padding: 1em;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
     border-radius: $border-radius-md;
-    background-color: #fff;
+    background: #fff;
   }
 
-  .metadata {
-    display: inline-block;
-    padding: 0.4rem;
-    background-color: #dedede;
-    opacity: 0.7;
-    border-radius: 9px;
-    font-size: 75%;
+  .date {
     position: absolute;
-    top: 100%;
-    right: 0;
+    right: 0.5rem;
+    bottom: 0;
+    z-index: 1;
+    font-size: $font-size-8;
+    color: $color-text-light;
+  }
+
+  .author {
+    position: absolute;
+    left: 1rem;
+    top: 0.5rem;
+    z-index: 1;
+    font-size: $font-size-8;
+    color: $color-text-light;
   }
 }
 </style>

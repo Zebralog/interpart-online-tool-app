@@ -52,7 +52,7 @@ export default {
       align-items: center;
     }
     .key {
-      min-width: 2.5rem;
+      min-width: 2rem;
       font-size: $font-size-4;
     }
     .content {

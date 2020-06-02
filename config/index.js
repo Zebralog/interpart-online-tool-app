@@ -9,99 +9,6 @@ import question1Url from "./question1.jpg"
 
 export default {
   heroAlt: "Willkommen bei Wiesbaden Biebrich! Los gehts",
-  discussion: [
-    {
-      id: 1,
-      type: "text",
-      author: "User 1",
-      timestamp: "2020-04-21 10:10:10",
-      content: "lorem ipsum dolor amet",
-    },
-    {
-      id: 2,
-      type: "text",
-      author: "User 2",
-      timestamp: "2020-03-01 14:00:00",
-      content: "lorem ipsum dolor amet",
-    },
-    {
-      id: 3,
-      type: "text",
-      author: "User 1",
-      timestamp: "2020-04-21 10:10:10",
-      content: "lorem ipsum dolor amet",
-    },
-    {
-      id: 4,
-      type: "text",
-      author: "User 1",
-      timestamp: "2020-04-21 10:10:10",
-      content: "lorem ipsum dolor amet",
-    },
-    {
-      id: 5,
-      type: "text",
-      author: "User 1",
-      timestamp: "2020-04-21 10:10:10",
-      content: "lorem ipsum dolor amet",
-    },
-    {
-      id: 6,
-      type: "text",
-      author: "User 1",
-      timestamp: "2020-04-21 10:10:10",
-      content: "lorem ipsum dolor amet",
-    },
-    {
-      id: 7,
-      type: "text",
-      author: "User 1",
-      timestamp: "2020-04-21 10:10:10",
-      content: "lorem ipsum dolor amet",
-    },
-    {
-      id: 8,
-      type: "text",
-      author: "User 1",
-      timestamp: "2020-04-21 10:10:10",
-      content: "lorem ipsum dolor amet",
-    },
-    {
-      id: 9,
-      type: "text",
-      author: "User 1",
-      timestamp: "2020-04-21 10:10:10",
-      content: "lorem ipsum dolor amet",
-    },
-    {
-      id: 10,
-      type: "text",
-      author: "User 1",
-      timestamp: "2020-04-21 10:10:10",
-      content: "lorem ipsum dolor amet",
-    },
-    {
-      id: 11,
-      type: "text",
-      author: "User 1",
-      timestamp: "2020-04-21 10:10:10",
-      content: "lorem ipsum dolor amet",
-    },
-    {
-      id: 12,
-      type: "text",
-      author: "User 1",
-      timestamp: "2020-04-21 10:10:10",
-      content: "lorem ipsum dolor amet",
-    },
-    {
-      id: 13,
-      type: "text",
-      author: "User 1",
-      timestamp: "2020-04-21 10:10:10",
-      content: "lorem ipsum dolor amet",
-    },
-  ],
   informationItems: [
     {
       name: "about",
@@ -233,6 +140,24 @@ export default {
       ],
       completionMessage: "",
       askForMessage: true,
+      initial: {
+        discussion: [
+          {
+            id: 1,
+            type: "text",
+            author: "User 1",
+            date: new Date(),
+            content: "lorem ipsum dolor amet",
+          },
+          {
+            id: 2,
+            type: "text",
+            author: "User 2",
+            date: new Date(),
+            content: "lorem ipsum dolor amet",
+          },
+        ],
+      },
     },
     "2": {
       id: "2",
@@ -288,6 +213,24 @@ export default {
           ],
         },
       ],
+      initial: {
+        discussion: [
+          {
+            id: 1,
+            type: "text",
+            author: "User 1",
+            date: new Date(),
+            content: "lorem ipsum dolor amet",
+          },
+          {
+            id: 2,
+            type: "text",
+            author: "User 2",
+            date: new Date(),
+            content: "lorem ipsum dolor amet",
+          },
+        ],
+      },
     },
     "3": {
       id: "3",
@@ -343,6 +286,24 @@ export default {
           ],
         },
       ],
+      initial: {
+        discussion: [
+          {
+            id: 1,
+            type: "text",
+            author: "User 1",
+            date: new Date(),
+            content: "lorem ipsum dolor amet",
+          },
+          {
+            id: 2,
+            type: "text",
+            author: "User 2",
+            date: new Date(),
+            content: "lorem ipsum dolor amet",
+          },
+        ],
+      },
     },
     "4": {
       id: "4",
@@ -398,6 +359,24 @@ export default {
           ],
         },
       ],
+      initial: {
+        discussion: [
+          {
+            id: 1,
+            type: "text",
+            author: "User 1",
+            date: new Date(),
+            content: "lorem ipsum dolor amet",
+          },
+          {
+            id: 2,
+            type: "text",
+            author: "User 2",
+            date: new Date(),
+            content: "lorem ipsum dolor amet",
+          },
+        ],
+      },
     },
     "5": {
       id: "5",
@@ -453,6 +432,24 @@ export default {
           ],
         },
       ],
+      initial: {
+        discussion: [
+          {
+            id: 1,
+            type: "text",
+            author: "User 1",
+            date: new Date(),
+            content: "lorem ipsum dolor amet",
+          },
+          {
+            id: 2,
+            type: "text",
+            author: "User 2",
+            date: new Date(),
+            content: "lorem ipsum dolor amet",
+          },
+        ],
+      },
     },
   },
 }

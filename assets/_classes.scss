@@ -44,7 +44,7 @@
   cursor: pointer;
 
   &[disabled] {
-    color: #aaa;
+    color: #999;
   }
 
   &:hover {
@@ -56,11 +56,16 @@
   }
 
   &:not(.is-light):not(.is-small):not(.is-extra-small) {
+
     padding: 1rem 1.1rem;
     border-radius: $border-radius-md;
     box-shadow: $shadow-md;
     font-size: $font-size-5;
     font-weight: 500;
+
+    input[type=radio] + & {
+      padding-right: 2rem;
+    }
   }
 
   &.is-light {

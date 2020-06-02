@@ -3,7 +3,7 @@
 @import 'transitions/index';
 
 html {
-  font-size: 13px;
+  font-size: $font-size-base;
   font-family: Montserrat, sans-serif;
   color: $color-text;
 }

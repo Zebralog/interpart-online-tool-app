@@ -2,7 +2,7 @@
   <div class="textarea">
     <textarea
       :value="value"
-      rows="9"
+      rows="7"
       @input="$emit('input', $event.target.value)"
     />
     <span
@@ -55,7 +55,7 @@ export default {
     border: none;
     padding: 1rem;
     box-shadow: $shadow-md;
-    border: $border;
+    border: 1px solid $grey-lighter;
     border-radius: $border-radius-md;
     font-family: inherit;
     font-size: inherit;
@@ -63,6 +63,7 @@ export default {
 
     &:focus {
       outline: none;
+      border: $border;
     }
   }
 }
