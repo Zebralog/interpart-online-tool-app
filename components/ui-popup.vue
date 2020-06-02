@@ -105,20 +105,20 @@ export default {
     content: "";
     position: absolute;
     left: 50%;
-    width: 2rem;
-    height: 2rem;
+    width: 26px;
+    height: 26px;
     transform: translate(-50%) scaleX(0.7) rotate(45deg);
     background: #fff;
   }
 
   &:not(.is-bottom) .popup-triangle {
-    bottom: -1.3rem;
+    bottom: -15px;
     border-right: 3px solid;
     border-bottom: 3px solid;
   }
 
   &.is-bottom .popup-triangle {
-    top: -1.3rem;
+    top: -15px;
     border-left: 3px solid;
     border-top: 3px solid;
   }
