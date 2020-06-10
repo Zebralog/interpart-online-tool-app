@@ -15,6 +15,8 @@ Then install the dependencies using `npm install`.
 * When testing in the browser, it makes sense to use the dev tools to limit the viewport to a mobile display, since this prototype is intended to be used on smartphones only.
 
 ## Cloud Server setup
+The prototype is deployed via a Hetzner Cloud Server that Zebralog is currently evaluating. The following are the steps to reproduce a server setup:
+
 * `apt-get install git`
 * `apt-get install build-essential` (Some NPM packages use compilers to build themselves)
 * `apt-get install ufw` (Firewall)
@@ -23,3 +25,5 @@ Then install the dependencies using `npm install`.
 * Intall [NVM](https://github.com/nvm-sh/nvm)
 * `nvm install 12`
 * `npm install -g pm2` ([PM2](https://pm2.keymetrics.io/) is a process manager for production)
+
+To make adjustments to the server, you need an invitation from one of our sys admins. From there, you have to create an account and then you can create servers or add SSH keys to existing servers. Login always takes place via SSH and the server IP.
