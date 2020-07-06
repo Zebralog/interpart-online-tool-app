@@ -9,7 +9,9 @@
     "start": "nuxt start",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore --max-warnings 0 .",
     "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore --max-warnings 0 .",
-    "deploy": "npm ci && npm run build && pm2 startOrRestart ecosystem.json"
+    "deploy": "npm ci && npm run build && pm2 startOrRestart ecosystem.json",
+    "setup-city-moabit": "rm -f config/live && ln -s $(readlink -f config/moabit) config/live",
+    "setup-city-biebrich": "rm -f config/live && ln -s $(readlink -f config/biebrich) config/live"
   },
   "repository": {
     "type": "git",

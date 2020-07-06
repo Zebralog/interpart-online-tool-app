@@ -3,6 +3,9 @@
 ## Local Setup
 This project requires at least Node.js 12. When having installed Node.js via NVM, you can install multiple versions and switch between them using `nvm use <version>`.
 
+**Before installing dependencies** set the desired configuration up by symlinking the specific folder under `config/` to `config/live`;
+eg, `ln -s $(readlink -f config/moabit) config/live`
+
 Then install the dependencies using `npm install`.
 
 ## Usage
