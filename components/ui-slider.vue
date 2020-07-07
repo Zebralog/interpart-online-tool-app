@@ -1,7 +1,7 @@
 <template>
   <div class="slider">
     <transition :name="'slide-' + direction">
-      <div :key="slideIndex" class="slide">
+      <div :key="slideIndex" v-touch:swipe="swipe" class="slide">
         <div class="slide-content content" v-html="slide.content" />
         <component
           :is="slide.image"
@@ -26,6 +26,7 @@
 export default {
   props: {
     slides: { type: Array, required: true },
+    loop: { type: Boolean, required: false, default: true },
   },
   data: () => ({
     slideIndex: 0,
@@ -36,16 +37,36 @@ export default {
       return this.slides[this.slideIndex]
     },
     prevIndex() {
-      return this.slideIndex > 0 ? this.slideIndex - 1 : this.slides.length - 1
+      return this.slideIndex > 0
+        ? this.slideIndex - 1
+        : this.loop
+        ? this.slides.length - 1
+        : this.slideIndex
     },
     nextIndex() {
-      return (this.slideIndex + 1) % this.slides.length
+      return this.loop
+        ? (this.slideIndex + 1) % this.slides.length
+        : this.slideIndex < this.slides.length - 1
+        ? this.slideIndex + 1
+        : this.slideIndex
     },
   },
   methods: {
     setIndex(index) {
       this.direction = index < this.slideIndex ? "left" : "right"
       this.slideIndex = index
+    },
+    swipe(direction) {
+      console.log(direction)
+      switch (direction) {
+        case "left":
+          this.setIndex(this.nextIndex)
+          break
+        case "right":
+          this.setIndex(this.prevIndex)
+          break
+        default:
+      }
     },
   },
 }

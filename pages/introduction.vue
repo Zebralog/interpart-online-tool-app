@@ -1,6 +1,6 @@
 <template>
   <ui-dialog>
-    <ui-slider :slides="items" />
+    <ui-slider :slides="items" :loop="false" />
   </ui-dialog>
 </template>
 
