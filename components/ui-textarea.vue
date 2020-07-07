@@ -3,6 +3,7 @@
     <textarea
       :value="value"
       rows="7"
+      :placeholder="getPlaceholder"
       @input="$emit('input', $event.target.value)"
     />
     <span
@@ -21,6 +22,7 @@
 export default {
   props: {
     value: { type: String, default: "" },
+    placeholder: { type: String, default: "" },
     maxLength: { type: Number, default: 0 },
   },
   computed: {
@@ -29,6 +31,9 @@ export default {
     },
     isValid() {
       return this.value.length > 0 && this.charsLeft >= 0
+    },
+    getPlaceholder() {
+      return this.placeholder.length > 0 ? this.placeholder : ``
     },
   },
   watch: {

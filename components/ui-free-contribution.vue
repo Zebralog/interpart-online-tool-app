@@ -6,15 +6,18 @@
       :style="{ color: dialog.color }"
     />
     <div class="subtitle">
-      Schreibe eine <br />
-      <strong>Nachricht</strong>
+      Was ist dir bei diesem Thema sonst noch <br />
+      <strong>wichtig?</strong>
     </div>
     <div class="call-to-action">
-      Was möchtest du uns noch mitteilen?
+      Teil uns mit, was unbedingt in der Planung beachtet werden sollte. Dein
+      hier verfasster Beitrag wird auf der Diskussionsseite zu diesem Thema in
+      der App veröffentlicht.
     </div>
     <ui-textarea
       v-model="textMessage"
       class="textarea"
+      :placeholder="`Schreibe hier deine Nachricht`"
       :max-length="maxTextMessageLength"
       @valid-change="isValid = $event"
     />
