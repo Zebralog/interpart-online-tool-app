@@ -30,8 +30,55 @@ export default {
     {
       name: "contact",
       title: "Kontakt",
-      content:
-        "<p><strong>Bürgerverein Biebrich e.V.</strong><br/>Gaugasse 12<br/>65203 Biebrich</p><p><strong>Interpart</strong><br/>Max Mustermann<br/>0657 5887462</p><p><strong>Zebralog</strong><br/>Omid Nowzamani<br/>0228 763706 14<br/>nowzamani@zebralog.de</p>",
+      content: endent`
+	<p>Herausgeber und Anbieter im Sinne des § 5 Telemediengesetz (TMG) sowie inhaltliche Verantwortung nach §55 Abs. 2 des Rundfunkstaatsvertrages (RStV):</p>
+
+	<p>
+	<strong>Zebralog GmbH & Co KG</strong> <br />
+	Oranienburger Straße 87/89, HH <br />
+	10178 Berlin <br />
+	Tel.: +49 (0)30 - 221 8265 - 1 <br />
+	Fax: +49 (0)30 - 221 8265 - 99
+	</p>
+	<p>
+	E-Mail: info [ät] zebralog.de <br />
+	Internet: <a href='https://www.zebralog.de'>www.zebralog.de</a> <br />
+	Geschäftsführer: Matthias Trénel, Dr. Oliver Märker
+	</p>
+	<p>
+	HRA 42286 B, Amtsgericht Berlin <br />
+	UST-ID Nr: DE264536890 <br />
+	Vertretungsberechtigte Komplementärin: Zebralog Verwaltungs GmbH
+	</p>
+	<br />
+	<p>
+	<strong>Konzept, Gestaltung, Realisierung und technischer Betrieb:</strong> <br />
+	Zebralog GmbH & Co KG <br />
+	Oranienburger Straße 87/89, HH <br />
+	10178 Berlin
+	</p>
+	<p>
+	Tel.: +49 (0)30 - 221 8265 - 1 <br />
+	Fax: +49 (0)30 - 221 8265 - 99 <br />
+	E-Mail: info [ät] zebralog.de <br />
+	Internet: <a href="https://www.zebralog.de">www.zebralog.de</a>
+	</p>
+	<p>
+	Geschäftsführer: Matthias Trénel, Dr. Oliver Märker <br />
+	HRA 42286 B, Amtsgericht Berlin
+	</p>
+	<p>
+	UST-ID Nr: DE264536890 <br />
+	Vertretungsberechtigte Komplementärin: Zebralog Verwaltungs GmbH <br />
+	Technische Umsetzung der Plattform auf Basis von Drupal.
+	</p>
+	<br />
+	<p>
+	<strong>Ansprechpartner/innen:</strong> <br />
+	Keno Franke <br />
+	E-Mail: franke [ät] zebralog.de
+	</p>
+  `,
     },
   ],
   introductionItems: [
