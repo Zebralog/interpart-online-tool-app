@@ -26,7 +26,7 @@
         />
       </transition>
     </div>
-    <ui-socialbar />
+    <ui-socialbar v-if="showSocialBar" :message="socialBarMessage" />
   </div>
 </template>
 
@@ -97,6 +97,19 @@ export default {
     },
     nextIndex() {
       return (this.slideIndex + 1) % this.slides.length
+    },
+    showSocialBar() {
+      return (
+        !this.dialog.socialBarPosition ||
+        this.dialog.socialBarPosition !== `end` ||
+        this.slideIndex >= this.questions.length
+      )
+    },
+    socialBarMessage() {
+      return this.dialog.socialBarMessage &&
+        this.dialog.socialBarMessage.length > 0
+        ? this.dialog.socialBarMessage
+        : false
     },
   },
   methods: {

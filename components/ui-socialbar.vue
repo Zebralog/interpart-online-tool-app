@@ -1,16 +1,19 @@
 <template>
-  <div class="socialbar">
-    <a
-      v-for="item in items"
-      :key="item.name"
-      :aria-label="item.name"
-      :href="item.link"
-      target="_blank"
-      class="socialbar-link"
-    >
-      <icon :icon="item.icon" aria-hidden />
-    </a>
-  </div>
+  <span class="socialbar-container">
+    <span v-if="message" class="social-bar-message">{{ message }}</span>
+    <span class="socialbar">
+      <a
+        v-for="item in items"
+        :key="item.name"
+        :aria-label="item.name"
+        :href="item.link"
+        target="_blank"
+        class="socialbar-link"
+      >
+        <icon :icon="item.icon" aria-hidden />
+      </a>
+    </span>
+  </span>
 </template>
 
 <script>
@@ -22,6 +25,14 @@ import Icon from "@/components/icon"
 export default {
   components: {
     Icon,
+  },
+  props: {
+    message: {
+      type: String,
+      default: function () {
+        return ""
+      },
+    },
   },
   computed: {
     items: () => [
@@ -46,5 +57,11 @@ export default {
 .socialbar-link {
   margin: 1rem;
   font-size: $font-size-4;
+}
+
+.social-bar-message {
+  text-align: center;
+  color: $color-text-light;
+  width: 100%;
 }
 </style>

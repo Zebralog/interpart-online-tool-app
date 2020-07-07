@@ -1,28 +1,30 @@
 <template>
   <transition name="popup">
-    <div
-      v-if="value"
-      v-click-outside="clickOutsideOptions"
-      :style="{
-        borderColor: color,
-        [isBottom ? 'top' : 'bottom']: 'calc(100% + 1.5rem)',
-      }"
-      :class="{ popup: true, 'is-bottom': isBottom }"
-    >
-      <div class="popup-triangle" :style="{ borderColor: color }" />
-      <div class="popup-content">
-        <h2 class="title">
-          {{ title }}
-        </h2>
-        <h3 v-if="subtitle" class="subtitle">
-          {{ subtitle }}
-        </h3>
-        <nuxt-link v-if="linkRoute" class="action-link" :to="linkRoute">
-          {{ linkTitle }}
-          <icon :icon="AngleRightCircle" />
-        </nuxt-link>
+    <nuxt-link v-if="linkRoute" class="action-link" :to="linkRoute">
+      <div
+        v-if="value"
+        v-click-outside="clickOutsideOptions"
+        :style="{
+          borderColor: color,
+          [isBottom ? 'top' : 'bottom']: 'calc(100% + 1.5rem)',
+        }"
+        :class="{ popup: true, 'is-bottom': isBottom }"
+      >
+        <div class="popup-triangle" :style="{ borderColor: color }" />
+        <div class="popup-content">
+          <h2 class="title">
+            {{ title }}
+          </h2>
+          <h3 v-if="subtitle" class="subtitle">
+            {{ subtitle }}
+          </h3>
+          <nuxt-link v-if="linkRoute" class="action-link" :to="linkRoute">
+            {{ linkTitle }}
+            <icon :icon="AngleRightCircle" />
+          </nuxt-link>
+        </div>
       </div>
-    </div>
+    </nuxt-link>
   </transition>
 </template>
 
@@ -80,7 +82,7 @@ export default {
 .popup {
   position: absolute;
   left: 50%;
-  width: 9rem;
+  width: 20rem;
   padding: 1rem;
   background: #fff;
   border: 3px solid;
@@ -95,6 +97,7 @@ export default {
 
   .title {
     font-weight: 500;
+    margin-bottom: 0.5rem;
   }
 
   .action-link {

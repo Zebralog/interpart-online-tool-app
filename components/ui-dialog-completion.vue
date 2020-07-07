@@ -5,20 +5,21 @@
       :icon="CheckmarkBig"
       :style="{ color: dialog.color }"
     />
+
     <div class="confirmation">
       <template v-if="isDone">
-        <div><strong>Danke!</strong></div>
-        Deine Nachricht
-        <br />
-        wurde gesendet.
+        <div><strong>Vielen Dank </strong></div>
+        für deine Abstimmung für eine gemeinsam gestaltete Stadt der Zukunft!
+        Deine Stimme fließt jetzt in die Planung der Kreuzung mit ein.
       </template>
       <template v-else>
-        <div><strong>Danke</strong></div>
-        für deine Teilnahme!
+        <div><strong>Vielen Dank </strong></div>
+        für deine Abstimmung für eine gemeinsam gestaltete Stadt der Zukunft!
+        Deine Stimme fließt jetzt in die Planung der Kreuzung mit ein.
       </template>
     </div>
 
-    <div>
+    <div v-if="false">
       <ui-button
         tag="nuxt-link"
         variant="small"
@@ -30,13 +31,18 @@
     </div>
     <div v-if="askForMessage">
       <div class="contribution">
-        Dir liegt noch etwas auf dem Herzen?<br />Dann teil es uns mit!
+        Möchtest du sonst noch was dazu sagen?
       </div>
-      <ui-button
-        :icon-right="AngleRight"
-        @click="$emit('answer-selected', 'contribution')"
-      >
-        Weiter
+
+      <ui-button @click="$emit('answer-selected', 'contribution')">
+        Dann hier entlang!
+      </ui-button>
+
+      <br />
+      <br />
+      <ui-button tag="nuxt-link" :to="{ name: `map` }">
+        Ansonsten geht's hier wieder zur Übersichtskarte und weiteren
+        Stadtthemen, die deine Perspektive brauchen
       </ui-button>
     </div>
   </div>

@@ -5,7 +5,7 @@ import Introduction3 from "./introduction3.svg"
 import Introduction4 from "./introduction4.svg"
 import Introduction5 from "./introduction5.svg"
 import Introduction6 from "./introduction6.svg"
-import question1Url from "./question1.jpg"
+import question1Url from "./question1.png"
 
 export default {
   heroAlt: "Willkommen bei Wiesbaden Biebrich! Los gehts",
@@ -38,34 +38,33 @@ export default {
   introductionItems: [
     {
       content: endent`
-        Hallo, hier ist studio biebrich – das Mitmachformat von INTERPART.<br/>
-        Wir wollen deine Meinung zu Sicherheit und Fortbewegung in Biebrich. So machst du mit!
+        Hallo und willkommen beim studio biebrich - Mitmachformat von INTERPART für die Gestaltung einer sicheren (Fort-) Bewegung in Biebrich. <br/><br/>
+        Dafür ist das Fachwissen von Stadtplanern und Stadtplanerinnen genauso wichtig, wie Erfahrungs- und Alltagswissen von Stadtnutzern und Stadtnutzerinnen.<br/><br/>
+        Und so machst du mit...
       `,
       image: Introduction1,
     },
     {
       content: endent`
-        Gerne würden wir über die App deine Meinung zu Mobilität in Biebrich erfahren.
-        In mehreren Spaces kannst du deine Meinung sagen. 
+        Konkret geht es um deine Meinung zu den Möglichkeiten, sich in Biebrich zu bewegen. 
+        Was funktioniert gut? Was nicht so gut und welche Vorschläge hast du für die Zukunft der Mobilität in Biebrich?
       `,
       image: Introduction2,
     },
     {
       content: endent`
-        In den Spaces findest du die jeweiligen Themenfelder, zu der wir dich brauchen.
-        Wo soll der neue Basketballplatz entstehen? Was brauchst du für Sportgeräte im Park?
+        Auch Biebrich verändert sich als Stadt - Hier kannst du deine Perspektive & Meinung einbringen und damit Biebrich aktiv mitgestalten!
       `,
       image: Introduction3,
     },
     {
       content:
-        "Auf der Übersichtskarte von Moabit kannst du dich in die jeweiligen Spaces klicken und in mehreren Leveln, ganz unterschiedlich, deine Meinung sagen.",
+        "Auf der Übersichtskarte siehst du, wo sich Biebrich grade verändert. Du kannst über (Veränderungs-) Vorschläge abstimmen, deine Bedürfnisse und Ideen äußern oder eigene Vorschläge machen.",
       image: Introduction4,
     },
     {
       content: endent`
-        In der unteren Leiste hast du 3 Grundfunktionen.
-        Da findest du weitere Informationen zu unserem Projekt und die Kommentare der weiteren Nutzer.
+        In der unteren Leiste findest du drei Grundfunktionen zur schnellen Navigation: Informationen zum studio biebrich – Mitmachformat, die Übersichtskarte und die Beiträge der anderen Nutzer und Nutzerinnen, die ihre Meinungen eingebracht haben.
       `,
       image: Introduction5,
     },
@@ -74,9 +73,9 @@ export default {
         <div class="is-size-5 text-center">
           <p class="pb-1">
             <strong>Alles verstanden?</strong><br/>
-            Dann kann es ja losgehen
           </p>
-          <p><a class="button" href="/map">Los gehts!</a></p>
+          <p><a class="button" href="/information">Nein, ich möchte mehr erfahren!</a></p>
+          <p><a class="button" href="/map">Ja, ich will jetzt mitmachen!</a></p>
         </div>
       `,
       image: Introduction6,
@@ -161,28 +160,28 @@ export default {
     },
     "2": {
       id: "2",
-      title: "Situation 2",
+      title: "Verkehrssituation an der Galatea-Anlage",
       trigger: {
         x: 63,
         y: 7,
       },
-      subtitle: "sicut dolor amet",
+      subtitle: "",
+      buttonLabel:
+        "Stimme jetzt darüber ab, wie die Kreuzung gestaltet sein sollte.",
       color: "#cc76af",
+      socialBarPosition: "end",
+      socialBarMessage:
+        "Teile deine Abstimmung mit deinen Freunden und gestaltet zusammen euer Biebrich der Zukunft!",
       questions: [
         {
           type: "emoji",
           image: question1Url,
-          question: "Was denkst du, wenn du dieses Bield siehst?",
+          question:
+            "Stell dir vor, du musst über die Kreuzung – Was ist für dich am wichtigsten, um gut und sicher auf die andere Seite zu kommen?",
           answers: [
-            { emoji: "😬", value: "grimacing" },
-            { emoji: "😠", value: "angry" },
-            { emoji: "🙂", value: "slightly-smiling" },
-            {
-              emoji: "😰",
-              value: "cold-sweat",
-            },
-            { emoji: "😍", value: "love" },
             { emoji: "😕", value: "confused" },
+            { emoji: "🙂", value: "slightly-smiling" },
+            { emoji: "😠", value: "angry" },
           ],
         },
         {
@@ -201,7 +200,7 @@ export default {
             },
             {
               key: "B",
-              content: "Weniger autos, mehr Fahrradwege",
+              content: "Weniger Autos und mehr Fahrradwege",
               value: "fahrradwege",
             },
             { key: "C", content: "Zebrastreifen", value: "zebra" },
@@ -213,6 +212,8 @@ export default {
           ],
         },
       ],
+      completionMessage: "",
+      askForMessage: true,
       initial: {
         discussion: [
           {
@@ -307,28 +308,24 @@ export default {
     },
     "4": {
       id: "4",
-      title: "Situation 4",
+      title: "Bewegung und Aufenthalt im Park",
       trigger: {
         x: 56,
         y: 45,
       },
       subtitle: "",
+      buttonlabel: "Los geht’s",
       color: "#A9D9E7",
       questions: [
         {
           type: "emoji",
           image: question1Url,
-          question: "Was denkst du, wenn du dieses Bield siehst?",
+          question:
+            "Stell dir vor, du bist in der Robert-Krekel-Anlage unterwegs – Was ist für dich in dem Park am wichtigsten, damit du dich wohlfühlst?",
           answers: [
-            { emoji: "😬", value: "grimacing" },
-            { emoji: "😠", value: "angry" },
-            { emoji: "🙂", value: "slightly-smiling" },
-            {
-              emoji: "😰",
-              value: "cold-sweat",
-            },
-            { emoji: "😍", value: "love" },
             { emoji: "😕", value: "confused" },
+            { emoji: "🙂", value: "slightly-smiling" },
+            { emoji: "😠", value: "angry" },
           ],
         },
         {
@@ -342,23 +339,27 @@ export default {
           answers: [
             {
               key: "A",
-              content: "Gute Beleuchtung",
+              content: "Guter Bodenbelag zum durchfahren",
               value: "good",
             },
             {
               key: "B",
-              content: "Weniger autos, mehr Fahrradwege",
+              content: "Spiel- und Sportstätten für alle Generationen",
               value: "fahrradwege",
             },
             { key: "C", content: "Zebrastreifen", value: "zebra" },
             {
               key: "D",
-              content: "Niedrige Bordsteinkanten",
+              content: "Ruheorte",
               value: "bordsteinkanten",
             },
           ],
         },
       ],
+      completionMessage: "",
+      askForMessage: true,
+      socialBarMessage:
+        "Teile deine Abstimmung mit deinen Freunden und gestaltet zusammen euer Biebrich der Zukunft!",
       initial: {
         discussion: [
           {
