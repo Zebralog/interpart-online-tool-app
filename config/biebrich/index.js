@@ -14,7 +14,7 @@ export default {
       name: "about",
       title: "Über das Projekt",
       content:
-        "<p>Ich dann im hohen Grase am fallenden Bache liege, und näher an <strong>der Erde tausend</strong> mannigfaltige Gräschen mir merkwürdig werden;</p><p>Wenn ich das <strong>Wimmeln</strong> der kleinen Welt zwischen Halmen, die unzähligen, unergründlichen Gestalten der Würmchen, der Mückchen näher an meinem Herzen fühle, und fühle die Gegenwart.</p>",
+        "<p>studio biebrich ist der Name der Mitmach-Formate von dem Forschungsprojekt Interpart. Das Forschungsprojekt möchte gemeinsam mit der Wiesbadener Verwaltung herausfinden, wie sich zukünftig möglichst alle Stadtbewohner und Stadtbewohnerinnen besser in Themen der Stadtentwicklung einbringen können. Denn: Für die Entwicklung unserer Stadt sind alle Meinungen wichtig!</p><p>Mehr Informationen erhälst du auf studio biebrich.</p>",
     },
     {
       name: "goals",
