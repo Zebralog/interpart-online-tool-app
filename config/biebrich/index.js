@@ -24,9 +24,8 @@ export default {
     },
     {
       name: "how-to",
-      title: "Wie bediene ich das Tool?",
-      content:
-        "<p>das Wehen des Alliebenden, der uns in ewiger Wonne schwebend trägt und erhält; mein Freund! Aber ich gehe darüber zugrunde, ich erliege unter der <strong>Gewalt der Herrlichkeit</strong> dieser Erscheinungen.</p><p>Oder sieh dir einfach <strong>Tutorial</strong> an.</p>",
+      title: "FAQ",
+      content: `<p>Bei Fragen zur Navigation, schau’ dir doch das Intro nochmal an oder wende dich an den Support (Kontaktdaten hier in den Informationen unter “Kontakt”)</p>`,
     },
     {
       name: "contact",
