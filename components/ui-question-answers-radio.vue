@@ -3,15 +3,34 @@
     <label
       v-for="(answer, index) in answers"
       :key="index"
-      class="answer radio"
-      @click="saveAndNext(answer.value)"
+      :class="{ answer: true, radio: true, selected: answer.value == choice }"
+      @click="selectAnswer(answer.value)"
     >
-      <input class="input" type="radio" name="answer" />
+      <input
+        class="input"
+        type="radio"
+        name="answer"
+        :value="answer.value"
+        :checked="answer.value === choice"
+      />
       <span class="button">
         <span class="key">{{ answer.key }}</span>
         <span class="content">{{ answer.content }}</span>
       </span>
     </label>
+    <ui-button
+      variant="extra-small"
+      :class="{
+        button: true,
+        isExtraSmall: true,
+        weiter: true,
+        disabled: !choice || choice.length == 0,
+      }"
+      :disabled="!choice || choice.length == 0"
+      @click="saveAndNext()"
+    >
+      Weiter
+    </ui-button>
   </div>
 </template>
 
@@ -22,13 +41,17 @@ export default {
     answers: { type: Array, required: true },
   },
   data: () => ({
-    answer: null,
+    choice: null,
   }),
   computed: {},
   methods: {
-    saveAndNext(value) {
-      this.answer = value
-      this.$emit("answer-selected", this.answer)
+    saveAndNext() {
+      if (this.choice && this.choice.length > 0) {
+        this.$emit("answer-selected", this.choice)
+      }
+    },
+    selectAnswer(value) {
+      this.choice = value
     },
   },
 }
@@ -42,10 +65,28 @@ export default {
   flex-direction: column;
   margin: -0.5rem;
 
+  .button.weiter {
+    color: black;
+    opacity: 1;
+    display: inline-block;
+    font-weight: bolder;
+    text-align: right;
+
+    &.disabled {
+      color: #999;
+      opacity: 0.5;
+    }
+  }
+
   .answer.radio {
     display: block;
     position: relative;
     margin: 0.5rem;
+
+    &.selected,
+    &.selected > span.button {
+      background-color: lightgoldenrodyellow;
+    }
 
     .button {
       display: flex;
