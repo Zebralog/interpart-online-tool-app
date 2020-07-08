@@ -1,9 +1,11 @@
 <template>
   <div>
     <ui-image
-      v-if="question.image"
+      v-if="typeof question.image == 'object'"
       variant="exposed"
-      :src="question.image"
+      :src="question.image.src"
+      :alt="question.image.alt"
+      :title="question.image.title"
       class="question-image"
     />
     <div :class="['question-question', { 'has-content': content }]">

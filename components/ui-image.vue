@@ -1,11 +1,13 @@
 <template>
-  <img :class="['image', 'is-' + variant]" />
+  <img :class="['image', 'is-' + variant]" :alt="alt" :title="title" />
 </template>
 
 <script>
 export default {
   props: {
     variant: { type: String, default: "normal" },
+    alt: { type: String, default: "", required: false },
+    title: { type: String, default: "", required: false },
   },
 }
 </script>

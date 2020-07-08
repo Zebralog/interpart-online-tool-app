@@ -88,31 +88,51 @@ export default {
         Dafür ist das Fachwissen von Stadtplanern und Stadtplanerinnen genauso wichtig, wie Erfahrungs- und Alltagswissen von Stadtnutzern und Stadtnutzerinnen.<br/><br/>
         Und so machst du mit...
       `,
-      image: Introduction1,
+      image: {
+        src: Introduction1,
+        alt: "Hallo und willkommen beim studio biebrich ...",
+        title: "Hallo und willkommen beim studio biebrich ...",
+      },
     },
     {
       content: endent`
         Konkret geht es um deine Meinung zu den Möglichkeiten, sich in Biebrich zu bewegen. 
         Was funktioniert gut? Was nicht so gut und welche Vorschläge hast du für die Zukunft der Mobilität in Biebrich?
       `,
-      image: Introduction2,
+      image: {
+        src: Introduction2,
+        alt: "Konkret geht es um deine Meinung ...",
+        title: "Konkret geht es um deine Meinung ...",
+      },
     },
     {
       content: endent`
         Auch Biebrich verändert sich als Stadt - Hier kannst du deine Perspektive & Meinung einbringen und damit Biebrich aktiv mitgestalten!
       `,
-      image: Introduction3,
+      image: {
+        src: Introduction3,
+        alt: "Auch Biebrich verändert sich als Stadt ...",
+        title: "Auch Biebrich verändert sich als Stadt ...",
+      },
     },
     {
       content:
         "Auf der Übersichtskarte siehst du, wo sich Biebrich grade verändert. Du kannst über (Veränderungs-) Vorschläge abstimmen, deine Bedürfnisse und Ideen äußern oder eigene Vorschläge machen.",
-      image: Introduction4,
+      image: {
+        src: Introduction4,
+        alt: "Auf der Übersichtskarte siehst du ...",
+        title: "Auf der Übersichtskarte siehst du ...",
+      },
     },
     {
       content: endent`
         In der unteren Leiste findest du drei Grundfunktionen zur schnellen Navigation: Informationen zum studio biebrich – Mitmachformat, die Übersichtskarte und die Beiträge der anderen Nutzer und Nutzerinnen, die ihre Meinungen eingebracht haben.
       `,
-      image: Introduction5,
+      image: {
+        src: Introduction5,
+        alt: "In der unteren Leiste ...",
+        title: "In der unteren Leiste ...",
+      },
     },
     {
       content: endent`
@@ -141,7 +161,11 @@ export default {
       questions: [
         {
           type: "emoji",
-          image: question1Url,
+          image: {
+            src: question1Url,
+            alt: "Was denkst du, wenn du  ...",
+            title: "Was denkst du, wenn du ...",
+          },
           question: "Was denkst du, wenn du dieses Bield siehst?",
           answers: [
             { emoji: "😬", value: "grimacing" },
@@ -221,7 +245,11 @@ export default {
       questions: [
         {
           type: "emoji",
-          image: question1Url,
+          image: {
+            src: question1Url,
+            alt: "Stell dir vor, du musst  ...",
+            title: "Stell dir vor, du musst ...",
+          },
           question:
             "Stell dir vor, du musst über die Kreuzung – Was ist für dich am wichtigsten, um gut und sicher auf die andere Seite zu kommen?",
           answers: [
@@ -291,7 +319,11 @@ export default {
       questions: [
         {
           type: "emoji",
-          image: question1Url,
+          image: {
+            src: question1Url,
+            alt: "Was denkst du, wenn du ...",
+            title: "Was denkst du, wenn du ...",
+          },
           question: "Was denkst du, wenn du dieses Bield siehst?",
           answers: [
             { emoji: "😬", value: "grimacing" },
@@ -365,7 +397,11 @@ export default {
       questions: [
         {
           type: "emoji",
-          image: question1Url,
+          image: {
+            src: question1Url,
+            alt: "Stell dir vor, du bist in der ...",
+            title: "Stell dir vor, du bist in der ...",
+          },
           question:
             "Stell dir vor, du bist in der Robert-Krekel-Anlage unterwegs – Was ist für dich in dem Park am wichtigsten, damit du dich wohlfühlst?",
           answers: [
@@ -437,7 +473,11 @@ export default {
       questions: [
         {
           type: "emoji",
-          image: question1Url,
+          image: {
+            src: question1Url,
+            alt: "Was denkst du, wenn du dieses Bield ...",
+            title: "Was denkst du, wenn du dieses Bield ...",
+          },
           question: "Was denkst du, wenn du dieses Bield siehst?",
           answers: [
             { emoji: "😬", value: "grimacing" },

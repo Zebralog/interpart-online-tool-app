@@ -4,7 +4,9 @@
       <div :key="slideIndex" v-touch:swipe="swipe" class="slide">
         <div class="slide-content content" v-html="slide.content" />
         <component
-          :is="slide.image"
+          :is="slide.image.src"
+          :alt="slide.image.alt"
+          :title="slide.image.title"
           class="slide-image"
           @click="setIndex(nextIndex)"
         />
