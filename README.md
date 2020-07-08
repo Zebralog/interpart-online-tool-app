@@ -6,6 +6,10 @@ This project requires at least Node.js 12. When having installed Node.js via NVM
 **Before installing dependencies** set the desired configuration up by symlinking the specific folder under `config/` to `config/live`;
 eg, `ln -s $(readlink -f config/moabit) config/live`
 
+in general,
+
+`ln -s [selected configuration folder path] config/live`
+
 Then install the dependencies using `npm install`.
 
 ## Usage
