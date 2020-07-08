@@ -3,7 +3,7 @@
     <textarea
       :value="value"
       rows="7"
-      :placeholder="getPlaceholder"
+      :placeholder="placeholder"
       @input="$emit('input', $event.target.value)"
     />
     <span
@@ -31,9 +31,6 @@ export default {
     },
     isValid() {
       return this.value.length > 0 && this.charsLeft >= 0
-    },
-    getPlaceholder() {
-      return this.placeholder.length > 0 ? this.placeholder : ``
     },
   },
   watch: {
