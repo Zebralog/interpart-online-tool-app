@@ -3,9 +3,9 @@
     <ui-image
       v-if="typeof question.image == 'object'"
       variant="exposed"
-      :src="question.image.src"
-      :alt="question.image.alt"
-      :title="question.image.title"
+      :src="question.image ? question.image.src : ``"
+      :alt="question.image ? question.image.alt : ``"
+      :title="question.image ? question.image.title : ``"
       class="question-image"
     />
     <div :class="['question-question', { 'has-content': content }]">
