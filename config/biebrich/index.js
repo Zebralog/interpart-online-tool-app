@@ -273,9 +273,9 @@ export default {
           type: "radio",
           image: null,
           question: {
-            title: "Okay aber jetzt nochmal genau...",
+            title: "",
             content:
-              "stell dir vor, du sollst diese Straße uberqueren. Was ware dich wirtig?",
+              "Stell dir vor, du musst über die Kreuzung – Was ist für dich am wichtigsten, um gut und sicher auf die andere Seite zu kommen?",
           },
           answers: [
             {
@@ -430,12 +430,12 @@ export default {
           ],
         },
         {
-          type: "radio",
+          type: "multiple",
           image: null,
           question: {
-            title: "Okay aber jetzt nochmal genau...",
+            title: "",
             content:
-              "stell dir vor, du sollst diese Straße uberqueren. Was ware dich wirtig?",
+              "Stell dir vor, du bist in der Robert-Krekel-Anlage unterwegs – Was ist für dich in dem Park am wichtigsten, damit du dich wohlfühlst?",
           },
           answers: [
             {
@@ -448,7 +448,7 @@ export default {
               content: "Spiel- und Sportstätten für alle Generationen",
               value: "fahrradwege",
             },
-            { key: "C", content: "Zebrastreifen", value: "zebra" },
+            { key: "C", content: "Beleuchtete Wege", value: "zebra" },
             {
               key: "D",
               content: "Ruheorte",

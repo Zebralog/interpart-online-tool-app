@@ -16,7 +16,7 @@
       :is="answerComponents[question.type]"
       v-if="question && question.answers"
       :answers="question.answers"
-      @answer-selected="$emit('answer-selected', $event)"
+      @answer-selected="handleAnswer"
     />
   </div>
 </template>
@@ -25,6 +25,7 @@
 import UiImage from "@/components/ui-image"
 import AnswersEmoji from "@/components/ui-question-answers-emoji"
 import AnswersRadio from "@/components/ui-question-answers-radio"
+import AnswersRadioMultiple from "@/components/ui-question-answers-radio-multiple"
 
 export default {
   components: {
@@ -47,7 +48,15 @@ export default {
     answerComponents: () => ({
       emoji: AnswersEmoji,
       radio: AnswersRadio,
+      multiple: AnswersRadioMultiple,
     }),
+  },
+  methods: {
+    handleAnswer(answer) {
+      console.log(`ANSWERED!`)
+      console.log(answer)
+      this.$emit("answer-selected", answer)
+    },
   },
 }
 </script>
