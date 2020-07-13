@@ -7,6 +7,15 @@ import Introduction5 from "./introduction5.svg"
 import Introduction6 from "./introduction6.svg"
 import question1Url from "./question1.png"
 
+import IconStreetLightPark from "@/config/live/street-light-park.svg"
+import IconPedestrianCrossing from "@/config/live/pedestrian-crossing.svg"
+import IconCurb from "@/config/live/curb.svg"
+import IconBikeLane from "@/config/live/bike-lane.svg"
+// import IconStreetLight from "@/config/live/street-light.svg"
+// import IconParkWithBench from "@/config/live/park-with-bench.svg"
+// import IconGymSport from "@/config/live/gym-sport-fueralle.svg"
+// import IconElection from "@/config/live/election.svg"
+
 export default {
   heroAlt: "Willkommen bei Wiesbaden Biebrich! Los gehts",
   informationItems: [
@@ -192,12 +201,14 @@ export default {
               key: "A",
               content: "Gute Beleuchtung",
               value: "good",
+              icon: IconStreetLightPark,
             },
             { key: "B", content: "Zebrastreifen", value: "zebra" },
             {
               key: "C",
               content: "Weniger autos, mehr Fahrradwege",
               value: "fahrradwege",
+              icon: IconBikeLane,
             },
             {
               key: "D",
@@ -240,8 +251,7 @@ export default {
         "Stimme jetzt darüber ab, wie die Kreuzung gestaltet sein sollte.",
       color: "#cc76af",
       socialBarPosition: "end",
-      socialBarMessage:
-        "Teile deine Abstimmung mit deinen Freunden und gestaltet zusammen euer Biebrich der Zukunft!",
+      socialBarMessage: "Teile deine Abstimmung mit deinen Freunden!",
       questions: [
         {
           type: "emoji",
@@ -271,17 +281,25 @@ export default {
               key: "A",
               content: "Gute Beleuchtung",
               value: "good",
+              icon: IconStreetLightPark,
             },
             {
               key: "B",
               content: "Weniger Autos und mehr Fahrradwege",
               value: "fahrradwege",
+              icon: IconBikeLane,
             },
-            { key: "C", content: "Zebrastreifen", value: "zebra" },
+            {
+              key: "C",
+              content: "Zebrastreifen",
+              value: "zebra",
+              icon: IconPedestrianCrossing,
+            },
             {
               key: "D",
               content: "Niedrige Bordsteinkanten",
               value: "bordsteinkanten",
+              icon: IconCurb,
             },
           ],
         },
@@ -440,8 +458,7 @@ export default {
       ],
       completionMessage: "",
       askForMessage: true,
-      socialBarMessage:
-        "Teile deine Abstimmung mit deinen Freunden und gestaltet zusammen euer Biebrich der Zukunft!",
+      socialBarMessage: "Teile deine Abstimmung mit deinen Freunden!",
       initial: {
         discussion: [
           {

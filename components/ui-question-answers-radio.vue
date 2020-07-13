@@ -14,36 +14,48 @@
         :checked="answer.value === choice"
       />
       <span class="button">
+        <span v-if="answer.icon" class="icon-container">
+          <icon :icon="answer.icon" :size="`medium`" aria-hidden />
+        </span>
         <span class="key">{{ answer.key }}</span>
         <span class="content">{{ answer.content }}</span>
       </span>
     </label>
-    <ui-button
-      variant="extra-small"
-      :class="{
-        button: true,
-        isExtraSmall: true,
-        weiter: true,
-        disabled: !choice || choice.length == 0,
-      }"
-      :disabled="!choice || choice.length == 0"
-      @click="saveAndNext()"
-    >
-      Weiter
-    </ui-button>
+    <div class="weiter-button-container">
+      <ui-button
+        variant="extra-small"
+        :icon-right="AngleRightCircle"
+        :class="{
+          button: true,
+          isExtraSmall: true,
+          weiter: true,
+          disabled: !choice || choice.length === 0,
+        }"
+        :disabled="!choice || choice.length === 0"
+        @click="saveAndNext()"
+      >
+        Weiter
+      </ui-button>
+    </div>
   </div>
 </template>
 
 <script>
+import UiButton from "@/components/ui-button"
+import Icon from "@/components/icon"
+import AngleRightCircle from "@/assets/angle-right-circle.svg"
+
 export default {
-  components: {},
+  components: { UiButton, Icon },
   props: {
     answers: { type: Array, required: true },
   },
   data: () => ({
     choice: null,
   }),
-  computed: {},
+  computed: {
+    AngleRightCircle: () => AngleRightCircle,
+  },
   methods: {
     saveAndNext() {
       if (this.choice && this.choice.length > 0) {
@@ -64,6 +76,11 @@ export default {
   display: flex;
   flex-direction: column;
   margin: -0.5rem;
+
+  .weiter-button-container {
+    margin-left: auto;
+    margin-right: 0;
+  }
 
   .button.weiter {
     color: black;
@@ -92,6 +109,9 @@ export default {
       display: flex;
       align-items: center;
     }
+    .icon-container {
+      min-width: 3rem;
+    }
     .key {
       min-width: 2rem;
       font-size: $font-size-4;
@@ -109,6 +129,7 @@ export default {
       height: 1rem;
       background: $grey-lightest;
       border-radius: 100%;
+      display: none;
 
       &:checked {
         background: $grey;
