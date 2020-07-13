@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="place"
+    v-if="place && !place.disabled"
     v-click-outside="clickOutsidePin"
     :style="elementStyle"
     :class="['map-place', { 'is-popup-open': isPopupOpen }]"

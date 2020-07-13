@@ -161,6 +161,7 @@ export default {
     // for emoji codes look into plugin's collection data file, es. node_modules/emoji-mart-vue/data/apple.json
     "1": {
       id: "1",
+      disabled: true,
       title: "Situation 1 - Verkehr in Biebrich",
       trigger: {
         x: 29,
@@ -328,6 +329,7 @@ export default {
     },
     "3": {
       id: "3",
+      disabled: true,
       title: "Situation 3",
       trigger: {
         x: 78,
@@ -481,6 +483,7 @@ export default {
     },
     "5": {
       id: "5",
+      disabled: true,
       title: "Situation 5 - Lorem Ipsum III",
       trigger: {
         x: 35,
