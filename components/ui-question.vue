@@ -53,8 +53,6 @@ export default {
   },
   methods: {
     handleAnswer(answer) {
-      console.log(`ANSWERED!`)
-      console.log(answer)
       this.$emit("answer-selected", answer)
     },
   },
