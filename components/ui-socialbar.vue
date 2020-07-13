@@ -63,5 +63,7 @@ export default {
   text-align: center;
   color: $color-text-light;
   width: 100%;
+  display: block;
+  font-size: 0.8rem;
 }
 </style>

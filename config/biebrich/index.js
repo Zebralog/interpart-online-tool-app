@@ -150,6 +150,7 @@ export default {
             <strong>Alles verstanden?</strong><br/>
           </p>
           <p><a class="button" href="/information">Nein, ich möchte mehr erfahren!</a></p>
+          <br />
           <p><a class="button" href="/map">Ja, ich will jetzt mitmachen!</a></p>
         </div>
       `,
@@ -261,7 +262,7 @@ export default {
             title: "Stell dir vor, du musst ...",
           },
           question:
-            "Stell dir vor, du musst über die Kreuzung – Was ist für dich am wichtigsten, um gut und sicher auf die andere Seite zu kommen?",
+            "Welcher Emoji passt am besten zu deiner Stimmung, wenn du dir das Bild anguckst?",
           answers: [
             { emoji: "😕", value: "confused" },
             { emoji: "🙂", value: "slightly-smiling" },
