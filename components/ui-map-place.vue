@@ -13,11 +13,12 @@
       :link-route="{ name: 'dialog.id', params: { id: place.id } }"
     />
     <button
+      v-click-outside="clickOutsidePin"
       type="button"
       class="map-place-button"
       :aria-label="place.title"
       :style="{ fontSize: '4.5rem', color: place.color }"
-      @click="isPopupOpen = true"
+      @click="clickOnPin"
     >
       <icon :icon="Pin" />
     </button>
@@ -49,6 +50,16 @@ export default {
           this.place.trigger.y > 0 ? "+" : "-"
         } ${Math.abs(this.place.trigger.y)}vw)`,
       }
+    },
+  },
+  methods: {
+    clickOnPin() {
+      this.isPopupOpen = true
+      this.$emit("map-popup-opened")
+    },
+    clickOutsidePin() {
+      this.isPopupOpen = false
+      this.$emit("map-popup-closed")
     },
   },
 }

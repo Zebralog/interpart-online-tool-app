@@ -1,6 +1,15 @@
 <template>
-  <div v-if="places" class="map-places-container">
-    <Place v-for="place in places" :key="place.id" :place="place" />
+  <div
+    v-if="places"
+    :class="{ 'map-places-container': true, 'has-open-popup': hasOpenPopup }"
+  >
+    <Place
+      v-for="place in places"
+      :key="place.id"
+      :place="place"
+      @map-popup-opened="hasOpenPopup = true"
+      @map-popup-closed="hasOpenPopup = false"
+    />
   </div>
 </template>
 
@@ -19,6 +28,9 @@ export default {
       },
     },
   },
+  data: () => ({
+    hasOpenPopup: false,
+  }),
 }
 </script>
 

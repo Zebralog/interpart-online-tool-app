@@ -1,0 +1,8 @@
+.has-open-popup {
+  .map-place {
+    opacity: 0.3;
+  }
+  .map-place.is-popup-open {
+    opacity: 1;
+  }
+}

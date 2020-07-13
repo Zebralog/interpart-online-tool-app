@@ -33,7 +33,12 @@ export default {
       },
     ],
   },
-  css: ["reset-css", "typeface-montserrat", "assets/style.scss"],
+  css: [
+    "reset-css",
+    "typeface-montserrat",
+    "assets/style.scss",
+    "assets/custom.scss",
+  ],
   router: {
     routeNameSplitter: ".",
     linkActiveClass: "is-active",
