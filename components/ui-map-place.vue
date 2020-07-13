@@ -1,6 +1,7 @@
 <template>
   <div
     v-if="place"
+    v-click-outside="clickOutsidePin"
     :style="elementStyle"
     :class="['map-place', { 'is-popup-open': isPopupOpen }]"
   >
@@ -13,7 +14,6 @@
       :link-route="{ name: 'dialog.id', params: { id: place.id } }"
     />
     <button
-      v-click-outside="clickOutsidePin"
       type="button"
       class="map-place-button"
       :aria-label="place.title"
