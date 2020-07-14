@@ -11,8 +11,12 @@
 
     <div class="confirmation">
       <template v-if="isDone">
-        <div><strong>Danke</strong></div>
-        <div>für deine Teilnahme!</div>
+        <div><strong>Vielen Dank</strong></div>
+        <div>
+          für deinen Beitrag zu einer gemeinsam gestalteten Stadt der Zukunft!
+          Dein Beitrag erscheint nun auf der Diskussionsseite, wo du dir auch
+          die Beiträge der anderen Nutzer und Nutzerinnen anschauen kannst.
+        </div>
       </template>
       <template v-else>
         <div><strong>Danke</strong></div>
