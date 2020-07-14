@@ -91,6 +91,30 @@ export default {
 	</p>
   `,
     },
+    {
+      name: "datenschutz",
+      title: "Datenschutz",
+      content: endent`
+	<p><strong>Weiterverwendung von Inhalten:</strong></p>
+    <p>Die auf der Website eingesetzten Texte, Fotos, Videos und Navigations-Grafiken dürfen ausschließlich im direkten Zusammenhang mit diesem Beteiligungsverfahren abgebildet werden. 
+    Falls Sie Inhalte von den durch die Organisatoren eingestellten Informationen weiterverwenden möchten, 
+    fragen Sie bitte die oben genannten Herausgeber der Beteiligungsplattform, in welcher Form eine Nutzung möglich ist.
+    </p>
+    <p><strong>Haftungsausschluss:</strong></p>
+    <p>Die Organisatoren dieses Projekts haben stets die Richtigkeit, Vollständigkeit und Aktualität der auf diesem Online-Angebot bereitgestellten redaktionellen 
+    Informationen zum Ziel. Dennoch können Fehler und Unklarheiten nicht ausgeschlossen werden. 
+    Für Schäden, die durch die Nutzung der zur Verfügung gestellten Informationen oder Daten oder durch die Nutzung 
+    fehlerhafter bzw. unvollständiger Informationen oder Daten verursacht werden, wird keine Haftung übernommen. 
+    Die inhaltliche Verantwortung für die eingestellten redaktionellen Inhalte liegt bei der Amprion GmbH. 
+    Für die Richtigkeit von Dritten erstellten Inhalte auf diesem Online-Angebot (bspw. Beiträge von Nutzenden) sind die jeweiligen 
+    Urheber verantwortlich.
+    </p>
+    <p>Soweit auf diesem Online-Angebot durch redaktionelle Informationen ein Zugang zu fremden Inhalten, etwa in Form von Links, 
+    vermittelt wird, die von anderen Anbietern bereitgestellt werden, wird darauf hingewiesen, dass wir auf diese fremden Inhalte keinen Einfluss haben,
+    wir somit keine Haftung für diese Inhalte übernehmen und uns diese Inhalte auch nicht zu eigen machen.
+	</p>
+  `,
+    },
   ],
   introductionItems: [
     {
