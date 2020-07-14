@@ -49,7 +49,10 @@
         <br />
         Dann teil es uns mit!
       </div>
-      <ui-button tag="nuxt-link" :to="{ name: `map` }" :icon-right="AngleRight">
+      <ui-button
+        :icon-right="AngleRight"
+        @click="$emit('answer-selected', 'contribution')"
+      >
         Weiter
       </ui-button>
     </div>
