@@ -339,14 +339,14 @@ export default {
       initial: {
         discussion: [
           {
-            id: 1,
+            id: 3,
             type: "text",
             author: "User 1",
             date: new Date(),
             content: "lorem ipsum dolor amet",
           },
           {
-            id: 2,
+            id: 4,
             type: "text",
             author: "User 2",
             date: new Date(),
@@ -417,14 +417,14 @@ export default {
       initial: {
         discussion: [
           {
-            id: 1,
+            id: 5,
             type: "text",
             author: "User 1",
             date: new Date(),
             content: "lorem ipsum dolor amet",
           },
           {
-            id: 2,
+            id: 6,
             type: "text",
             author: "User 2",
             date: new Date(),
@@ -494,14 +494,14 @@ export default {
       initial: {
         discussion: [
           {
-            id: 1,
+            id: 7,
             type: "text",
             author: "User 1",
             date: new Date(),
             content: "lorem ipsum dolor amet",
           },
           {
-            id: 2,
+            id: 8,
             type: "text",
             author: "User 2",
             date: new Date(),
@@ -572,14 +572,14 @@ export default {
       initial: {
         discussion: [
           {
-            id: 1,
+            id: 9,
             type: "text",
             author: "User 1",
             date: new Date(),
             content: "lorem ipsum dolor amet",
           },
           {
-            id: 2,
+            id: 10,
             type: "text",
             author: "User 2",
             date: new Date(),
