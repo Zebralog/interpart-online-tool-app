@@ -6,21 +6,22 @@
       :style="{ color: dialog.color }"
     />
     <div class="subtitle">
-      Was ist dir bei diesem Thema sonst noch <br />
-      <strong>wichtig?</strong>
-    </div>
-    <div class="call-to-action">
-      Teil uns mit, was unbedingt in der Planung beachtet werden sollte. Dein
-      hier verfasster Beitrag wird auf der Diskussionsseite zu diesem Thema in
-      der App veröffentlicht.
+      Schreibe eine <br />
+      <strong>Nachricht</strong>
     </div>
     <ui-textarea
       v-model="textMessage"
       class="textarea"
-      :placeholder="`Schreibe hier deine Nachricht`"
+      :placeholder="``"
       :max-length="maxTextMessageLength"
       @valid-change="isValid = $event"
     />
+    <div class="call-to-action">
+      Was ist dir bei diesem Thema sonst noch wichtig? Teil uns mit, was
+      unbedingt in der Planung beachtet werden sollte. Dein hier verfasster
+      Beitrag wird auf der Diskussionsseite zu diesem Thema in der App
+      veröffentlicht.
+    </div>
 
     <div>
       <ui-button :icon-right="AngleRight" :disabled="!isValid">
@@ -86,7 +87,6 @@ export default {
 
   .call-to-action {
     font-size: $font-size-5;
-    font-weight: 600;
     margin-bottom: 1rem;
   }
 
