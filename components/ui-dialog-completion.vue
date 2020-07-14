@@ -2,20 +2,21 @@
   <div class="dialog-completion">
     <icon
       class="checkmark"
-      :icon="CheckmarkBig"
+      :icon="CompletionIcon"
       :style="{ color: dialog.color }"
     />
+    <div v-if="dialog.completionMessage" class="completion-message">
+      {{ dialog.completionMessage }}
+    </div>
 
     <div class="confirmation">
       <template v-if="isDone">
-        <div><strong>Vielen Dank </strong></div>
-        für deine Abstimmung für eine gemeinsam gestaltete Stadt der Zukunft!
-        Deine Stimme fließt jetzt in die Planung der Kreuzung mit ein.
+        <div><strong>Danke</strong></div>
+        <div>für deine Teilnahme!</div>
       </template>
       <template v-else>
-        <div><strong>Vielen Dank </strong></div>
-        für deine Abstimmung für eine gemeinsam gestaltete Stadt der Zukunft!
-        Deine Stimme fließt jetzt in die Planung der Kreuzung mit ein.
+        <div><strong>Danke</strong></div>
+        <div>für deine Teilnahme!</div>
       </template>
     </div>
 
@@ -30,19 +31,26 @@
       </ui-button>
     </div>
     <div v-if="askForMessage">
-      <div class="contribution">
-        Möchtest du sonst noch was dazu sagen?
-      </div>
+      <div class="contribution"></div>
 
-      <ui-button @click="$emit('answer-selected', 'contribution')">
-        Dann hier entlang!
+      <ui-button
+        tag="nuxt-link"
+        variant="small"
+        :to="{ name: `map` }"
+        :icon-right="NounMap"
+      >
+        Zurück zu Karte
       </ui-button>
 
       <br />
       <br />
-      <ui-button tag="nuxt-link" :to="{ name: `map` }">
-        Ansonsten geht's hier wieder zur Übersichtskarte und weiteren
-        Stadtthemen, die deine Perspektive brauchen
+      <div class="bold-text">
+        Dir liegt noch etwas auf dem Herzen?
+        <br />
+        Dann teil es uns mit!
+      </div>
+      <ui-button tag="nuxt-link" :to="{ name: `map` }" :icon-right="AngleRight">
+        Weiter
       </ui-button>
     </div>
   </div>
@@ -66,7 +74,11 @@ export default {
     isDone: { type: Boolean, default: false },
   },
   computed: {
-    CheckmarkBig: () => CheckmarkBig,
+    CompletionIcon() {
+      return this.dialog.completionIcon
+        ? this.dialog.completionIcon
+        : CheckmarkBig
+    },
     AngleRight: () => AngleRight,
     NounMap: () => NounMap,
   },
@@ -81,12 +93,24 @@ export default {
 
   .checkmark {
     height: auto;
-    margin-bottom: 1rem;
-    max-height: 9rem;
+    margin-bottom: 0;
+    max-height: 17rem;
+  }
+  .completion-message {
+    margin-bottom: 2rem;
+    font-style: italic;
+    font-weight: 500;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .bold-text {
+    font-size: 1.3rem;
+    font-weight: bold;
   }
 
   .contribution {
-    margin-top: 3rem;
+    margin-top: 1rem;
     margin-bottom: 1rem;
     font-weight: 500;
   }

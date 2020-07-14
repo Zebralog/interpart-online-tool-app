@@ -144,7 +144,7 @@ strong {
 
 .slider {
   position: relative;
-  padding-top: 3rem;
+  padding-top: 1.5rem;
 
   .slider-back-button {
     position: absolute;
