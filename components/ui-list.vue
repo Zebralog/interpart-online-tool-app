@@ -1,10 +1,10 @@
 <template>
   <ul class="list">
-    <li v-for="item in items" :key="item.title" class="list-item">
-      <nuxt-link :to="item.to">
+    <nuxt-link v-for="item in items" :key="item.title" :to="item.to">
+      <li class="list-item">
         {{ item.title }}
-      </nuxt-link>
-    </li>
+      </li>
+    </nuxt-link>
   </ul>
 </template>
 
