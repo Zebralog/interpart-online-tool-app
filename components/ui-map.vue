@@ -4,7 +4,7 @@
 
 <script>
 import Hero from "@/components/hero"
-import mapUrl from "!url-loader!@/config/map.svg"
+import mapUrl from "!url-loader!@/config/live/map.svg"
 
 export default {
   components: {

@@ -5,13 +5,14 @@ import Introduction3 from "./introduction3.svg"
 import Introduction4 from "./introduction4.svg"
 import Introduction5 from "./introduction5.svg"
 import Introduction6 from "./introduction6.svg"
-import question1Url from "./question1.png"
+import question1Url from "./question1.jpg"
 
 import IconStreetLightPark from "@/config/live/street-light-park.svg"
 import IconPedestrianCrossing from "@/config/live/pedestrian-crossing.svg"
 import IconCurb from "@/config/live/curb.svg"
 import IconBikeLane from "@/config/live/bike-lane.svg"
-import IconPieChart from "@/config/live/pie_chart-03.svg"
+// import IconPieChart from "@/config/live/pie_chart-03.svg"
+// import IconPieChartBlue from "@/config/live/pie_chart-blue.svg"
 import IconMail from "@/config/live/wahlurne-02.svg"
 // import IconStreetLight from "@/config/live/street-light.svg"
 // import IconParkWithBench from "@/config/live/park-with-bench.svg"
@@ -161,7 +162,10 @@ export default {
     },
     {
       content: endent`
-        In der unteren Leiste findest du drei Grundfunktionen zur schnellen Navigation: Informationen zum studio biebrich – Mitmachformat, die Übersichtskarte und die Beiträge der anderen Nutzer und Nutzerinnen, die ihre Meinungen eingebracht haben.
+        In der unteren Leiste findest du drei Grundfunktionen zur schnellen Navigation: 
+        <a href="/information">Informationen</a> zum studio biebrich – Mitmachformat, 
+        die <a href="/map">Übersichtskarte</a> und die Kommentare der anderen Nutzer und Nutzerinnen, 
+        die ihre <a href="/discussion">Meinungen</a> eingebracht haben.
       `,
       image: {
         src: Introduction5,
@@ -271,15 +275,15 @@ export default {
       id: "2",
       title: "Verkehrssituation an der Galatea-Anlage",
       trigger: {
-        x: 63,
-        y: 7,
+        x: 73,
+        y: 25,
       },
       subtitle: "",
       buttonLabel:
         "Stimme jetzt darüber ab, wie die Kreuzung gestaltet sein sollte.",
       color: "#cc76af",
       socialBarPosition: "end",
-      socialBarMessage: "Teile deine Abstimmung mit deinen Freunden!",
+      socialBarMessage: "Teile deine Abstimmung mit deinen Freunden",
       questions: [
         {
           type: "emoji",
@@ -332,7 +336,7 @@ export default {
           ],
         },
       ],
-      completionIcon: IconPieChart,
+      completionIcon: IconMail,
       completionMessage:
         "In der Grafik siehst du, wie andere Nutzer*innen abgestimmt haben!",
       askForMessage: true,
@@ -437,10 +441,10 @@ export default {
       id: "4",
       title: "Bewegung und Aufenthalt im Park",
       trigger: {
-        x: 56,
-        y: 45,
+        x: 55,
+        y: 40,
       },
-      subtitle: "",
+      subtitle: "Stimme jetzt darüber ab, wie der Park gestaltet werden sollte",
       buttonlabel: "Los geht’s",
       color: "#A9D9E7",
       questions: [
@@ -452,7 +456,7 @@ export default {
             title: "Stell dir vor, du bist in der ...",
           },
           question:
-            "Stell dir vor, du bist in der Robert-Krekel-Anlage unterwegs – Was ist für dich in dem Park am wichtigsten, damit du dich wohlfühlst?",
+            "Welcher Emoji passt am besten zu deiner Stimmung, wenn du dir das Bild anguckst?",
           answers: [
             { emoji: "😕", value: "confused" },
             { emoji: "🙂", value: "slightly-smiling" },
@@ -488,9 +492,11 @@ export default {
         },
       ],
       completionIcon: IconMail,
-      completionMessage: "",
+      completionMessage:
+        "In der Grafik siehst du, wie andere Nutzer und Nutzerinnen abgestimmt haben",
       askForMessage: true,
-      socialBarMessage: "Teile deine Abstimmung mit deinen Freunden!",
+      socialBarPosition: "end",
+      socialBarMessage: "Teile deine Abstimmung mit deinen Freunden",
       initial: {
         discussion: [
           {

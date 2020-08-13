@@ -13,14 +13,23 @@
       <template v-if="isDone">
         <div><strong>Vielen Dank</strong></div>
         <div>
-          für deinen Beitrag zu einer gemeinsam gestalteten Stadt der Zukunft!
-          Dein Beitrag erscheint nun auf der Diskussionsseite, wo du dir auch
-          die Beiträge der anderen Nutzer und Nutzerinnen anschauen kannst.
+          für deinen Kommentar zu einer gemeinsam gestalteten Stadt der Zukunft!
+          Was du hier schreibst wird nun auf der Kommentarseite veröffentlicht,
+          wo du dir auch die Beiträge der anderen Nutzer und Nutzerinnen
+          anschauen kannst.
         </div>
+        <ui-button
+          tag="nuxt-link"
+          variant="small"
+          :to="{ name: `discussion` }"
+          :icon-right="NounTalk"
+        >
+          Zur Kommentarseite
+        </ui-button>
       </template>
       <template v-else>
-        <div><strong>Danke</strong></div>
-        <div>für deine Teilnahme!</div>
+        <div><strong>Vielen Dank für deine Abstimmung.</strong></div>
+        <div>Deine Stimme fließt jetzt in die Stadtplanung ein.</div>
       </template>
     </div>
 
@@ -50,14 +59,12 @@
       <br />
       <div class="bold-text">
         Dir liegt noch etwas auf dem Herzen?
-        <br />
-        Dann teil es uns mit!
       </div>
       <ui-button
         :icon-right="AngleRight"
         @click="$emit('answer-selected', 'contribution')"
       >
-        Weiter
+        Dann teil es uns mit
       </ui-button>
     </div>
   </div>
@@ -67,6 +74,7 @@
 import Icon from "@/components/icon"
 import UiButton from "@/components/ui-button"
 import NounMap from "@/assets/noun-map.svg"
+import NounTalk from "@/assets/noun-talk.svg"
 import CheckmarkBig from "@/assets/checkmark-big.svg"
 import AngleRight from "@/assets/angle-right.svg"
 
@@ -88,6 +96,7 @@ export default {
     },
     AngleRight: () => AngleRight,
     NounMap: () => NounMap,
+    NounTalk: () => NounTalk,
   },
 }
 </script>

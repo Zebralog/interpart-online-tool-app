@@ -16,6 +16,7 @@
       :is="answerComponents[question.type]"
       v-if="question && question.answers"
       :answers="question.answers"
+      :chosen-answer="pickedAnswer"
       @answer-selected="handleAnswer"
     />
   </div>
@@ -33,7 +34,17 @@ export default {
   },
   props: {
     question: { type: Object, required: true },
+    answer: {
+      type: Array,
+      required: false,
+      default: function () {
+        return []
+      },
+    },
   },
+  data: () => ({
+    pickedAnswer: null,
+  }),
   computed: {
     title() {
       return typeof this.question.question === "string"
@@ -51,9 +62,13 @@ export default {
       multiple: AnswersRadioMultiple,
     }),
   },
+  mounted() {
+    this.pickedAnswer = this.answer
+  },
   methods: {
     handleAnswer(answer) {
-      this.$emit("answer-selected", answer)
+      this.pickedAnswer = answer
+      this.$emit("answer-selected", this.pickedAnswer)
     },
   },
 }

@@ -5,14 +5,6 @@
     :style="elementStyle"
     :class="['map-place', { 'is-popup-open': isPopupOpen }]"
   >
-    <ui-popup
-      v-model="isPopupOpen"
-      :color="place.color"
-      :title="place.title"
-      :subtitle="place.subtitle"
-      :link-title="place.buttonLabel ? place.buttonLabel : `Los gehts`"
-      :link-route="{ name: 'dialog.id', params: { id: place.id } }"
-    />
     <button
       type="button"
       class="map-place-button"
@@ -22,6 +14,15 @@
     >
       <icon :icon="Pin" />
     </button>
+
+    <ui-popup
+      v-model="isPopupOpen"
+      :color="place.color"
+      :title="place.title"
+      :subtitle="place.subtitle"
+      :link-title="place.buttonLabel ? place.buttonLabel : `Los gehts`"
+      :link-route="{ name: 'dialog.id', params: { id: place.id } }"
+    />
   </div>
 </template>
 

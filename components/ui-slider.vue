@@ -94,6 +94,9 @@ $image-height: 10rem;
 
 .slide-content {
   margin-top: 5rem;
+  a {
+    text-decoration: underline !important;
+  }
 }
 
 .slide-image {

@@ -81,14 +81,13 @@ export default {
 
 .popup {
   position: absolute;
-  left: 50%;
   width: 20rem;
   padding: 1rem;
   background: #fff;
   border: 3px solid;
   border-radius: $border-radius-xl;
   font-size: 0.85rem;
-  transform: translate(-50%);
+  transform: translate(-55%, 15rem);
   box-shadow: $shadow-lg;
 
   .popup-content {
@@ -107,17 +106,17 @@ export default {
   .popup-triangle {
     content: "";
     position: absolute;
-    left: 50%;
+    left: 64%;
     width: 26px;
-    height: 26px;
-    transform: translate(-50%) scaleX(0.7) rotate(45deg);
+    height: 28px;
+    transform: translate(-50%, -7rem) scaleX(0.7) rotate(45deg);
     background: #fff;
   }
 
   &:not(.is-bottom) .popup-triangle {
     bottom: -15px;
-    border-right: 3px solid;
-    border-bottom: 3px solid;
+    border-left: 3px solid;
+    border-top: 3px solid;
   }
 
   &.is-bottom .popup-triangle {

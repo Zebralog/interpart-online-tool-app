@@ -49,6 +49,13 @@ export default {
   },
   props: {
     questions: { type: Array, required: true },
+    answers: {
+      type: Array,
+      required: false,
+      default: function () {
+        return []
+      },
+    },
     dialog: { type: Object, required: false, default: null },
   },
   data: () => ({
@@ -119,7 +126,7 @@ export default {
     },
     saveAndNext(value) {
       if (this.slideIndex < this.questions.length) {
-        this.answer = value
+        this.answers[this.slideIndex] = value
         this.setIndex(this.nextIndex)
       } else {
         this.setIndex(this.slides.findIndex((slide) => slide.name === value))

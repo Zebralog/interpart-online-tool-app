@@ -6,8 +6,8 @@
       :style="{ color: dialog.color }"
     />
     <div class="subtitle">
-      Schreibe eine <br />
-      <strong>Nachricht</strong>
+      Schreibe einen <br />
+      <strong>Kommentar</strong>
     </div>
     <ui-textarea
       v-model="textMessage"
@@ -17,10 +17,9 @@
       @valid-change="isValid = $event"
     />
     <div class="call-to-action">
-      Was ist dir bei diesem Thema sonst noch wichtig? Teil uns mit, was
-      unbedingt in der Planung beachtet werden sollte. Dein hier verfasster
-      Beitrag wird auf der Diskussionsseite zu diesem Thema in der App
-      veröffentlicht.
+      Was ist dir bei diesem Thema noch wichtig? Teile uns mit, was deiner
+      Meinung nach in der Planung beachtet werden sollte. Was du hier schreibst,
+      wird auf der Kommentarseite in der App veröffentlicht.
     </div>
 
     <div>

@@ -5,7 +5,11 @@
         v-for="(answer, index) in answers"
         :key="index"
         :style="{ fontSize: '2.5rem' }"
-        class="answer emoji"
+        :class="{
+          answer: true,
+          emoji: true,
+          selected: pickedAnswers && pickedAnswers.includes(answer),
+        }"
         @click="saveAndNext(answer.value)"
       >
         {{ answer.emoji }}
@@ -23,15 +27,25 @@ export default {
   },
   props: {
     answers: { type: Array, required: true },
+    chosenAnswer: {
+      type: Array,
+      required: false,
+      default: function () {
+        return []
+      },
+    },
   },
   data: () => ({
-    answer: null,
+    pickedAnswers: [],
   }),
   computed: {},
+  mounted() {
+    this.pickedAnswers = this.chosenAnswer
+  },
   methods: {
     saveAndNext(value) {
-      this.answer = value
-      this.$emit("answer-selected", this.answer)
+      this.pickedAnswers = [value]
+      this.$emit("answer-selected", this.pickedAnswers)
     },
   },
 }
