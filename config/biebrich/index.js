@@ -163,9 +163,9 @@ export default {
     {
       content: endent`
         In der unteren Leiste findest du drei Grundfunktionen zur schnellen Navigation: 
-        <a href="/information">Informationen</a> zum studio biebrich – Mitmachformat, 
-        die <a href="/map">Übersichtskarte</a> und die Kommentare der anderen Nutzer und Nutzerinnen, 
-        die ihre <a href="/discussion">Meinungen</a> eingebracht haben.
+        <a class="underlined" href="/information">Informationen</a> zum studio biebrich – Mitmachformat, 
+        die <a class="underlined" href="/map">Übersichtskarte</a> und die Kommentare der anderen Nutzer und Nutzerinnen, 
+        die ihre <a class="underlined" href="/discussion">Meinungen</a> eingebracht haben.
       `,
       image: {
         src: Introduction5,
