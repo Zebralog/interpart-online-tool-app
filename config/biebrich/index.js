@@ -28,12 +28,12 @@ export default {
       content:
         "<p>studio biebrich ist der Name der Mitmach-Formate von dem Forschungsprojekt Interpart. Das Forschungsprojekt möchte gemeinsam mit der Wiesbadener Verwaltung herausfinden, wie sich zukünftig möglichst alle Stadtbewohner und Stadtbewohnerinnen besser in Themen der Stadtentwicklung einbringen können. Denn: Für die Entwicklung unserer Stadt sind alle Meinungen wichtig!</p><p>Mehr Informationen erhälst du auf studio biebrich.</p>",
     },
-    {
-      name: "goals",
-      title: "Was wollen wir erreichen?",
-      content:
-        "<p>das Wehen des Alliebenden, der uns in ewiger <strong>Wonne schwebend</strong> trägt und erhält; mein Freund!</p><p>Wenn’s dann um meine Augen dämmert, und die Welt um mich her und der Himmel.</p>",
-    },
+    // {
+    //   name: "goals",
+    //   title: "Was wollen wir erreichen?",
+    //   content:
+    //     "<p>das Wehen des Alliebenden, der uns in ewiger <strong>Wonne schwebend</strong> trägt und erhält; mein Freund!</p><p>Wenn’s dann um meine Augen dämmert, und die Welt um mich her und der Himmel.</p>",
+    // },
     {
       name: "how-to",
       title: "FAQ",
