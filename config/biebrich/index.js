@@ -179,12 +179,15 @@ export default {
           <p class="pb-1">
             <strong>Alles verstanden?</strong><br/>
           </p>
-          <p><a class="button" href="/information">Nein, ich möchte mehr erfahren!</a></p>
-          <br />
+          <p><a class="button" href="/information/about">Nein, ich möchte mehr erfahren!</a></p>
           <p><a class="button" href="/map">Ja, ich will jetzt mitmachen!</a></p>
         </div>
       `,
-      image: Introduction6,
+      image: {
+        src: Introduction6,
+        alt: "",
+        title: "",
+      },
     },
   ],
   dialogs: {
