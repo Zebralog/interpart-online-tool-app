@@ -289,8 +289,10 @@ export default {
           type: "emoji",
           image: {
             src: question1Url,
-            alt: "Stell dir vor, du musst  ...",
-            title: "Stell dir vor, du musst ...",
+            alt:
+              "Ausschnitt einer Straßenkreuzung mit einem roten Auto an der Galatea-Anlage",
+            title:
+              "Ausschnitt einer Straßenkreuzung mit einem roten Auto an der Galatea-Anlage",
           },
           question:
             "Welcher Emoji passt am besten zu deiner Stimmung, wenn du dir das Bild anguckst?",
@@ -454,8 +456,10 @@ export default {
           type: "emoji",
           image: {
             src: question1Url,
-            alt: "Stell dir vor, du bist in der ...",
-            title: "Stell dir vor, du bist in der ...",
+            alt:
+              "Offene Parkanlage mit Sitzbänken und Blick auf die gegenüberliegende Straße",
+            title:
+              "Offene Parkanlage mit Sitzbänken und Blick auf die gegenüberliegende Straße",
           },
           question:
             "Welcher Emoji passt am besten zu deiner Stimmung, wenn du dir das Bild anguckst?",
