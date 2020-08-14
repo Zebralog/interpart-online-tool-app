@@ -109,7 +109,7 @@ export default {
   }
 
   .action-link {
-    font-style: italic;
+    font-style: inherit;
   }
 
   .popup-triangle {
