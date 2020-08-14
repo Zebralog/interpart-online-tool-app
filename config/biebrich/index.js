@@ -345,8 +345,7 @@ export default {
       completionIcon: IconMail,
       completionMessage: "",
       opinionSentIcon: IconPieChart,
-      opinionSentMessage:
-        "In der Grafik siehst du, wie andere Nutzer und Nutzerinnen abgestimmt haben",
+      opinionSentMessage: "",
       askForMessage: true,
       initial: {
         discussion: [
