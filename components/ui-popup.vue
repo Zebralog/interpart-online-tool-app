@@ -45,7 +45,7 @@ export default {
     linkRoute: { type: Object, default: undefined },
   },
   data: () => ({
-    isBottom: false,
+    isBottom: true,
     clickOutsideActive: false,
   }),
   computed: {
@@ -62,8 +62,16 @@ export default {
       if (this.value) {
         this.$nextTick(() => {
           this.$el.style.animation = "none"
-          const { y } = this.$el.getBoundingClientRect()
-          this.isBottom = y < 0
+
+          // UGLY WORKAROUND: we need (https://trello.com/c/EXE80Eym) to switch the popup
+          // on the bottom of the pin;
+          // I could not properly understand how to get around the logic here,
+          // so I just brutally forced it :/
+          // @Landwehr could/should have a look here.
+
+          // const { y } = this.$el.getBoundingClientRect()
+          // this.isBottom = y < 0
+          this.isBottom = true
           this.$el.style.animation = ""
           this.clickOutsideActive = true
         })
@@ -80,6 +88,7 @@ export default {
 @import "@/assets/variables";
 
 .popup {
+  left: 50%;
   position: absolute;
   width: 20rem;
   padding: 1rem;
@@ -87,7 +96,7 @@ export default {
   border: 3px solid;
   border-radius: $border-radius-xl;
   font-size: 0.85rem;
-  transform: translate(-55%, 15rem);
+  transform: translate(-55%);
   box-shadow: $shadow-lg;
 
   .popup-content {
@@ -106,17 +115,17 @@ export default {
   .popup-triangle {
     content: "";
     position: absolute;
-    left: 64%;
+    left: 55%;
     width: 26px;
-    height: 28px;
-    transform: translate(-50%, -7rem) scaleX(0.7) rotate(45deg);
+    height: 26px;
+    transform: translate(-50%) scaleX(0.7) rotate(45deg);
     background: #fff;
   }
 
   &:not(.is-bottom) .popup-triangle {
     bottom: -15px;
-    border-left: 3px solid;
-    border-top: 3px solid;
+    border-right: 3px solid;
+    border-bottom: 3px solid;
   }
 
   &.is-bottom .popup-triangle {
