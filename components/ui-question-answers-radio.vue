@@ -17,7 +17,7 @@
         <span v-if="answer.icon" class="icon-container">
           <icon :icon="answer.icon" :size="`medium`" aria-hidden />
         </span>
-        <span class="key">{{ answer.key }}</span>
+        <span v-if="answer.showAnswerKey" class="key">{{ answer.key }}</span>
         <span class="content">{{ answer.content }}</span>
       </span>
     </label>
