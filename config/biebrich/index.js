@@ -11,8 +11,8 @@ import IconStreetLightPark from "@/config/live/street-light-park.svg"
 import IconPedestrianCrossing from "@/config/live/pedestrian-crossing.svg"
 import IconCurb from "@/config/live/curb.svg"
 import IconBikeLane from "@/config/live/bike-lane.svg"
-// import IconPieChart from "@/config/live/pie_chart-03.svg"
-// import IconPieChartBlue from "@/config/live/pie_chart-blue.svg"
+import IconPieChart from "@/config/live/pie_chart-03.svg"
+import IconPieChartBlue from "@/config/live/pie_chart-blue.svg"
 import IconMail from "@/config/live/wahlurne-02.svg"
 // import IconStreetLight from "@/config/live/street-light.svg"
 // import IconParkWithBench from "@/config/live/park-with-bench.svg"
@@ -337,8 +337,10 @@ export default {
         },
       ],
       completionIcon: IconMail,
-      completionMessage:
-        "In der Grafik siehst du, wie andere Nutzer*innen abgestimmt haben!",
+      completionMessage: "",
+      opinionSentIcon: IconPieChart,
+      opinionSentMessage:
+        "In der Grafik siehst du, wie andere Nutzer und Nutzerinnen abgestimmt haben",
       askForMessage: true,
       initial: {
         discussion: [
@@ -492,7 +494,9 @@ export default {
         },
       ],
       completionIcon: IconMail,
-      completionMessage:
+      completionMessage: "",
+      opinionSentIcon: IconPieChartBlue,
+      opinionSentMessage:
         "In der Grafik siehst du, wie andere Nutzer und Nutzerinnen abgestimmt haben",
       askForMessage: true,
       socialBarPosition: "end",

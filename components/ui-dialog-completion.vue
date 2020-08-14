@@ -1,16 +1,16 @@
 <template>
   <div class="dialog-completion">
-    <icon
-      class="checkmark"
-      :icon="CompletionIcon"
-      :style="{ color: dialog.color }"
-    />
-    <div v-if="dialog.completionMessage" class="completion-message">
-      {{ dialog.completionMessage }}
-    </div>
-
     <div class="confirmation">
       <template v-if="isDone">
+        <icon
+          class="checkmark"
+          :icon="CompletionIcon"
+          :style="{ color: dialog.color }"
+        />
+        <div v-if="dialog.completionMessage" class="completion-message">
+          {{ dialog.completionMessage }}
+        </div>
+
         <div><strong>Vielen Dank</strong></div>
         <div>
           für deinen Kommentar zu einer gemeinsam gestalteten Stadt der Zukunft!
@@ -28,6 +28,15 @@
         </ui-button>
       </template>
       <template v-else>
+        <icon
+          class="checkmark"
+          :icon="OpinionSentIcon"
+          :style="{ color: dialog.color }"
+        />
+        <div v-if="dialog.opinionSentMessage" class="completion-message">
+          {{ dialog.opinionSentMessage }}
+        </div>
+
         <div><strong>Vielen Dank für deine Abstimmung.</strong></div>
         <div>Deine Stimme fließt jetzt in die Stadtplanung ein.</div>
       </template>
@@ -92,6 +101,11 @@ export default {
     CompletionIcon() {
       return this.dialog.completionIcon
         ? this.dialog.completionIcon
+        : CheckmarkBig
+    },
+    OpinionSentIcon() {
+      return this.dialog.opinionSentIcon
+        ? this.dialog.opinionSentIcon
         : CheckmarkBig
     },
     AngleRight: () => AngleRight,
