@@ -305,6 +305,7 @@ export default {
         {
           type: "radio",
           image: null,
+          showAnswerKey: false,
           question: {
             title: "",
             content:
@@ -472,6 +473,7 @@ export default {
         {
           type: "multiple",
           image: null,
+          showAnswerKey: true,
           question: {
             title: "",
             content:
