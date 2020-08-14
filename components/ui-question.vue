@@ -15,6 +15,7 @@
     <component
       :is="answerComponents[question.type]"
       v-if="question && question.answers"
+      :question="question"
       :answers="question.answers"
       :chosen-answer="pickedAnswer"
       @answer-selected="handleAnswer"
@@ -89,6 +90,9 @@ export default {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+  }
+  .question-content {
+    font-size: 1.2rem;
   }
 }
 

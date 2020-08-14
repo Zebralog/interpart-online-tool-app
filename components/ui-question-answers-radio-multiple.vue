@@ -21,7 +21,7 @@
         <span v-if="answer.icon" class="icon-container">
           <icon :icon="answer.icon" :size="`medium`" aria-hidden />
         </span>
-        <span class="key">{{ answer.key }}</span>
+        <span v-if="question.showAnswerKey" class="key">{{ answer.key }}</span>
         <span class="content">{{ answer.content }}</span>
       </span>
     </label>
@@ -52,7 +52,20 @@ import AngleRightCircle from "@/assets/angle-right-circle.svg"
 export default {
   components: { UiButton, Icon },
   props: {
-    answers: { type: Array, required: true },
+    answers: {
+      type: Array,
+      required: false,
+      default: function () {
+        return []
+      },
+    },
+    question: {
+      type: Array,
+      required: false,
+      default: function () {
+        return []
+      },
+    },
   },
   data: () => ({
     choices: [],
@@ -96,6 +109,7 @@ export default {
   .weiter-button-container {
     margin-left: auto;
     margin-right: 0;
+    margin-top: 2rem;
   }
 
   .button.weiter {
