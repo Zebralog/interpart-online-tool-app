@@ -1,6 +1,6 @@
 import Vue from "vue"
-// import { LOGGED_IN_AUTHOR, REPLY_TIMEOUT } from "@/model/constants"
-import { LOGGED_IN_AUTHOR } from "@/model/constants"
+import { LOGGED_IN_AUTHOR, REPLY_TIMEOUT } from "@/model/constants"
+// import { LOGGED_IN_AUTHOR } from "@/model/constants"
 
 export const state = () => ({ messages: [] })
 
@@ -16,21 +16,32 @@ export const mutations = {
 }
 
 export const actions = {
-  add: ({ commit }, message) => {
+  add: ({ dispatch, commit }, message) => {
     const date = new Date()
     commit("add", { date, ...message })
 
     if (message.author === LOGGED_IN_AUTHOR) {
-      // we disable the sample chat answer for now/
-      // setTimeout(
-      //   () =>
-      //     dispatch("add", {
-      //       dialogId: message.dialogId,
-      //       author: "Max Mustermann",
-      //       content: "Dies ist eine Antwort",
-      //     }),
-      //   REPLY_TIMEOUT
-      // )
+      setTimeout(
+        () =>
+          dispatch("add", {
+            dialogId: message.dialogId,
+            author: "Max Mustermann",
+            content:
+              "An dieser Kreuzung schlage ich einen großen Zebrastreifen als Fußgänger vor.",
+          }),
+        REPLY_TIMEOUT
+      )
+
+      setTimeout(
+        () =>
+          dispatch("add", {
+            dialogId: message.dialogId,
+            author: "Klaus Klausterman",
+            content:
+              "Ich wünsche mir z.B. besonders mehr Platz für einen neuen und sicheren Fahrradweg an dieser Kreuzung.",
+          }),
+        REPLY_TIMEOUT * 2
+      )
     }
   },
 }

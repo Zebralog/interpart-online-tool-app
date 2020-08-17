@@ -256,22 +256,7 @@ export default {
       completionMessage: "",
       askForMessage: true,
       initial: {
-        discussion: [
-          {
-            id: 1,
-            type: "text",
-            author: "User 1",
-            date: new Date(),
-            content: "lorem ipsum dolor amet",
-          },
-          {
-            id: 2,
-            type: "text",
-            author: "User 2",
-            date: new Date(),
-            content: "lorem ipsum dolor amet",
-          },
-        ],
+        discussion: [],
       },
     },
     "2": {
@@ -352,18 +337,28 @@ export default {
       initial: {
         discussion: [
           {
-            id: 3,
+            id: 1,
             type: "text",
             author: "User 1",
             date: new Date(),
-            content: "lorem ipsum dolor amet",
+            content:
+              "Mir würde ein Zebrastreifen an dieser Kreuzung sehr helfen, um mit dem Kinderwagen sicher über die Straße zu kommen.",
           },
           {
-            id: 4,
+            id: 2,
             type: "text",
             author: "User 2",
             date: new Date(),
-            content: "lorem ipsum dolor amet",
+            content:
+              "Eine niedrige Bordsteinkange fände ich gut, damit ich sicherer mit dem Fahrrad die Straße überqueren kann.",
+          },
+          {
+            id: 3,
+            type: "text",
+            author: "User 3",
+            date: new Date(),
+            content:
+              "Wenn die Kreuzung besser beleuchtet wird, können mich Autofahrer an der Kreuzung auch abends als Fahrradfahrerin besser erkennen und würde mir den Weg nach hause erleichtern.",
           },
         ],
       },
@@ -428,22 +423,7 @@ export default {
         },
       ],
       initial: {
-        discussion: [
-          {
-            id: 5,
-            type: "text",
-            author: "User 1",
-            date: new Date(),
-            content: "lorem ipsum dolor amet",
-          },
-          {
-            id: 6,
-            type: "text",
-            author: "User 2",
-            date: new Date(),
-            content: "lorem ipsum dolor amet",
-          },
-        ],
+        discussion: [],
       },
     },
     "4": {
@@ -512,22 +492,7 @@ export default {
       socialBarPosition: "end",
       socialBarMessage: "Teile deine Abstimmung mit deinen Freunden",
       initial: {
-        discussion: [
-          {
-            id: 7,
-            type: "text",
-            author: "User 1",
-            date: new Date(),
-            content: "lorem ipsum dolor amet",
-          },
-          {
-            id: 8,
-            type: "text",
-            author: "User 2",
-            date: new Date(),
-            content: "lorem ipsum dolor amet",
-          },
-        ],
+        discussion: [],
       },
     },
     "5": {
@@ -590,22 +555,7 @@ export default {
         },
       ],
       initial: {
-        discussion: [
-          {
-            id: 9,
-            type: "text",
-            author: "User 1",
-            date: new Date(),
-            content: "lorem ipsum dolor amet",
-          },
-          {
-            id: 10,
-            type: "text",
-            author: "User 2",
-            date: new Date(),
-            content: "lorem ipsum dolor amet",
-          },
-        ],
+        discussion: [],
       },
     },
   },
