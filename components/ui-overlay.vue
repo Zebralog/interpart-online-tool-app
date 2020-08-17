@@ -18,6 +18,8 @@
   top: 0;
   right: 0;
   bottom: $navbar-height;
+  opacity: 0.8;
+  background-color: #fff;
 
   /deep/ > * {
     position: absolute;

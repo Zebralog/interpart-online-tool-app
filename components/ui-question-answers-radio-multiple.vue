@@ -60,10 +60,10 @@ export default {
       },
     },
     question: {
-      type: Array,
+      type: Object,
       required: false,
       default: function () {
-        return []
+        return {}
       },
     },
   },

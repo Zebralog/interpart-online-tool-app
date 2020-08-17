@@ -1,8 +1,10 @@
 <template>
   <div>
     <ui-title>Informationen</ui-title>
-    <ui-subtitle>{{ item.title }}</ui-subtitle>
-    <ui-content>
+    <ui-subtitle class="subtitle">
+      {{ item.title }}
+    </ui-subtitle>
+    <ui-content class="content">
       <div v-html="item.content" />
     </ui-content>
     <ui-link :to="{ name: 'information' }">
@@ -38,3 +40,12 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.subtitle {
+  font-size: 1.6rem;
+}
+.content {
+  font-size: 1.3rem;
+}
+</style>
