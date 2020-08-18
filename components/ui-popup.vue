@@ -90,7 +90,8 @@ export default {
 .popup {
   left: 50%;
   position: absolute;
-  width: 20rem;
+  min-width: 14rem;
+  text-align: center;
   padding: 1rem;
   background: #fff;
   border: 3px solid;
