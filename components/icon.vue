@@ -2,7 +2,12 @@
   <component
     :is="icon"
     aria-hidden
-    :class="{ icon: true, big: size == `big`, medium: size == `medium` }"
+    :class="{
+      icon: true,
+      big: size == `big`,
+      medium: size == `medium`,
+      'original-color': originalColor,
+    }"
     v-on="$listeners"
   />
 </template>
@@ -12,6 +17,7 @@ export default {
   props: {
     icon: { required: true, type: Object },
     size: { required: false, type: String, default: "" },
+    originalColor: { required: false, type: Boolean, default: false },
   },
 }
 </script>
@@ -37,8 +43,8 @@ export default {
     width: auto;
   }
 
-  &,
-  /deep/ path {
+  &:not(.original-color),
+  &:not(.original-color) /deep/ path {
     fill: currentColor;
   }
 }

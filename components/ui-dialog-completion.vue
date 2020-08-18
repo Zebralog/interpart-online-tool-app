@@ -31,6 +31,7 @@
         <icon
           class="checkmark"
           :icon="OpinionSentIcon"
+          :original-color="true"
           :style="{ color: dialog.color }"
         />
         <div v-if="dialog.opinionSentMessage" class="completion-message">
