@@ -5,7 +5,8 @@ import Introduction3 from "./introduction3.svg"
 import Introduction4 from "./introduction4.svg"
 import Introduction5 from "./introduction5.svg"
 import Introduction6 from "./introduction6.svg"
-import question1Url from "./question1.jpg"
+import dialog2Url from "./question1.jpg"
+import dialog4Url from "./dialog4bild.png"
 
 import IconStreetLightPark from "@/config/live/street-light-park.svg"
 import IconPedestrianCrossing from "@/config/live/pedestrian-crossing.svg"
@@ -206,7 +207,7 @@ export default {
         {
           type: "emoji",
           image: {
-            src: question1Url,
+            src: dialog2Url,
             alt: "Was denkst du, wenn du  ...",
             title: "Was denkst du, wenn du ...",
           },
@@ -276,7 +277,7 @@ export default {
         {
           type: "emoji",
           image: {
-            src: question1Url,
+            src: dialog2Url,
             alt:
               "Ausschnitt einer Straßenkreuzung mit einem roten Auto an der Galatea-Anlage",
             title:
@@ -377,7 +378,7 @@ export default {
         {
           type: "emoji",
           image: {
-            src: question1Url,
+            src: dialog2Url,
             alt: "Was denkst du, wenn du ...",
             title: "Was denkst du, wenn du ...",
           },
@@ -440,7 +441,7 @@ export default {
         {
           type: "emoji",
           image: {
-            src: question1Url,
+            src: dialog4Url,
             alt:
               "Offene Parkanlage mit Sitzbänken und Blick auf die gegenüberliegende Straße",
             title:
@@ -509,7 +510,7 @@ export default {
         {
           type: "emoji",
           image: {
-            src: question1Url,
+            src: dialog2Url,
             alt: "Was denkst du, wenn du dieses Bield ...",
             title: "Was denkst du, wenn du dieses Bield ...",
           },
