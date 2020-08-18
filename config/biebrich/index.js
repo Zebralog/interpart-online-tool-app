@@ -351,7 +351,7 @@ export default {
             author: "User 2",
             date: new Date(),
             content:
-              "Eine niedrige Bordsteinkange fände ich gut, damit ich sicherer mit dem Fahrrad die Straße überqueren kann.",
+              "Eine niedrige Bordsteinkante fände ich gut, damit ich sicherer mit dem Fahrrad die Straße überqueren kann.",
           },
           {
             id: 3,
@@ -359,7 +359,7 @@ export default {
             author: "User 3",
             date: new Date(),
             content:
-              "Wenn die Kreuzung besser beleuchtet wird, können mich Autofahrer an der Kreuzung auch abends als Fahrradfahrerin besser erkennen und würde mir den Weg nach hause erleichtern.",
+              "Wenn die Kreuzung besser beleuchtet wird, können mich Autofahrer an der Kreuzung auch abends als Fahrradfahrerin besser erkennen und würde mir den Weg nach Hause erleichtern.",
           },
         ],
       },

@@ -38,7 +38,7 @@ export const actions = {
             dialogId: message.dialogId,
             author: "Klaus Klausterman",
             content:
-              "Ich wünsche mir z.B. besonders mehr Platz für einen neuen und sicheren Fahrradweg an dieser Kreuzung.",
+              "Ich wünsche mir einen neuen Fahrradweg an dieser Kreuzung.",
           }),
         REPLY_TIMEOUT * 2
       )
