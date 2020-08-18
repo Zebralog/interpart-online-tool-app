@@ -27,7 +27,7 @@ export const actions = {
             dialogId: message.dialogId,
             author: "Max Mustermann",
             content:
-              "An dieser Kreuzung schlage ich einen großen Zebrastreifen als Fußgänger vor.",
+              "An dieser Kreuzung schlage ich einen großen Zebrastreifen für Fußgänger vor.",
           }),
         REPLY_TIMEOUT
       )
