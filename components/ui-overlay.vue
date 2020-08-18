@@ -18,7 +18,7 @@
   top: 0;
   right: 0;
   bottom: $navbar-height;
-  opacity: 0.8;
+  opacity: 0.9;
   background-color: #fff;
 
   /deep/ > * {
