@@ -319,8 +319,7 @@ export default {
         },
       ],
       completionIcon: IconMail,
-      completionMessage:
-        "In der Grafik siehst du, wie andere Nutzer und Nutzerinnen abgestimmt haben",
+      completionMessage: "",
       opinionSentIcon: IconPieChartPink,
       opinionSentMessage: "",
       askForMessage: true,
@@ -476,8 +475,7 @@ export default {
       completionIcon: IconMail,
       completionMessage: "",
       opinionSentIcon: IconPieChartBlue,
-      opinionSentMessage:
-        "In der Grafik siehst du, wie andere Nutzer und Nutzerinnen abgestimmt haben",
+      opinionSentMessage: "",
       askForMessage: true,
       socialBarPosition: "end",
       socialBarMessage: "Teile deine Abstimmung mit deinen Freunden",
