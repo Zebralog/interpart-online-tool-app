@@ -121,7 +121,7 @@ export default {
     {
       content: endent`
         Hallo und willkommen beim studio biebrich - Mitmachformat von INTERPART für die Gestaltung einer sicheren (Fort-) Bewegung in Biebrich. <br/><br/>
-        Dafür ist das Fachwissen von Stadtplanern und Stadtplanerinnen genauso wichtig, wie Erfahrungs- und Alltagswissen von Stadtnutzern und Stadtnutzerinnen.<br/><br/>
+        Dafür ist das Fachwissen von Stadtplanern und Stadtplanerinnen genauso wichtig, wie dein Wissen und deine Erfahrung aus deinem Alltag in der Stadt.<br/><br/>
         Und so machst du mit...
       `,
       image: {
