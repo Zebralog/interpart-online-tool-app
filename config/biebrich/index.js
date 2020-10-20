@@ -1,7 +1,6 @@
 import endent from "endent"
 import Introduction1 from "./introduction1.svg"
 import Introduction2 from "./introduction2.svg"
-import Introduction3 from "./introduction3.svg"
 import Introduction4 from "./introduction4.svg"
 import Introduction5 from "./introduction5.svg"
 import Introduction6 from "./introduction6.svg"
@@ -140,16 +139,6 @@ export default {
         src: Introduction2,
         alt: "Konkret geht es um deine Meinung ...",
         title: "Konkret geht es um deine Meinung ...",
-      },
-    },
-    {
-      content: endent`
-        Auch Biebrich verändert sich als Stadt - Hier kannst du deine Perspektive & Meinung einbringen und damit Biebrich aktiv mitgestalten!
-      `,
-      image: {
-        src: Introduction3,
-        alt: "Auch Biebrich verändert sich als Stadt ...",
-        title: "Auch Biebrich verändert sich als Stadt ...",
       },
     },
     {
