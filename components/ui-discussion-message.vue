@@ -3,9 +3,14 @@
     v-if="message"
     :data-type="message.type"
     :class="['message-container', { 'is-me': isMe }]"
+    :style="{
+      borderColor: color,
+    }"
   >
-    <span class="date">{{ message.date | formatDate }}</span>
-    <span v-if="author" class="author">{{ author }}</span>
+    <span class="date"> {{ message.date | formatDate }}</span>
+    <span v-if="dialogInformation" class="dialog-info">{{
+      dialogInformation
+    }}</span>
     <div class="content">
       {{ message.content }}
     </div>
@@ -15,6 +20,7 @@
 <script>
 import { LOGGED_IN_AUTHOR } from "@/model/constants"
 import { format, isSameDay } from "date-fns"
+import config from "@/config"
 
 export default {
   filters: {
@@ -43,11 +49,14 @@ export default {
         display: this.showMeta ? `inline-block` : `none`,
       }
     },
-    author() {
-      return this.isMe ? undefined : this.message.author
+    dialogInformation() {
+      return config.dialogs[this.message.dialogId].title
     },
     isMe() {
       return this.message.author === LOGGED_IN_AUTHOR
+    },
+    color() {
+      return config.dialogs[this.message.dialogId].color
     },
   },
   methods: {
@@ -70,40 +79,26 @@ export default {
   position: relative;
   margin-top: 3rem;
   margin-bottom: 3rem;
+  margin-right: 15%;
   border-radius: $border-radius-md;
-  border: $border;
+  border: $border-speech-bubbles;
 
-  &:not(.is-me) {
-    margin-right: 15%;
+  &:before {
+    left: 0;
+    transform: rotate(15deg) skewY(-35deg);
+  }
 
-    &:before {
-      left: 0;
-      transform: rotate(15deg) skewY(-35deg);
-    }
-
-    &:after {
-      left: 0;
-    }
-
-    .content {
-      padding-top: 1.5rem;
-    }
+  .content {
+    padding-top: 1.5rem;
   }
 
   &.is-me {
     margin-left: 15%;
 
     &:before {
+      left: auto;
       right: 0;
       transform: rotate(-15deg) skewY(35deg);
-    }
-
-    &:after {
-      right: 0;
-    }
-
-    .content {
-      padding-top: 1rem;
     }
   }
 
@@ -113,17 +108,8 @@ export default {
     bottom: -8px;
     width: 30px;
     height: 30px;
-    border: $border;
-    background: #fff;
-    pointer-events: none;
-  }
-
-  &:after {
-    content: "";
-    position: absolute;
-    bottom: -1px;
-    width: 27px;
-    height: 1px;
+    border: $border-speech-bubbles;
+    border-color: inherit;
     background: #fff;
     pointer-events: none;
   }
@@ -146,7 +132,7 @@ export default {
     color: $color-text-light;
   }
 
-  .author {
+  .dialog-info {
     position: absolute;
     left: 1rem;
     top: 0.5rem;
