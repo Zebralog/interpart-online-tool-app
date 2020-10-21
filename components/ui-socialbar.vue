@@ -1,5 +1,5 @@
 <template>
-  <span class="socialbar-container">
+  <div class="socialbar-container">
     <span v-if="message" class="social-bar-message">{{ message }}</span>
     <span class="socialbar">
       <a
@@ -13,7 +13,7 @@
         <icon :icon="item.icon" aria-hidden />
       </a>
     </span>
-  </span>
+  </div>
 </template>
 
 <script>
@@ -47,23 +47,27 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/variables";
 
+.socialbar-container {
+  margin-top: 1em;
+}
+
 .socialbar {
   display: flex;
   justify-content: center;
   margin: -1rem;
-  color: $color-text-light;
+  color: $color-text;
 }
 
 .socialbar-link {
   margin: 1rem;
-  font-size: $font-size-4;
+  font-size: $font-size-3;
 }
 
 .social-bar-message {
   text-align: center;
-  color: $color-text-light;
+  color: $color-text;
   width: 100%;
   display: block;
-  font-size: 0.8rem;
+  font-size: $font-size-5;
 }
 </style>

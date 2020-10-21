@@ -39,7 +39,10 @@
         </div>
 
         <div><strong>Vielen Dank für deine Abstimmung.</strong></div>
-        <div>Deine Stimme fließt jetzt in die Stadtplanung ein.</div>
+        <div>
+          In der Grafik siehst du, wie Andere abgestimmt haben. Deine Stimme
+          kann jetzt in der Stadtentwicklung berücksichtigt werden.
+        </div>
       </template>
     </div>
 
