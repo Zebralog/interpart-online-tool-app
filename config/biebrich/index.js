@@ -14,6 +14,8 @@ import IconBikeLane from "@/config/live/bike-lane.svg"
 import IconPieChartPink from "@/config/live/pie_chart-pink.svg"
 import IconPieChartBlue from "@/config/live/pie_chart-blue.svg"
 import IconMail from "@/config/live/wahlurne-02.svg"
+import IconPlayground from "@/config/live/spiel-und-sportstaette.svg"
+import IconRestingPlaces from "@/config/live/ruheorte.svg"
 // import IconStreetLight from "@/config/live/street-light.svg"
 // import IconParkWithBench from "@/config/live/park-with-bench.svg"
 // import IconGymSport from "@/config/live/gym-sport-fueralle.svg"
@@ -465,18 +467,26 @@ export default {
             {
               key: "A",
               content: "Guter Bodenbelag zum durchfahren",
-              value: "good",
+              value: "goodroads",
+              icon: IconBikeLane,
             },
             {
               key: "B",
               content: "Spiel- und Sportstätten für alle Generationen",
-              value: "fahrradwege",
+              value: "playground",
+              icon: IconPlayground,
             },
-            { key: "C", content: "Beleuchtete Wege", value: "zebra" },
+            {
+              key: "C",
+              content: "Beleuchtete Wege",
+              value: "lighting",
+              icon: IconStreetLightPark,
+            },
             {
               key: "D",
               content: "Ruheorte",
-              value: "bordsteinkanten",
+              value: "resting",
+              icon: IconRestingPlaces,
             },
           ],
         },
