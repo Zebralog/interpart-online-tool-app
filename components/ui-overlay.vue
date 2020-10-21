@@ -18,8 +18,7 @@
   top: 0;
   right: 0;
   bottom: $navbar-height;
-  opacity: 0.9;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.9);
 
   /deep/ > * {
     position: absolute;
