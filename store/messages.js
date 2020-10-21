@@ -25,7 +25,6 @@ export const actions = {
         () =>
           dispatch("add", {
             dialogId: message.dialogId,
-            author: "Max Mustermann",
             content:
               "An dieser Kreuzung schlage ich einen großen Zebrastreifen für Fußgänger vor.",
           }),
@@ -36,7 +35,6 @@ export const actions = {
         () =>
           dispatch("add", {
             dialogId: message.dialogId,
-            author: "Klaus Klausterman",
             content:
               "Ich wünsche mir einen neuen Fahrradweg an dieser Kreuzung.",
           }),
