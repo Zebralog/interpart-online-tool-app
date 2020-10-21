@@ -145,14 +145,12 @@ export default {
           {
             id: 1,
             type: "text",
-            author: "User 1",
             date: new Date(),
             content: "lorem ipsum dolor amet",
           },
           {
             id: 2,
             type: "text",
-            author: "User 2",
             date: new Date(),
             content: "lorem ipsum dolor amet",
           },
@@ -218,14 +216,12 @@ export default {
           {
             id: 1,
             type: "text",
-            author: "User 1",
             date: new Date(),
             content: "lorem ipsum dolor amet",
           },
           {
             id: 2,
             type: "text",
-            author: "User 2",
             date: new Date(),
             content: "lorem ipsum dolor amet",
           },
@@ -291,14 +287,12 @@ export default {
           {
             id: 1,
             type: "text",
-            author: "User 1",
             date: new Date(),
             content: "lorem ipsum dolor amet",
           },
           {
             id: 2,
             type: "text",
-            author: "User 2",
             date: new Date(),
             content: "lorem ipsum dolor amet",
           },
@@ -364,14 +358,12 @@ export default {
           {
             id: 1,
             type: "text",
-            author: "User 1",
             date: new Date(),
             content: "lorem ipsum dolor amet",
           },
           {
             id: 2,
             type: "text",
-            author: "User 2",
             date: new Date(),
             content: "lorem ipsum dolor amet",
           },
@@ -437,14 +429,12 @@ export default {
           {
             id: 1,
             type: "text",
-            author: "User 1",
             date: new Date(),
             content: "lorem ipsum dolor amet",
           },
           {
             id: 2,
             type: "text",
-            author: "User 2",
             date: new Date(),
             content: "lorem ipsum dolor amet",
           },

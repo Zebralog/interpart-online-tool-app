@@ -337,25 +337,25 @@ export default {
       initial: {
         discussion: [
           {
+            dialogId: 2,
             id: 1,
             type: "text",
-            author: "User 1",
             date: new Date(),
             content:
               "Mir würde ein Zebrastreifen an dieser Kreuzung sehr helfen, um mit dem Kinderwagen sicher über die Straße zu kommen.",
           },
           {
+            dialogId: 2,
             id: 2,
             type: "text",
-            author: "User 2",
             date: new Date(),
             content:
               "Eine niedrige Bordsteinkante fände ich gut, damit ich sicherer mit dem Fahrrad die Straße überqueren kann.",
           },
           {
+            dialogId: 2,
             id: 3,
             type: "text",
-            author: "User 3",
             date: new Date(),
             content:
               "Wenn die Kreuzung besser beleuchtet wird, können mich Autofahrer an der Kreuzung auch abends als Fahrradfahrerin besser erkennen und würde mir den Weg nach Hause erleichtern.",
@@ -400,7 +400,7 @@ export default {
           question: {
             title: "Okay aber jetzt nochmal genau...",
             content:
-              "stell dir vor, du sollst diese Straße uberqueren. Was ware dich wirtig?",
+              "stell dir vor, du sollst diese Straße uberqueren. Was ware dich wichtig?",
           },
           answers: [
             {
