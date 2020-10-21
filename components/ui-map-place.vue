@@ -9,7 +9,7 @@
       type="button"
       class="map-place-button"
       :aria-label="place.title"
-      :style="{ fontSize: '4.5rem', color: place.color }"
+      :style="{ fontSize: '4.5rem' }"
       @click="clickOnPin"
     >
       <icon :icon="Pin" />
