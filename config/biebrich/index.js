@@ -25,8 +25,7 @@ export default {
     {
       name: "about",
       title: "Über das Projekt",
-      content:
-        "<p>studio biebrich ist der Name der Mitmach-Formate von dem Forschungsprojekt Interpart. Das Forschungsprojekt möchte gemeinsam mit der Wiesbadener Verwaltung herausfinden, wie sich zukünftig möglichst alle Stadtbewohner und Stadtbewohnerinnen besser in Themen der Stadtentwicklung einbringen können. Denn: Für die Entwicklung unserer Stadt sind alle Meinungen wichtig!</p><p>Mehr Informationen erhälst du auf studio biebrich.</p>",
+      content: `<p>studio biebrich ist der Name der Mitmach-Formate von dem Forschungsprojekt Interpart. Das Forschungsprojekt möchte gemeinsam mit der Wiesbadener Verwaltung herausfinden, wie sich zukünftig möglichst alle Stadtbewohner und Stadtbewohnerinnen besser in Themen der Stadtentwicklung einbringen können. Denn: Für die Entwicklung unserer Stadt sind alle Meinungen wichtig!</p><p>Mehr Informationen erhälst du auf <a href="https://www.interpart.org/node/1217#uip-1">studio biebrich</a>.</p>`,
     },
     // {
     //   name: "goals",
@@ -37,7 +36,17 @@ export default {
     {
       name: "how-to",
       title: "FAQ",
-      content: `<p>Bei Fragen zur Navigation, schau’ dir doch das Intro nochmal an oder wende dich an den Support (Kontaktdaten hier in den Informationen unter “Kontakt”)</p>`,
+      content: `<p><strong>Wie benutze ich das Online-Tool?</strong></p>
+      <p>Bei Fragen zur Navigation, schau’ dir gerne das Intro noch einmal an oder wende dich ansonsten an unseren Support: <a href="mailto:franke@zebralog.de">franke [ät] zebralog.de</a>.</p>
+      <br>
+      <p><strong>Was passiert mit meinen Ideen?</strong></p>
+      <p>Das Online-Tool zeigt aktuell ausgedachte Beispiele für digitale Beteiligung in Biebrich. Das bedeutet, dass deine Abstimmung und dein Kommentar zurzeit nicht an die Stadtverwaltung weitergeleitet werden.</p>
+      <br>
+      <p><strong>Wie geht es weiter?</strong></p>
+      <p>Mit deinem Feedback entwickeln wir das Online-Tool weiter mit dem Ziel, digitale Beteiligung zu vereinfachen und für alle zu ermöglichen.</p>
+      <br>
+      <p><strong>Gibt es noch andere Wege, sich zu beteiligen als online?</strong></p>
+    <p>Ja. An Orten, wo gerade Beteiligung stattfindet, stehen Installationen in Form einer Türklingel. Auch dort kannst du deine Ideen einbringen. Die Kommentare aus den Klingeln findest du hier auf der <ui-link to="/discussion">Beitragsseite</ui-link>.</p>`,
     },
     {
       name: "contact",
