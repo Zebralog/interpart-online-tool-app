@@ -52,14 +52,14 @@ export default {
   justify-content: center;
   align-items: center;
   font-size: 3rem;
-  color: #d1d1d1;
+  color: $color-text-light;
 
   &:hover,
   &:focus,
   &::v-deep.is-active {
     position: relative;
     background: #fff;
-    color: #7e7e7e;
+    color: $color-text;
 
     &:before {
       content: "";
