@@ -499,7 +499,16 @@ export default {
       socialBarPosition: "end",
       socialBarMessage: "Teile deine Abstimmung mit deinen Freunden",
       initial: {
-        discussion: [],
+        discussion: [
+          {
+            dialogId: 4,
+            id: 1,
+            type: "text",
+            date: new Date(),
+            content:
+              "Ich bräuchte etwas bessere Beleuchtung um mich sicher zu fühlen.",
+          },
+        ],
       },
     },
     "5": {
