@@ -340,7 +340,7 @@ export default {
             dialogId: 2,
             id: 1,
             type: "text",
-            date: new Date(),
+            date: new Date("December 19, 2019 15:15:30"),
             content:
               "Mir würde ein Zebrastreifen an dieser Kreuzung sehr helfen, um mit dem Kinderwagen sicher über die Straße zu kommen.",
           },
@@ -348,7 +348,7 @@ export default {
             dialogId: 2,
             id: 2,
             type: "text",
-            date: new Date(),
+            date: new Date("July 20, 2020 15:00:00"),
             content:
               "Eine niedrige Bordsteinkante fände ich gut, damit ich sicherer mit dem Fahrrad die Straße überqueren kann.",
           },
