@@ -83,7 +83,7 @@ export default {
   margin-top: 3rem;
   margin-bottom: 3rem;
   margin-right: 15%;
-  padding: 1rem;
+  padding: 0.5rem 1rem 1rem 1rem;
   z-index: 1;
 
   &:before {
@@ -130,12 +130,16 @@ export default {
     bottom: 0;
     z-index: 1;
     font-size: $font-size-8;
-    color: $color-text-light;
+    color: #666;
   }
 
   .dialog-info {
     font-size: $font-size-8;
-    color: $color-text-light;
+    color: #666;
+  }
+
+  .content {
+    font-size: $font-size-6;
   }
 }
 </style>
