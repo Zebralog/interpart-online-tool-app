@@ -8,12 +8,24 @@
     }"
   >
     <span class="date"> {{ message.date | formatDate }}</span>
-    <span v-if="dialogInformation" class="dialog-info">{{
-      dialogInformation
-    }}</span>
+    <span v-if="dialogInformation" class="dialog-info">
+      <span v-if="isBellMessage">{{ bellItemIntroText }}</span>
+      <span v-else>{{ genericItemIntroText }}</span>
+      "{{ dialogInformation }}"
+    </span>
     <div class="content">
-      {{ message.content }}
+      {{ isTranslated ? message.translatedContent : message.content }}
     </div>
+    <button
+      v-if="message.translatedContent"
+      class="button is-extra-small"
+      :style="buttonInlineStyle"
+      @click="toggleTranslation"
+    >
+      {{
+        isTranslated ? "Originalsprache anzeigen" : "ins Deutsche übersetzen"
+      }}
+    </button>
   </div>
 </template>
 
@@ -29,7 +41,9 @@ export default {
       if (isSameDay(date, today)) {
         return format(date, "HH:mm")
       } else if (today.getFullYear() == date.getFullYear()) {
-        return `${date.getDate()}/${date.getMonth()} - ${date.toLocaleTimeString()}`
+        return `${date.getDate()}/${
+          date.getMonth() + 1
+        } - ${date.toLocaleTimeString()}`
       } else {
         return `${date.toLocaleDateString()} - ${date.toLocaleTimeString()}`
       }
@@ -41,6 +55,7 @@ export default {
   data: function () {
     return {
       showMeta: false,
+      isTranslated: false,
     }
   },
   computed: {
@@ -58,6 +73,20 @@ export default {
     color() {
       return config.dialogs[this.message.dialogId].color
     },
+    bellItemIntroText() {
+      return config.bellItemIntroText
+    },
+    genericItemIntroText() {
+      return config.genericItemIntroText
+    },
+    isBellMessage() {
+      return this.message.isBellMessage
+    },
+    buttonInlineStyle() {
+      return this.isTranslated
+        ? { borderColor: this.color, backgroundColor: this.color }
+        : ""
+    },
   },
   methods: {
     toggleMetaInfo() {
@@ -67,6 +96,9 @@ export default {
       } else {
         this.$emit("message-meta-hidden")
       }
+    },
+    toggleTranslation() {
+      this.isTranslated = !this.isTranslated
     },
   },
 }
@@ -141,5 +173,17 @@ export default {
   .content {
     font-size: $font-size-6;
   }
+
+  .button {
+    border-color: $color-text;
+    color: $color-text;
+    margin-top: 1em;
+  }
+
+  // .translation-is-active {
+  //   border-color: inherit;
+  //   background: $color-text;
+  //   color: white;
+  // }
 }
 </style>

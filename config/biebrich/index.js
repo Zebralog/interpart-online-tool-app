@@ -23,6 +23,8 @@ import IconRestingPlaces from "@/config/live/ruheorte.svg"
 
 export default {
   heroAlt: "Willkommen bei Wiesbaden Biebrich! Los gehts",
+  bellItemIntroText: "Klingelbeitrag zu ",
+  genericItemIntroText: "Beitrag zu ",
   informationItems: [
     {
       name: "about",
@@ -507,6 +509,16 @@ export default {
             date: new Date(),
             content:
               "Ich bräuchte etwas bessere Beleuchtung um mich sicher zu fühlen.",
+          },
+          {
+            dialogId: 4,
+            id: 2,
+            type: "text",
+            date: new Date(),
+            isBellMessage: true,
+            content: "I wish there was a better ground for riding my bike.",
+            translatedContent:
+              "Ich wünschte es gäbe einen besseren Bodenbelag zum Fahrradfahren.",
           },
         ],
       },
