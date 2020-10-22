@@ -20,6 +20,7 @@
 import Facebook from "@/assets/facebook.svg"
 import Instagram from "@/assets/instagram.svg"
 import Twitter from "@/assets/twitter.svg"
+import Mail from "@/assets/mail.svg"
 import Icon from "@/components/icon"
 
 export default {
@@ -39,6 +40,7 @@ export default {
       { name: "Facebook", icon: Facebook, link: "https://facebook.com" },
       { name: "Instagram", icon: Instagram, link: "https://instagram.com" },
       { name: "Twitter", icon: Twitter, link: "https://twitter.com" },
+      { name: "Mail", icon: Mail, link: "mailto:franke@zebralog.de" },
     ],
   },
 }
@@ -61,6 +63,11 @@ export default {
 .socialbar-link {
   margin: 1rem;
   font-size: $font-size-3;
+
+  /deep/ .icon {
+    height: 1em;
+    width: 1em;
+  }
 }
 
 .social-bar-message {
