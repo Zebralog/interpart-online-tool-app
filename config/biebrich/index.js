@@ -264,8 +264,8 @@ export default {
       id: "2",
       title: "Verkehrssituation an der Galatea-Anlage",
       trigger: {
-        x: 73,
-        y: 25,
+        x: 71,
+        y: 20,
       },
       subtitle: "",
       buttonLabel:
@@ -431,7 +431,7 @@ export default {
       title: "Bewegung und Aufenthalt im Park",
       trigger: {
         x: 55,
-        y: 40,
+        y: 50,
       },
       subtitle: "Stimme jetzt darüber ab, wie der Park gestaltet werden sollte",
       buttonlabel: "Los geht’s",
