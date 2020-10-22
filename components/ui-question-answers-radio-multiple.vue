@@ -113,7 +113,7 @@ export default {
   }
 
   .button.weiter {
-    color: black;
+    color: $color-text;
     opacity: 1;
     display: inline-block;
     font-weight: bolder;
