@@ -76,20 +76,42 @@ export default {
 @import "@/assets/variables";
 
 .message-container {
+  background: #fff;
+  border-radius: $border-radius-md;
+  border: $border-speech-bubbles;
   position: relative;
   margin-top: 3rem;
   margin-bottom: 3rem;
   margin-right: 15%;
-  border-radius: $border-radius-md;
-  border: $border-speech-bubbles;
+  padding: 1rem;
+  z-index: 1;
 
   &:before {
+    content: "";
+    position: absolute;
+    bottom: -8px;
     left: 0;
+    width: 30px;
+    height: 30px;
+    border: $border-speech-bubbles;
+    border-color: inherit;
+    background: #fff;
+    pointer-events: none;
     transform: rotate(15deg) skewY(-35deg);
+    z-index: -1;
   }
 
-  .content {
-    padding-top: 1.5rem;
+  &:after {
+    content: "";
+    border-radius: 3px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    pointer-events: none;
+    z-index: -1;
   }
 
   &.is-me {
@@ -102,27 +124,6 @@ export default {
     }
   }
 
-  &:before {
-    content: "";
-    position: absolute;
-    bottom: -8px;
-    width: 30px;
-    height: 30px;
-    border: $border-speech-bubbles;
-    border-color: inherit;
-    background: #fff;
-    pointer-events: none;
-  }
-
-  .content {
-    position: relative;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-bottom: 1rem;
-    border-radius: $border-radius-md;
-    background: #fff;
-  }
-
   .date {
     position: absolute;
     right: 0.5rem;
@@ -133,10 +134,6 @@ export default {
   }
 
   .dialog-info {
-    position: absolute;
-    left: 1rem;
-    top: 0.5rem;
-    z-index: 1;
     font-size: $font-size-8;
     color: $color-text-light;
   }
