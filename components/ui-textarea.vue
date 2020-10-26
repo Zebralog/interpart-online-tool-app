@@ -4,6 +4,7 @@
       :value="value"
       rows="7"
       :placeholder="placeholder"
+      :class="{ 'is-dirty': !!value }"
       @input="$emit('input', $event.target.value)"
     />
     <icon
@@ -85,6 +86,10 @@ export default {
       & + .textarea-edit-icon {
         opacity: 0;
       }
+    }
+
+    &.is-dirty + .textarea-edit-icon {
+      opacity: 0;
     }
   }
 }
