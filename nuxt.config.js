@@ -43,6 +43,6 @@ export default {
     routeNameSplitter: ".",
     linkActiveClass: "is-active",
   },
-  modules: ["nuxt-svg-loader"],
+  modules: ["nuxt-svg-loader", "nuxt-interpolation"],
   plugins: ["plugins/v-click-outside", "plugins/v-touch-events"],
 }

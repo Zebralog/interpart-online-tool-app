@@ -50,7 +50,7 @@ export default {
       <p>Mit deinem Feedback entwickeln wir das Online-Tool weiter mit dem Ziel, digitale Beteiligung zu vereinfachen und für alle zu ermöglichen.</p>
       <br>
       <p><strong>Gibt es noch andere Wege, sich zu beteiligen als online?</strong></p>
-    <p>Ja. An Orten, wo gerade Beteiligung stattfindet, stehen Installationen in Form einer Türklingel. Auch dort kannst du deine Ideen einbringen. Die Kommentare aus den Klingeln findest du hier auf der <ui-link to="/discussion">Beitragsseite</ui-link>.</p>`,
+    <p>Ja. An Orten, wo gerade Beteiligung stattfindet, stehen Installationen in Form einer Türklingel. Auch dort kannst du deine Ideen einbringen. Die Kommentare aus den Klingeln findest du hier auf der <a href="/discussion">Beitragsseite</a>.</p>`,
     },
     {
       name: "contact",

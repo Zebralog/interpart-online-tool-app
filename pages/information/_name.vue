@@ -5,7 +5,7 @@
       {{ item.title }}
     </ui-subtitle>
     <ui-content class="content">
-      <div v-html="item.content" />
+      <div v-interpolation v-html="item.content" />
     </ui-content>
     <ui-link :to="{ name: 'information' }">
       Zurück
