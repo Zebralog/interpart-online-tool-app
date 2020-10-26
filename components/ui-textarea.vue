@@ -6,6 +6,12 @@
       :placeholder="placeholder"
       @input="$emit('input', $event.target.value)"
     />
+    <icon
+      class="textarea-edit-icon"
+      :icon="EditIcon"
+      :size="`medium`"
+      aria-hidden
+    />
     <span
       class="textarea-counter"
       :class="[
@@ -19,7 +25,13 @@
 </template>
 
 <script>
+import EditIcon from "@/assets/edit.svg"
+import Icon from "@/components/icon"
+
 export default {
+  components: {
+    Icon,
+  },
   props: {
     value: { type: String, default: "" },
     placeholder: { type: String, default: "" },
@@ -31,6 +43,9 @@ export default {
     },
     isValid() {
       return this.value.length > 0 && this.charsLeft >= 0
+    },
+    EditIcon() {
+      return EditIcon
     },
   },
   watch: {
@@ -66,6 +81,10 @@ export default {
     &:focus {
       outline: none;
       border: $border;
+
+      & + .textarea-edit-icon {
+        opacity: 0;
+      }
     }
   }
 }
@@ -86,5 +105,15 @@ export default {
   &.error {
     color: darken(red, 5%);
   }
+}
+
+.textarea-edit-icon {
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  color: $color-text-light;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.15s ease-in-out;
 }
 </style>
