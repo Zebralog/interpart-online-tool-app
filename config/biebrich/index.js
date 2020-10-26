@@ -66,7 +66,7 @@ export default {
 	Fax: +49 (0)30 - 221 8265 - 99
 	</p>
 	<p>
-	E-Mail: info [ät] zebralog.de <br />
+	E-Mail: <a href="mailto:info@zebralog.de">info [ät] zebralog.de</a> <br />
 	Internet: <a href='https://www.zebralog.de'>www.zebralog.de</a> <br />
 	Geschäftsführer: Matthias Trénel, Dr. Oliver Märker
 	</p>
@@ -85,7 +85,7 @@ export default {
 	<p>
 	Tel.: +49 (0)30 - 221 8265 - 1 <br />
 	Fax: +49 (0)30 - 221 8265 - 99 <br />
-	E-Mail: info [ät] zebralog.de <br />
+	E-Mail: <a href="mailto:info@zebralog.de">info [ät] zebralog.de</a> <br />
 	Internet: <a href="https://www.zebralog.de">www.zebralog.de</a>
 	</p>
 	<p>
@@ -101,7 +101,7 @@ export default {
 	<p>
 	<strong>Ansprechpartner/innen:</strong> <br />
 	Keno Franke <br />
-	E-Mail: franke [ät] zebralog.de
+	E-Mail: <a href="mailto:franke@zebralog.de">franke [ät] zebralog.de</a>
 	</p>
   `,
     },
