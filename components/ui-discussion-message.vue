@@ -6,6 +6,7 @@
     :style="{
       borderColor: color,
     }"
+    :data-message-id="message.id"
   >
     <span class="date"> {{ message.date | formatDate }}</span>
     <span v-if="dialogInformation" class="dialog-info">
@@ -14,7 +15,7 @@
       "{{ dialogInformation }}"
     </span>
     <div class="content">
-      {{ isTranslated ? message.translatedContent : message.content }}
+      {{ showTranslation ? message.translatedContent : message.content }}
     </div>
     <button
       v-if="message.translatedContent"
@@ -23,7 +24,9 @@
       @click="toggleTranslation"
     >
       {{
-        isTranslated ? "Originalsprache anzeigen" : "ins Deutsche übersetzen"
+        isShowingTranslatedContent
+          ? "Originalsprache anzeigen"
+          : "ins Deutsche übersetzen"
       }}
     </button>
   </div>
@@ -55,7 +58,7 @@ export default {
   data: function () {
     return {
       showMeta: false,
-      isTranslated: false,
+      showTranslation: false,
     }
   },
   computed: {
@@ -83,9 +86,15 @@ export default {
       return this.message.isBellMessage
     },
     buttonInlineStyle() {
-      return this.isTranslated
+      return this.showTranslation
         ? { borderColor: this.color, backgroundColor: this.color }
         : ""
+    },
+    isShowingTranslatedContent() {
+      return (
+        (this.message.language == "de" && !this.showTranslation) ||
+        (this.message.language != "de" && this.showTranslation)
+      )
     },
   },
   methods: {
@@ -98,7 +107,7 @@ export default {
       }
     },
     toggleTranslation() {
-      this.isTranslated = !this.isTranslated
+      this.showTranslation = !this.showTranslation
     },
   },
 }

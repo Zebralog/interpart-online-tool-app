@@ -59,7 +59,6 @@ export default {
       this.slideIndex = index
     },
     swipe(direction) {
-      console.log(direction)
       switch (direction) {
         case "left":
           this.setIndex(this.nextIndex)

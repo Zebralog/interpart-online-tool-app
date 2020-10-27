@@ -11,6 +11,7 @@
 import UiOverlay from "@/components/ui-overlay"
 import UiTitle from "@/components/ui-title"
 import Discussion from "@/components/ui-discussion"
+import config from "@/config"
 
 export default {
   components: {
@@ -20,8 +21,19 @@ export default {
   },
   computed: {
     messages() {
+      // return this.$store.getters["messages.static/all"]
       return this.$store.getters["messages/all"]
     },
+  },
+  mounted() {
+    this.$store
+      .dispatch("messages/login", {
+        email: config.api.rest.messages.auth.user,
+        password: config.api.rest.messages.auth.password,
+      })
+      .then(() => {
+        this.$store.dispatch("messages/loadItems")
+      })
   },
 }
 </script>

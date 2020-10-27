@@ -36,6 +36,7 @@ import AngleRight from "@/assets/angle-right.svg"
 import Icon from "@/components/icon"
 import UiTextarea from "@/components/ui-textarea"
 import UiButton from "@/components/ui-button"
+import config from "@/config"
 
 export default {
   components: {
@@ -57,14 +58,24 @@ export default {
   },
   methods: {
     submit() {
-      this.$store.dispatch("messages/add", {
-        dialogId: this.dialog.id,
-        type: "text",
-        author: "Ich",
-        date: new Date(),
-        content: this.textMessage,
-      })
-      this.$emit("answer-selected", "contribution-done")
+      this.$store
+        .dispatch("messages/login", {
+          email: config.api.rest.messages.auth.user,
+          password: config.api.rest.messages.auth.password,
+        })
+        .then(() => {
+          this.$store
+            .dispatch("messages/add", {
+              dialogId: this.dialog.id,
+              type: "text",
+              author: "Ich",
+              date: new Date(),
+              content: this.textMessage,
+            })
+            .then(() => {
+              this.$emit("answer-selected", "contribution-done")
+            })
+        })
     },
   },
 }
