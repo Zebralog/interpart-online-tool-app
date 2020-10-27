@@ -34,3 +34,12 @@ The prototype is deployed via a Hetzner Cloud Server that Zebralog is currently 
 * `npm install -g pm2` ([PM2](https://pm2.keymetrics.io/) is a process manager for production)
 
 To make adjustments to the server, you need an invitation from one of our sys admins. From there, you have to create an account and then you can create servers or add SSH keys to existing servers. Login always takes place via SSH and the server IP.
+
+## Deploying changes to the prototype
+To deploy changes to the prototype [prototyp.interpart.org (78.47.108.125)](https://prototyp.interpart.org/):
+
+* have your local SSL public key authorized for access to server
+* log on the server as `root`: `ssh root@prototyp.interpart.org`
+* `cd /var/www/interpart-mobile-prototype/`
+* `git pull` (adjust to the needed branch / specific commit)
+* `npm run deploy`
