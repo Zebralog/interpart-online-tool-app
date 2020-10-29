@@ -458,7 +458,7 @@ export default {
       title: "Bewegung und Aufenthalt im Park",
       trigger: {
         x: 55,
-        y: 50,
+        y: 40,
       },
       subtitle: "Stimme jetzt darüber ab, wie der Park gestaltet werden sollte",
       buttonlabel: "Los geht’s",
