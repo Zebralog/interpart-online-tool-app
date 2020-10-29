@@ -11,8 +11,8 @@ import IconStreetLightPark from "@/config/live/street-light-park.svg"
 import IconPedestrianCrossing from "@/config/live/pedestrian-crossing.svg"
 import IconCurb from "@/config/live/curb.svg"
 import IconBikeLane from "@/config/live/bike-lane.svg"
-import IconPieChartPink from "@/config/live/pie_chart-pink.svg"
-import IconPieChartBlue from "@/config/live/pie_chart-blue.svg"
+import IconPieChartGalatea from "@/config/live/pie-chart-galatea-relative.svg"
+import IconPieChartPark from "@/config/live/pie-chart-park-relative.svg"
 import IconMail from "@/config/live/wahlurne-02.svg"
 import IconPlayground from "@/config/live/spiel-und-sportstaette.svg"
 import IconRestingPlaces from "@/config/live/ruheorte.svg"
@@ -358,7 +358,7 @@ export default {
       ],
       completionIcon: IconMail,
       completionMessage: "",
-      opinionSentIcon: IconPieChartPink,
+      opinionSentIcon: IconPieChartGalatea,
       opinionSentMessage: "",
       askForMessage: true,
       initial: {
@@ -520,7 +520,7 @@ export default {
       ],
       completionIcon: IconMail,
       completionMessage: "",
-      opinionSentIcon: IconPieChartBlue,
+      opinionSentIcon: IconPieChartPark,
       opinionSentMessage: "",
       askForMessage: true,
       socialBarPosition: "end",

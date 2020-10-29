@@ -29,7 +29,10 @@
       </template>
       <template v-else>
         <icon
-          class="checkmark"
+          :class="{
+            chart: hasCustomOpinionIcon,
+            checkmark: !hasCustomOpinionIcon,
+          }"
           :icon="OpinionSentIcon"
           :original-color="true"
           :style="{ color: dialog.color }"
@@ -115,6 +118,9 @@ export default {
     AngleRight: () => AngleRight,
     NounMap: () => NounMap,
     NounTalk: () => NounTalk,
+    hasCustomOpinionIcon() {
+      return !!this.dialog.opinionSentIcon
+    },
   },
 }
 </script>
@@ -130,6 +136,13 @@ export default {
     margin-bottom: 0;
     max-height: 17rem;
   }
+
+  .chart {
+    margin-bottom: 1.5em;
+    max-width: 100%;
+    height: auto;
+  }
+
   .completion-message {
     margin-bottom: 2rem;
     font-style: italic;
@@ -138,6 +151,7 @@ export default {
     margin-left: auto;
     margin-right: auto;
   }
+
   .bold-text {
     font-size: 1.3rem;
     font-weight: bold;
