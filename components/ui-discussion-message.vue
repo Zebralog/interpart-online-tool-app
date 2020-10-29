@@ -40,6 +40,9 @@ import config from "@/config"
 export default {
   filters: {
     formatDate: (date) => {
+      if (!date) {
+        return ""
+      }
       const today = new Date()
       if (isSameDay(date, today)) {
         return format(date, "HH:mm")

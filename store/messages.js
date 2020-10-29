@@ -46,7 +46,7 @@ export const mutations = {
       const newMessage = {
         bell_id: bellId,
         message: message.content,
-        language: "de",
+        language: message.language ?? "de",
         translations: {},
       }
 
@@ -57,8 +57,26 @@ export const mutations = {
           },
         })
         .then((response) => response.data)
-      // .then((message) => { console.log(message); })
+        .then((newMessage) => {
+          message.id = newMessage.id
+        })
+      Vue.set(state, "messages", [...state.messages, message])
+    } else {
+      console.warn("messages/add[mut]: AUTH token not found")
     }
+  },
+  addDummy: (state, message) => {
+    const bellId =
+      config.api.dialogsToBells[
+        message.dialogId in config.api.dialogsToBells
+          ? message.dialogId
+          : "default"
+      ]
+    const newMessage = { bellId, ...message }
+    if (!("id" in newMessage)) {
+      newMessage.id = Math.round(Math.random() * (99999 - 10000) + 10000)
+    }
+    Vue.set(state, "messages", [...state.messages, newMessage])
   },
   set: (state, messages) => {
     Vue.set(state, "messages", messages)
@@ -89,45 +107,51 @@ export const actions = {
         })
     })
   },
-  loadItems: ({ commit, state }) => {
-    if (state.auth.token) {
-      axios
-        .get(config.api.rest.messages.endpoints.getAll, {
-          headers: {
-            Authorization: `Bearer ${state.auth.token}`,
-          },
+  loadItems: ({ state, commit }) => {
+    axios
+      .get(config.api.rest.messages.endpoints.getAll)
+      .then((response) => response.data)
+      .then((messages) => {
+        let processed = {}
+        messages.forEach((message) => {
+          const dialogId =
+            config.api.bellsToDialogs[
+              message.bell_id in config.api.bellsToDialogs
+                ? message.bell_id
+                : "default"
+            ]
+          const translationLanguage = message.language == "de" ? "en" : "de"
+          const translation =
+            "translations" in message &&
+            translationLanguage in message.translations
+              ? message.translations[translationLanguage]
+              : null
+          processed[message.id] = {
+            dialogId: dialogId,
+            type: "text",
+            date: new Date(message.timestamp),
+            content: message.message,
+            translationLanguage: translationLanguage,
+            translatedContent: translation,
+            ...message,
+          }
         })
-        .then((response) => response.data)
-        .then((messages) => {
-          let processed = []
-          messages.forEach((message) => {
-            const dialogId =
-              config.api.bellsToDialogs[
-                message.bell_id in config.api.bellsToDialogs
-                  ? message.bell_id
-                  : "default"
-              ]
-            const translationLanguage = message.language == "de" ? "en" : "de"
-            const translation =
-              "translations" in message &&
-              translationLanguage in message.translations
-                ? message.translations[translationLanguage]
-                : null
-            processed.push({
-              dialogId: dialogId,
-              type: "text",
-              date: new Date(message.timestamp),
-              content: message.message,
-              translationLanguage: translationLanguage,
-              translatedContent: translation,
-              ...message,
-            })
-          })
-          commit("set", processed)
+
+        // check with current state before overwriting
+        state.messages.forEach((message) => {
+          if ("id" in message && !(message.id in processed)) {
+            processed[message.id] = message
+          }
         })
-    }
+        commit("set", Object.values(processed))
+      })
   },
   add: ({ commit }, message) => {
     commit("add", message)
+    return message
+  },
+  addDummy: ({ commit }, message) => {
+    commit("addDummy", message)
+    return message
   },
 }

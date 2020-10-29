@@ -37,6 +37,7 @@ import Icon from "@/components/icon"
 import UiTextarea from "@/components/ui-textarea"
 import UiButton from "@/components/ui-button"
 import config from "@/config"
+import { REPLY_TIMEOUT } from "@/model/constants"
 
 export default {
   components: {
@@ -73,6 +74,34 @@ export default {
               content: this.textMessage,
             })
             .then(() => {
+              setTimeout(() => {
+                this.$store.dispatch("messages/addDummy", {
+                  id: "DUMMY-MSG-001",
+                  dialogId: this.dialog.id,
+                  content:
+                    "An dieser Kreuzung schlage ich einen großen Zebrastreifen für Fußgänger vor.",
+                  language: "de",
+                  translatedContent:
+                    "At this intersection, I suggest a large zebra crossing for pedestrians.",
+                  type: "text",
+                  author: "Ich",
+                  date: new Date(),
+                })
+              }, REPLY_TIMEOUT)
+
+              setTimeout(() => {
+                this.$store.dispatch("messages/addDummy", {
+                  id: "DUMMY-MSG-002",
+                  dialogId: this.dialog.id,
+                  content: "I would like a new bike lane at this intersection.",
+                  language: "en",
+                  translatedContent:
+                    "Ich wünsche mir einen neuen Fahrradweg an dieser Kreuzung.",
+                  type: "text",
+                  author: "Ich",
+                  date: new Date(),
+                })
+              }, REPLY_TIMEOUT * 2)
               this.$emit("answer-selected", "contribution-done")
             })
         })
