@@ -9,7 +9,7 @@
       type="button"
       class="map-place-button"
       :aria-label="place.title"
-      :style="{ fontSize: '4.5rem' }"
+      :style="{ fontSize: '4.5rem', color: pinColor }"
       @click="clickOnPin"
     >
       <icon :icon="Pin" />
@@ -52,6 +52,9 @@ export default {
         } ${Math.abs(this.place.trigger.y)}vw)`,
       }
     },
+    pinColor() {
+      return this.lightenDarkenColor(this.place.color, 30)
+    },
   },
   methods: {
     clickOnPin() {
@@ -62,12 +65,41 @@ export default {
       this.isPopupOpen = false
       this.$emit("map-popup-closed")
     },
+    // Borrowed from: https://css-tricks.com/snippets/javascript/lighten-darken-color/
+    lightenDarkenColor(col, amt) {
+      let usePound = false
+
+      if (col[0] == "#") {
+        col = col.slice(1)
+        usePound = true
+      }
+
+      const num = parseInt(col, 16)
+
+      let r = (num >> 16) + amt
+
+      if (r > 255) r = 255
+      else if (r < 0) r = 0
+
+      let b = ((num >> 8) & 0x00ff) + amt
+
+      if (b > 255) b = 255
+      else if (b < 0) b = 0
+
+      let g = (num & 0x0000ff) + amt
+
+      if (g > 255) g = 255
+      else if (g < 0) g = 0
+
+      return (usePound ? "#" : "") + (g | (b << 8) | (r << 16)).toString(16)
+    },
   },
 }
 </script>
 
 <style lang="scss" scoped>
 .map-place {
+  color: #333;
   position: absolute;
   transform: translate(-50%, -100%);
 
