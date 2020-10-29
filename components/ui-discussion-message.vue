@@ -127,7 +127,7 @@ export default {
   margin-top: 3rem;
   margin-bottom: 3rem;
   margin-right: 15%;
-  padding: 0.5rem 1rem 1rem 1rem;
+  padding: 1rem 1rem 1.5rem 1rem;
   z-index: 1;
 
   &:before {
