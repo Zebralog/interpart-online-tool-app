@@ -149,15 +149,8 @@ export const actions = {
           },
         }
       )
-      // .then((response) => response.data)
-      // .then((newMessage) => {
-      //   message.id = newMessage.id
-      // })
-      console.log(data)
       if (data && "id" in data) {
-        console.log(data)
         message.id = data.id
-        console.log(message)
         commit("add", message)
         commit("setLastMessage", message)
       }
