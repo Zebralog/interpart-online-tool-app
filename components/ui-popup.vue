@@ -119,7 +119,7 @@ export default {
   background: #fff;
   border: 3px solid;
   border-radius: $border-radius-xl;
-  font-size: 0.85rem;
+  font-size: $font-size-7;
   transform: translate(-55%);
   box-shadow: $shadow-lg;
 

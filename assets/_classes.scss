@@ -41,6 +41,7 @@
   display: inline-flex;
   align-items: center;
   border: 1px solid $grey-lighter;
+  line-height: normal;
   cursor: pointer;
 
   &[disabled] {

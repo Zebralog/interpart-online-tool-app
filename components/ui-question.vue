@@ -92,7 +92,7 @@ export default {
     text-align: center;
   }
   .question-content {
-    font-size: 1.2rem;
+    font-size: $font-size-5;
   }
 }
 

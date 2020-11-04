@@ -128,6 +128,7 @@ export default {
 
   .subtitle {
     margin-bottom: 2rem;
+    font-size: $font-size-6;
   }
 
   .call-to-action {

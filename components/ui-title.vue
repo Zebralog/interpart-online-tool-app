@@ -5,9 +5,11 @@
 </template>
 
 <style lang="scss" scoped>
+@import "@/assets/variables";
+
 .title {
   position: relative;
-  font-size: 1.75rem;
+  font-size: $font-size-4;
   font-weight: bold;
   padding-left: 2rem;
   padding-bottom: 2rem;

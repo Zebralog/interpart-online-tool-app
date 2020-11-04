@@ -50,7 +50,7 @@ export default {
 @import "@/assets/variables";
 
 .socialbar-container {
-  margin-top: 1em;
+  margin-top: 2rem;
 }
 
 .socialbar {
@@ -75,6 +75,6 @@ export default {
   color: $color-text;
   width: 100%;
   display: block;
-  font-size: $font-size-5;
+  font-size: $font-size-6;
 }
 </style>

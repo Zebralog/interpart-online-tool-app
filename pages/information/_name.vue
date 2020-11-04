@@ -42,10 +42,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/variables";
+
 .subtitle {
-  font-size: 1.6rem;
+  font-size: $font-size-3;
 }
+
 .content {
-  font-size: 1.3rem;
+  font-size: $font-size-5;
 }
 </style>

@@ -48,34 +48,24 @@
       </template>
     </div>
 
-    <div v-if="false">
+    <div v-if="askForMessage" class="next-steps">
       <ui-button
+        class="map-button"
         tag="nuxt-link"
-        variant="small"
-        :to="{ name: `map` }"
-        :icon-right="NounMap"
-      >
-        Zurück zu Karte
-      </ui-button>
-    </div>
-    <div v-if="askForMessage">
-      <div class="contribution"></div>
-
-      <ui-button
-        tag="nuxt-link"
-        variant="small"
+        variant="normal"
         :to="{ name: `map` }"
         :icon-right="NounMap"
       >
         Zurück zu Karte
       </ui-button>
 
-      <br />
-      <br />
-      <div class="bold-text">
-        Dir liegt noch etwas auf dem Herzen?
+      <div>
+        <strong>
+          Dir liegt noch etwas auf dem Herzen?
+        </strong>
       </div>
       <ui-button
+        class="message-button"
         :icon-right="AngleRight"
         @click="$emit('answer-selected', 'contribution')"
       >
@@ -137,7 +127,7 @@ export default {
   }
 
   .chart {
-    margin-bottom: 1.5em;
+    margin-bottom: 2rem;
     max-width: 100%;
     height: auto;
   }
@@ -151,20 +141,20 @@ export default {
     margin-right: auto;
   }
 
-  .bold-text {
-    font-size: 1.3rem;
-    font-weight: bold;
-  }
-
-  .contribution {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    font-weight: 500;
-  }
-
   .confirmation {
-    margin-bottom: 1rem;
-    font-size: $font-size-4;
+    font-size: $font-size-5;
+  }
+
+  .next-steps {
+    font-size: $font-size-5;
+  }
+
+  .map-button {
+    margin: 0.5rem 0 2rem 0;
+  }
+
+  .message-button {
+    margin-top: 0.5rem;
   }
 }
 </style>

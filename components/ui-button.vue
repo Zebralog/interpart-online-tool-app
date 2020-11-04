@@ -30,6 +30,6 @@ export default {
 
 .icon-right {
   margin-left: 0.5rem;
-  font-size: 1.3em;
+  font-size: $font-size-4;
 }
 </style>
