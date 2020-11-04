@@ -54,7 +54,7 @@ export default {
       },
   heroAlt: "Willkommen bei Wiesbaden Biebrich! Los gehts",
   bellItemIntroText: "Klingelbeitrag zu ",
-  genericItemIntroText: "Beitrag zu ",
+  genericItemIntroText: "Kommentar zu ",
   informationItems: [
     {
       name: "about",
