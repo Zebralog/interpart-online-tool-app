@@ -19,7 +19,7 @@
     <div class="call-to-action">
       Was ist dir bei diesem Thema noch wichtig? Teile uns mit, was deiner
       Meinung nach in der Planung beachtet werden sollte. Was du hier schreibst,
-      wird auf der Kommentarseite in der App veröffentlicht.
+      wird auf der Kommentarseite veröffentlicht.
     </div>
 
     <div>
