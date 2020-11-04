@@ -14,9 +14,8 @@
         <div><strong>Vielen Dank</strong></div>
         <div>
           für deinen Kommentar zu einer gemeinsam gestalteten Stadt der Zukunft!
-          Was du hier schreibst wird nun auf der Kommentarseite veröffentlicht,
-          wo du dir auch die Beiträge der anderen Nutzer und Nutzerinnen
-          anschauen kannst.
+          Siehe dir auf der Kommentarseite an, was andere zu dem Thema
+          geschrieben haben.
         </div>
         <ui-button
           tag="nuxt-link"
