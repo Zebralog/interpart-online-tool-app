@@ -21,32 +21,37 @@ import IconRestingPlaces from "@/config/live/ruheorte.svg"
 // import IconGymSport from "@/config/live/gym-sport-fueralle.svg"
 // import IconElection from "@/config/live/election.svg"
 
+// const localConfig = require("@/config/live/local.env")
+import { default as localConfig } from "@/config/live/local.env"
+
 export default {
-  api: {
-    rest: {
-      messages: {
-        endpoints: {
-          login: "http://195.201.238.202:4321/users/login",
-          getAll: "http://195.201.238.202:4321/messages",
-          newMessage: "http://195.201.238.202:4321/messages",
+  api: localConfig.api
+    ? localConfig.api
+    : {
+        rest: {
+          messages: {
+            endpoints: {
+              login: "http://195.201.238.202:4321/users/login",
+              getAll: "http://195.201.238.202:4321/messages",
+              newMessage: "http://195.201.238.202:4321/messages",
+            },
+            auth: {
+              user: "bell3@udk.de",
+              password: "valuable bark position choice",
+            },
+          },
         },
-        auth: {
-          user: "bell3@udk.de",
-          password: "valuable bark position choice",
+        bellsToDialogs: {
+          "BELL-3219794234": 4,
+          "BELL-7723427353": 2,
+          default: 2,
+        },
+        dialogsToBells: {
+          2: "BELL-7723427353",
+          4: "BELL-3219794234",
+          default: "BELL-7723427353",
         },
       },
-    },
-    bellsToDialogs: {
-      "BELL-3219794234": 4,
-      "BELL-7723427353": 2,
-      default: 2,
-    },
-    dialogsToBells: {
-      2: "BELL-7723427353",
-      4: "BELL-3219794234",
-      default: "BELL-7723427353",
-    },
-  },
   heroAlt: "Willkommen bei Wiesbaden Biebrich! Los gehts",
   bellItemIntroText: "Klingelbeitrag zu ",
   genericItemIntroText: "Beitrag zu ",

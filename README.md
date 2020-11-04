@@ -43,3 +43,13 @@ To deploy changes to the prototype [prototyp.interpart.org (78.47.108.125)](http
 * `cd /var/www/interpart-mobile-prototype/`
 * `git pull` (adjust to the needed branch / specific commit)
 * `npm run deploy`
+
+## Setup APIs connection
+
+The application stores the API endpoints, login data and collateral info in the specific `index.js` config file.
+To setup the API connection, copy the local configuration template to a local.env.js
+```
+cp config/live/local.env.js.template config/live/local.env.js
+```
+and change the relevant data accordingly.
+A repository containing the backend code (for local development) can be found [here](https://git.zebralog.net/roccazzella/interpart-db).
