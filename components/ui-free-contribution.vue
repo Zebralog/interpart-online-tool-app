@@ -74,9 +74,15 @@ export default {
               content: this.textMessage,
             })
             .then(() => {
+              const DUMMY_MSG_ID1 =
+                "DUMMY-MSG-" +
+                Math.floor(Math.random() * (99999 - 10000) + 10000)
+              const DUMMY_MSG_ID2 =
+                "DUMMY-MSG-" +
+                Math.floor(Math.random() * (99999 - 10000) + 10000)
               setTimeout(() => {
                 this.$store.dispatch("messages/addDummy", {
-                  id: "DUMMY-MSG-001",
+                  id: DUMMY_MSG_ID1,
                   dialogId: this.dialog.id,
                   content:
                     "An dieser Kreuzung schlage ich einen großen Zebrastreifen für Fußgänger vor.",
@@ -91,7 +97,7 @@ export default {
 
               setTimeout(() => {
                 this.$store.dispatch("messages/addDummy", {
-                  id: "DUMMY-MSG-002",
+                  id: DUMMY_MSG_ID2,
                   dialogId: this.dialog.id,
                   content: "I would like a new bike lane at this intersection.",
                   language: "en",

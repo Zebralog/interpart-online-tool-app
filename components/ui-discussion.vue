@@ -1,6 +1,11 @@
 <template>
   <div class="discussion">
-    <Message v-for="message in messages" :key="message.id" :message="message" />
+    <Message
+      v-for="message in messages"
+      :key="message.id"
+      :message="message"
+      :force-side="lastMessage == message.id"
+    />
   </div>
 </template>
 
@@ -17,6 +22,10 @@ export default {
       default: function () {
         return []
       },
+    },
+    lastMessage: {
+      type: Number,
+      default: null,
     },
   },
 }

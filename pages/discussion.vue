@@ -3,7 +3,7 @@
     <ui-title class="is-sr-only">
       Diskussion
     </ui-title>
-    <discussion :messages="messages" />
+    <discussion :messages="messages" :last-message="lastMessage" />
   </ui-overlay>
 </template>
 
@@ -22,6 +22,11 @@ export default {
     messages() {
       // return this.$store.getters["messages.static/all"]
       return this.$store.getters["messages/all"]
+    },
+    lastMessage() {
+      return this.$store.getters["messages/lastCreatedMessage"]
+        ? this.$store.getters["messages/lastCreatedMessage"].id
+        : null
     },
   },
   mounted() {

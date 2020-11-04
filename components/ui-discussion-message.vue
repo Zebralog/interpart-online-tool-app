@@ -57,6 +57,7 @@ export default {
   },
   props: {
     message: { type: Object, required: true },
+    forceSide: { type: Boolean, required: false, default: false },
   },
   data: function () {
     return {
@@ -74,7 +75,7 @@ export default {
       return config.dialogs[this.message.dialogId].title
     },
     isMe() {
-      return this.message.author === LOGGED_IN_AUTHOR
+      return this.forceSide || this.message.author === LOGGED_IN_AUTHOR
     },
     color() {
       return config.dialogs[this.message.dialogId].color

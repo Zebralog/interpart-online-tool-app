@@ -6,6 +6,7 @@ import config from "@/config"
 
 export const state = () => ({
   messages: [],
+  lastMessage: null,
   auth: {
     status: "",
     token: "",
@@ -16,6 +17,7 @@ export const getters = {
   isLoggedIn: (state) => !!state.auth.token,
   authStatus: (state) => state.auth.status,
   all: (state) => state.messages,
+  lastCreatedMessage: (state) => state.lastMessage,
   byDialogId: (state) => (dialogId) =>
     state.messages.filter((message) => message.dialogId === dialogId),
 }
@@ -36,34 +38,8 @@ export const mutations = {
     state.auth.token = ""
   },
   add: (state, message) => {
-    if (state.auth.token) {
-      const bellId =
-        config.api.dialogsToBells[
-          message.dialogId in config.api.dialogsToBells
-            ? message.dialogId
-            : "default"
-        ]
-      const newMessage = {
-        bell_id: bellId,
-        message: message.content,
-        language: message.language ?? "de",
-        translations: {},
-      }
-
-      axios
-        .post(config.api.rest.messages.endpoints.newMessage, newMessage, {
-          headers: {
-            Authorization: `Bearer ${state.auth.token}`,
-          },
-        })
-        .then((response) => response.data)
-        .then((newMessage) => {
-          message.id = newMessage.id
-        })
-      Vue.set(state, "messages", [...state.messages, message])
-    } else {
-      console.warn("messages/add[mut]: AUTH token not found")
-    }
+    state.messages = [...state.messages, message]
+    // Vue.set(state, "messages", [...state.messages, message])
   },
   addDummy: (state, message) => {
     const bellId =
@@ -80,6 +56,9 @@ export const mutations = {
   },
   set: (state, messages) => {
     Vue.set(state, "messages", messages)
+  },
+  setLastMessage: (state, message) => {
+    state.lastMessage = message
   },
 }
 
@@ -146,9 +125,45 @@ export const actions = {
         commit("set", Object.values(processed))
       })
   },
-  add: ({ commit }, message) => {
-    commit("add", message)
-    return message
+  add: async ({ commit, state }, message) => {
+    if (state.auth.token) {
+      const bellId =
+        config.api.dialogsToBells[
+          message.dialogId in config.api.dialogsToBells
+            ? message.dialogId
+            : "default"
+        ]
+      const newMessage = {
+        bell_id: bellId,
+        message: message.content,
+        language: message.language ?? "de",
+        translations: {},
+      }
+
+      let { data } = await axios.post(
+        config.api.rest.messages.endpoints.newMessage,
+        newMessage,
+        {
+          headers: {
+            Authorization: `Bearer ${state.auth.token}`,
+          },
+        }
+      )
+      // .then((response) => response.data)
+      // .then((newMessage) => {
+      //   message.id = newMessage.id
+      // })
+      console.log(data)
+      if (data && "id" in data) {
+        console.log(data)
+        message.id = data.id
+        console.log(message)
+        commit("add", message)
+        commit("setLastMessage", message)
+      }
+    } else {
+      console.warn("messages/add[mut]: AUTH token not found")
+    }
   },
   addDummy: ({ commit }, message) => {
     commit("addDummy", message)
