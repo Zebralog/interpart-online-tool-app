@@ -25,6 +25,29 @@
         </div>
       </div>
     </nuxt-link>
+    <div
+      v-else-if="value"
+      v-click-outside="clickOutsideOptions"
+      :style="{
+        borderColor: color,
+        [isBottom ? 'top' : 'bottom']: 'calc(100% + 1.5rem)',
+      }"
+      :class="{ popup: true, 'is-bottom': isBottom }"
+    >
+      <div class="popup-triangle" :style="{ borderColor: color }" />
+      <div class="popup-content">
+        <h2 class="title">
+          {{ title }}
+        </h2>
+        <h3 v-if="subtitle" class="subtitle">
+          {{ subtitle }}
+        </h3>
+        <nuxt-link v-if="linkRoute" class="action-link" :to="linkRoute">
+          {{ linkTitle }}
+          <icon :icon="AngleRightCircle" />
+        </nuxt-link>
+      </div>
+    </div>
   </transition>
 </template>
 

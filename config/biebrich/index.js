@@ -616,5 +616,101 @@ export default {
         discussion: [],
       },
     },
+    "6": {
+      id: "6",
+      closed: true,
+      title: "Neugestaltung des Mariannenplatzes",
+      trigger: {
+        x: 74,
+        y: 74,
+      },
+      subtitle: "Hier startet demnächst eine Beteiligung.",
+      buttonlabel: "Los geht’s",
+      color: "#C6D3E7",
+      questions: [
+        {
+          type: "emoji",
+          image: {
+            src: dialog4Url,
+            alt:
+              "Offene Parkanlage mit Sitzbänken und Blick auf die gegenüberliegende Straße",
+            title:
+              "Offene Parkanlage mit Sitzbänken und Blick auf die gegenüberliegende Straße",
+          },
+          question:
+            "Welcher Emoji passt am besten zu deiner Stimmung, wenn du dir das Bild anguckst?",
+          answers: [
+            { emoji: "😕", value: "confused" },
+            { emoji: "🙂", value: "slightly-smiling" },
+            { emoji: "😠", value: "angry" },
+          ],
+        },
+        {
+          type: "multiple",
+          image: null,
+          showAnswerKey: false,
+          question: {
+            title: "",
+            content:
+              "Stell dir vor, du bist in der Robert-Krekel-Anlage unterwegs – Was ist für dich in dem Park am wichtigsten, damit du dich wohlfühlst?",
+          },
+          answers: [
+            {
+              key: "A",
+              content: "Guter Bodenbelag zum durchfahren",
+              value: "goodroads",
+              icon: IconBikeLane,
+            },
+            {
+              key: "B",
+              content: "Spiel- und Sportstätten für alle Generationen",
+              value: "playground",
+              icon: IconPlayground,
+            },
+            {
+              key: "C",
+              content: "Beleuchtete Wege",
+              value: "lighting",
+              icon: IconStreetLightPark,
+            },
+            {
+              key: "D",
+              content: "Ruheorte",
+              value: "resting",
+              icon: IconRestingPlaces,
+            },
+          ],
+        },
+      ],
+      completionIcon: IconMail,
+      completionMessage: "",
+      opinionSentIcon: IconPieChartPark,
+      opinionSentMessage: "",
+      askForMessage: true,
+      socialBarPosition: "end",
+      socialBarMessage: "Teile deine Abstimmung mit deinen Freunden",
+      initial: {
+        discussion: [
+          {
+            dialogId: 4,
+            id: 1,
+            type: "text",
+            date: new Date(),
+            content:
+              "Ich bräuchte etwas bessere Beleuchtung um mich sicher zu fühlen.",
+          },
+          {
+            dialogId: 4,
+            id: 2,
+            type: "text",
+            date: new Date(),
+            isBellMessage: true,
+            content: "I wish there was a better ground for riding my bike.",
+            translatedContent:
+              "Ich wünschte es gäbe einen besseren Bodenbelag zum Fahrradfahren.",
+          },
+        ],
+      },
+    },
   },
 }

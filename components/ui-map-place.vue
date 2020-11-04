@@ -20,8 +20,12 @@
       :color="place.color"
       :title="place.title"
       :subtitle="place.subtitle"
-      :link-title="place.buttonLabel ? place.buttonLabel : `Los gehts`"
-      :link-route="{ name: 'dialog.id', params: { id: place.id } }"
+      :link-title="
+        !place.closed && place.buttonLabel ? place.buttonLabel : `Los gehts`
+      "
+      :link-route="
+        !place.closed ? { name: 'dialog.id', params: { id: place.id } } : null
+      "
     />
   </div>
 </template>
