@@ -71,7 +71,7 @@ export default {
       name: "how-to",
       title: "FAQ",
       content: `<p><strong>Wie benutze ich das Online-Tool?</strong></p>
-      <p>Bei Fragen zur Navigation, schau’ dir gerne das Intro noch einmal an oder wende dich ansonsten an unseren Support: <a href="mailto:franke@zebralog.de">franke [ät] zebralog.de</a>.</p>
+      <p>Bei Fragen zur Navigation, schau’ dir gerne das Intro noch einmal an oder wende dich ansonsten an unseren Support: <a class="underlined" href="mailto:franke@zebralog.de">franke [ät] zebralog.de</a>.</p>
       <br>
       <p><strong>Was passiert mit meinen Ideen?</strong></p>
       <p>Das Online-Tool zeigt aktuell ausgedachte Beispiele für digitale Beteiligung in Biebrich. Das bedeutet, dass deine Abstimmung und dein Kommentar zurzeit nicht an die Stadtverwaltung weitergeleitet werden.</p>
@@ -80,7 +80,7 @@ export default {
       <p>Mit deinem Feedback entwickeln wir das Online-Tool weiter mit dem Ziel, digitale Beteiligung zu vereinfachen und für alle zu ermöglichen.</p>
       <br>
       <p><strong>Gibt es noch andere Wege, sich zu beteiligen als online?</strong></p>
-    <p>Ja. An Orten, wo gerade Beteiligung stattfindet, stehen Installationen in Form einer Türklingel. Auch dort kannst du deine Ideen einbringen. Die Kommentare aus den Klingeln findest du hier auf der <a href="/discussion">Beitragsseite</a>.</p>`,
+    <p>Ja. An Orten, wo gerade Beteiligung stattfindet, stehen Installationen in Form einer Türklingel. Auch dort kannst du deine Ideen einbringen. Die Kommentare aus den Klingeln findest du hier auf der <a class="underlined" href="/discussion">Beitragsseite</a>.</p>`,
     },
     {
       name: "contact",
@@ -96,8 +96,8 @@ export default {
 	Fax: +49 (0)30 - 221 8265 - 99
 	</p>
 	<p>
-	E-Mail: <a href="mailto:info@zebralog.de">info [ät] zebralog.de</a> <br />
-	Internet: <a href='https://www.zebralog.de'>www.zebralog.de</a> <br />
+	E-Mail: <a class="underlined" href="mailto:info@zebralog.de">info [ät] zebralog.de</a> <br />
+	Internet: <a class="underlined" href='https://www.zebralog.de'>www.zebralog.de</a> <br />
 	Geschäftsführer: Matthias Trénel, Dr. Oliver Märker
 	</p>
 	<p>
@@ -115,8 +115,8 @@ export default {
 	<p>
 	Tel.: +49 (0)30 - 221 8265 - 1 <br />
 	Fax: +49 (0)30 - 221 8265 - 99 <br />
-	E-Mail: <a href="mailto:info@zebralog.de">info [ät] zebralog.de</a> <br />
-	Internet: <a href="https://www.zebralog.de">www.zebralog.de</a>
+	E-Mail: <a class="underlined" href="mailto:info@zebralog.de">info [ät] zebralog.de</a> <br />
+	Internet: <a class="underlined" href="https://www.zebralog.de">www.zebralog.de</a>
 	</p>
 	<p>
 	Geschäftsführer: Matthias Trénel, Dr. Oliver Märker <br />
@@ -131,7 +131,7 @@ export default {
 	<p>
 	<strong>Ansprechpartner/innen:</strong> <br />
 	Keno Franke <br />
-	E-Mail: <a href="mailto:franke@zebralog.de">franke [ät] zebralog.de</a>
+	E-Mail: <a class="underlined" href="mailto:franke@zebralog.de">franke [ät] zebralog.de</a>
 	</p>
   `,
     },
