@@ -59,7 +59,7 @@ export default {
     {
       name: "about",
       title: "Über das Projekt",
-      content: `<p>studio biebrich ist der Name der Mitmach-Formate von dem Forschungsprojekt Interpart. Das Forschungsprojekt möchte gemeinsam mit der Wiesbadener Verwaltung herausfinden, wie sich zukünftig möglichst alle Stadtbewohner und Stadtbewohnerinnen besser in Themen der Stadtentwicklung einbringen können. Denn: Für die Entwicklung unserer Stadt sind alle Meinungen wichtig!</p><p>Mehr Informationen erhälst du auf <a href="https://www.interpart.org/node/1217#uip-1">studio biebrich</a>.</p>`,
+      content: `<p>studio biebrich ist der Name der Mitmach-Formate von dem Forschungsprojekt Interpart. Das Forschungsprojekt möchte gemeinsam mit der Wiesbadener Verwaltung herausfinden, wie sich zukünftig möglichst alle Stadtbewohner und Stadtbewohnerinnen besser in Themen der Stadtentwicklung einbringen können. Denn: Für die Entwicklung unserer Stadt sind alle Meinungen wichtig!</p><p>Mehr Informationen erhälst du auf <a class="underlined" href="https://www.interpart.org/node/1217#uip-1">studio biebrich</a>.</p>`,
     },
     // {
     //   name: "goals",
@@ -89,7 +89,7 @@ export default {
 	<p>Herausgeber und Anbieter im Sinne des § 5 Telemediengesetz (TMG) sowie inhaltliche Verantwortung nach §55 Abs. 2 des Rundfunkstaatsvertrages (RStV):</p>
 
 	<p>
-	<strong>Zebralog GmbH & Co KG</strong> <br />
+	<strong>Zebralog GmbH</strong> <br />
 	Oranienburger Straße 87/89, HH <br />
 	10178 Berlin <br />
 	Tel.: +49 (0)30 - 221 8265 - 1 <br />
@@ -108,7 +108,7 @@ export default {
 	<br />
 	<p>
 	<strong>Konzept, Gestaltung, Realisierung und technischer Betrieb:</strong> <br />
-	Zebralog GmbH & Co KG <br />
+	Zebralog GmbH <br />
 	Oranienburger Straße 87/89, HH <br />
 	10178 Berlin
 	</p>
