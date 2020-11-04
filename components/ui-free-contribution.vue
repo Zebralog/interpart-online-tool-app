@@ -84,7 +84,7 @@ export default {
                   translatedContent:
                     "At this intersection, I suggest a large zebra crossing for pedestrians.",
                   type: "text",
-                  author: "Ich",
+                  author: "Person A",
                   date: new Date(),
                 })
               }, REPLY_TIMEOUT)
@@ -98,7 +98,7 @@ export default {
                   translatedContent:
                     "Ich wünsche mir einen neuen Fahrradweg an dieser Kreuzung.",
                   type: "text",
-                  author: "Ich",
+                  author: "Person B",
                   date: new Date(),
                 })
               }, REPLY_TIMEOUT * 2)
