@@ -626,7 +626,7 @@ export default {
       },
       subtitle: "Hier startet demnächst eine Beteiligung.",
       buttonlabel: "Los geht’s",
-      color: "#C6D3E7",
+      color: "#F6CD86",
       questions: [
         {
           type: "emoji",
