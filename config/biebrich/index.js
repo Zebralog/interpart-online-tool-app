@@ -621,7 +621,7 @@ export default {
       closed: true,
       title: "Neugestaltung des Mariannenplatzes",
       trigger: {
-        x: 74,
+        x: 71,
         y: 74,
       },
       subtitle: "Hier startet demnächst eine Beteiligung.",
