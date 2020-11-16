@@ -528,7 +528,7 @@ export default {
       completionMessage: "",
       opinionSentIcon: IconPieChartPark,
       opinionSentMessage:
-        "<span style='font-weight: bold; text-decoration: underline;'>106</span> Personen haben bisher abgestimmt",
+        "<span style='font-weight: bold; text-decoration: underline;'>100</span> Personen haben bisher abgestimmt",
       askForMessage: true,
       socialBarPosition: "end",
       socialBarMessage: "Teile deine Abstimmung mit deinen Freunden",
