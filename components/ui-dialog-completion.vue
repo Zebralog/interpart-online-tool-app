@@ -36,9 +36,11 @@
           :original-color="true"
           :style="{ color: dialog.color }"
         />
-        <div v-if="dialog.opinionSentMessage" class="completion-message">
-          {{ dialog.opinionSentMessage }}
-        </div>
+        <div
+          v-if="dialog.opinionSentMessage"
+          class="completion-message"
+          v-html="dialog.opinionSentMessage"
+        ></div>
 
         <div><strong>Vielen Dank für deine Abstimmung.</strong></div>
         <div>
@@ -134,9 +136,9 @@ export default {
 
   .completion-message {
     margin-bottom: 2rem;
-    font-style: italic;
+    font-size: 0.9em;
     font-weight: 500;
-    width: 80%;
+    width: 95%;
     margin-left: auto;
     margin-right: auto;
   }

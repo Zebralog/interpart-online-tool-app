@@ -364,7 +364,8 @@ export default {
       completionIcon: IconMail,
       completionMessage: "",
       opinionSentIcon: IconPieChartGalatea,
-      opinionSentMessage: "",
+      opinionSentMessage:
+        "<span style='font-weight: bold; text-decoration: underline;'>100</span> Personen haben bisher abgestimmt",
       askForMessage: true,
       initial: {
         discussion: [
