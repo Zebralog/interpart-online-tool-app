@@ -93,7 +93,6 @@ export default {
         // add the value
         this.choices.push(value)
       }
-      this.$emit("answer-is-preselected", this.choices.length > 0)
     },
   },
 }

@@ -16,23 +16,6 @@
           {{ slideIndex + 1 }} / {{ questions.length }}
         </div>
       </transition>
-      <transition name="fade">
-        <ui-button
-          v-if="slideIndex !== 0 && /question-\d+/.test(slide.name)"
-          variant="extra-small"
-          :icon-right="AngleRightCircle"
-          :class="{
-            button: true,
-            isExtraSmall: true,
-            weiter: true,
-            disabled: !enableNextButton,
-          }"
-          :disabled="!enableNextButton"
-          @click="saveAndNext"
-        >
-          Weiter
-        </ui-button>
-      </transition>
     </div>
     <div class="slider-content">
       <transition :name="'slide-' + direction">
@@ -42,7 +25,6 @@
           v-bind="slide.props"
           class="slide"
           @answer-selected="saveAndNext"
-          @answer-is-preselected="toggleNextButton"
         />
       </transition>
     </div>
@@ -157,13 +139,6 @@ export default {
     },
     goBack() {
       this.setIndex(this.prevIndex)
-      if (this.slideIndex < 2) {
-        this.toggleNextButton(false)
-      }
-    },
-    toggleNextButton(value) {
-      console.log(value)
-      this.enableNextButton = value
     },
   },
 }
@@ -181,18 +156,6 @@ strong {
 
 .slider {
   position: relative;
-
-  .button.weiter {
-    color: $color-text;
-    opacity: 1;
-    font-weight: bolder;
-    text-align: right;
-
-    &.disabled {
-      color: #999;
-      opacity: 0.5;
-    }
-  }
 
   .slider-header {
     display: flex;

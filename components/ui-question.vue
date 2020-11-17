@@ -19,7 +19,6 @@
       :answers="question.answers"
       :chosen-answer="pickedAnswer"
       @answer-selected="handleAnswer"
-      @answer-is-preselected="handleAnswerPreselection"
     />
   </div>
 </template>
@@ -71,9 +70,6 @@ export default {
     handleAnswer(answer) {
       this.pickedAnswer = answer
       this.$emit("answer-selected", this.pickedAnswer)
-    },
-    handleAnswerPreselection(answer) {
-      this.$emit("answer-is-preselected", answer)
     },
   },
 }
