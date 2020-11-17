@@ -38,8 +38,9 @@
 }
 
 .button {
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  justify-content: center;
   border: 1px solid $grey-lighter;
   line-height: normal;
   cursor: pointer;
