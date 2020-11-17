@@ -1,7 +1,7 @@
 <template>
   <div>
     <ui-image
-      v-if="typeof question.image == 'object'"
+      v-if="question.image"
       variant="exposed"
       :src="question.image ? question.image.src : ``"
       :alt="question.image ? question.image.alt : ``"
@@ -19,6 +19,7 @@
       :answers="question.answers"
       :chosen-answer="pickedAnswer"
       @answer-selected="handleAnswer"
+      @answer-is-preselected="handleAnswerPreselection"
     />
   </div>
 </template>
@@ -71,6 +72,9 @@ export default {
       this.pickedAnswer = answer
       this.$emit("answer-selected", this.pickedAnswer)
     },
+    handleAnswerPreselection(answer) {
+      this.$emit("answer-is-preselected", answer)
+    },
   },
 }
 </script>
@@ -83,7 +87,7 @@ export default {
 }
 
 .question-question {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 
   &:not(.has-content) {
     max-width: $max-width-narrow;

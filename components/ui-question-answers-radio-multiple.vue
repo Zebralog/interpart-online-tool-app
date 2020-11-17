@@ -93,6 +93,7 @@ export default {
         // add the value
         this.choices.push(value)
       }
+      this.$emit("answer-is-preselected", this.choices.length > 0)
     },
   },
 }
@@ -104,18 +105,17 @@ export default {
 .answers.radios {
   display: flex;
   flex-direction: column;
-  margin: -0.5rem;
+  margin: 0 -0.5rem;
 
   .weiter-button-container {
     margin-left: auto;
     margin-right: 0;
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
 
   .button.weiter {
     color: $color-text;
     opacity: 1;
-    display: inline-block;
     font-weight: bolder;
     text-align: right;
 
