@@ -217,6 +217,7 @@ strong {
     overflow-x: hidden;
     padding-left: 1rem;
     padding-right: 1rem;
+    padding-bottom: 1rem;
   }
 
   .slide {
