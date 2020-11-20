@@ -87,7 +87,7 @@ export default {
       return config.genericItemIntroText
     },
     isBellMessage() {
-      return this.message.isBellMessage
+      return this.message.isBellMessage || this.message.bell_id != 0
     },
     buttonInlineStyle() {
       return this.showTranslation

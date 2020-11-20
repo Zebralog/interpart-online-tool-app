@@ -42,12 +42,13 @@ export const mutations = {
     // Vue.set(state, "messages", [...state.messages, message])
   },
   addDummy: (state, message) => {
-    const bellId =
-      config.api.dialogsToBells[
-        message.dialogId in config.api.dialogsToBells
-          ? message.dialogId
-          : "default"
-      ]
+    // const bellId =
+    //   config.api.dialogsToBells[
+    //     message.dialogId in config.api.dialogsToBells
+    //       ? message.dialogId
+    //       : "default"
+    //   ]
+    const bellId = message.bell_id ?? 0
     const newMessage = { bellId, ...message }
     if (!("id" in newMessage)) {
       newMessage.id = Math.round(Math.random() * (99999 - 10000) + 10000)
@@ -127,12 +128,13 @@ export const actions = {
   },
   add: async ({ commit, state }, message) => {
     if (state.auth.token) {
-      const bellId =
-        config.api.dialogsToBells[
-          message.dialogId in config.api.dialogsToBells
-            ? message.dialogId
-            : "default"
-        ]
+      // const bellId =
+      //   config.api.dialogsToBells[
+      //     message.dialogId in config.api.dialogsToBells
+      //       ? message.dialogId
+      //       : "default"
+      //   ]
+      const bellId = message.bell_id ?? 0
       const newMessage = {
         bell_id: bellId,
         message: message.content,
