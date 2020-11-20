@@ -23,7 +23,7 @@
     </div>
 
     <div>
-      <ui-button :icon-right="AngleRight" :disabled="!isValid">
+      <ui-button class="center" :icon-right="AngleRight" :disabled="!isValid">
         Weiter
       </ui-button>
     </div>

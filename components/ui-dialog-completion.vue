@@ -67,7 +67,7 @@
         </strong>
       </div>
       <ui-button
-        class="message-button"
+        class="message-button center"
         :icon-right="AngleRight"
         @click="$emit('answer-selected', 'contribution')"
       >

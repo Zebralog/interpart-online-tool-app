@@ -55,7 +55,6 @@ export default {
 @import "@/assets/variables";
 
 .answers.emojis {
-  max-width: $max-width-narrow;
   margin-left: auto;
   margin-right: auto;
 
@@ -63,11 +62,10 @@ export default {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: -1rem;
   }
 
   .answer {
-    margin: 1rem;
+    margin: 0.5rem;
     line-height: 1;
   }
 }

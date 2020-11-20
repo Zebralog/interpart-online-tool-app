@@ -1,7 +1,7 @@
 <template>
   <div>
     <ui-image
-      v-if="typeof question.image == 'object'"
+      v-if="question.image"
       variant="exposed"
       :src="question.image ? question.image.src : ``"
       :alt="question.image ? question.image.alt : ``"
@@ -83,7 +83,7 @@ export default {
 }
 
 .question-question {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 
   &:not(.has-content) {
     max-width: $max-width-narrow;

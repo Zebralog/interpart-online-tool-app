@@ -50,7 +50,7 @@ export default {
 @import "@/assets/variables";
 
 .socialbar-container {
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .socialbar {

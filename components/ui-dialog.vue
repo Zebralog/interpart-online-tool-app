@@ -91,11 +91,11 @@ export default {
 .dialog-close {
   position: absolute;
   top: 0.1rem;
-  right: 0.75rem;
+  right: 0.5rem;
   font-size: $font-size-5;
 }
 
 .dialog-content {
-  padding: 1rem 2rem;
+  padding: 2rem 2rem 1.5rem 2rem;
 }
 </style>

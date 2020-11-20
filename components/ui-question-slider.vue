@@ -1,20 +1,22 @@
 <template>
   <div class="slider">
-    <transition name="fade">
-      <ui-button
-        v-if="slideIndex !== 0"
-        variant="extra-small"
-        class="slider-back-button"
-        @click="goBack"
-      >
-        Zurück
-      </ui-button>
-    </transition>
-    <transition name="fade">
-      <div v-if="slideIndex < questions.length" class="slider-progress">
-        {{ slideIndex + 1 }} / {{ questions.length }}
-      </div>
-    </transition>
+    <div class="slider-header">
+      <transition name="fade">
+        <ui-button
+          v-if="slideIndex !== 0"
+          variant="extra-small"
+          class="slider-back-button"
+          @click="goBack"
+        >
+          Zurück
+        </ui-button>
+      </transition>
+      <transition name="fade">
+        <div v-if="slideIndex < questions.length" class="slider-progress">
+          {{ slideIndex + 1 }} / {{ questions.length }}
+        </div>
+      </transition>
+    </div>
     <div class="slider-content">
       <transition :name="'slide-' + direction">
         <component
@@ -39,6 +41,7 @@ import UiSocialbar from "@/components/ui-socialbar"
 import ButtonWeiter from "@/components/ui-button-weiter"
 import NounMap from "@/assets/noun-map.svg"
 import Icon from "@/components/icon"
+import AngleRightCircle from "@/assets/angle-right-circle.svg"
 
 export default {
   components: {
@@ -61,6 +64,7 @@ export default {
   data: () => ({
     slideIndex: 0,
     direction: undefined,
+    enableNextButton: false,
   }),
   computed: {
     slides() {
@@ -118,6 +122,7 @@ export default {
         ? this.dialog.socialBarMessage
         : false
     },
+    AngleRightCircle: () => AngleRightCircle,
   },
   methods: {
     setIndex(index) {
@@ -151,19 +156,20 @@ strong {
 
 .slider {
   position: relative;
-  padding-top: 1.5rem;
 
-  .slider-back-button {
-    position: absolute;
-    left: 0;
-    top: 0;
+  .slider-header {
+    display: flex;
+    justify-content: space-between;
+    margin: -1rem 0 0.5rem 0;
+    min-height: calc(1.3rem + 2 * 0.35rem + 2 * 1px);
+    position: relative;
   }
 
   .slider-progress {
     position: absolute;
-    top: 1rem;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%);
+    transform: translate(-50%, -50%);
     color: $color-text-light;
     font-size: $font-size-7;
   }
@@ -174,7 +180,7 @@ strong {
     overflow-x: hidden;
     padding-left: 1rem;
     padding-right: 1rem;
-    padding-bottom: 0.5rem;
+    padding-bottom: 1rem;
   }
 
   .slide {
