@@ -21,7 +21,7 @@
       :title="place.title"
       :subtitle="place.subtitle"
       :link-title="
-        !place.closed && place.buttonLabel ? place.buttonLabel : `Los gehts`
+        !place.closed && place.buttonLabel ? place.buttonLabel : `Los geht’s`
       "
       :link-route="
         !place.closed ? { name: 'dialog.id', params: { id: place.id } } : null

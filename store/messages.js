@@ -48,7 +48,7 @@ export const mutations = {
     //       ? message.dialogId
     //       : "default"
     //   ]
-    const bellId = message.bell_id ?? 0
+    const bellId = message.bell_id ?? "0"
     const newMessage = { bellId, ...message }
     if (!("id" in newMessage)) {
       newMessage.id = Math.round(Math.random() * (99999 - 10000) + 10000)
@@ -134,7 +134,7 @@ export const actions = {
       //       ? message.dialogId
       //       : "default"
       //   ]
-      const bellId = message.bell_id ?? 0
+      const bellId = message.bell_id ?? "0"
       const newMessage = {
         bell_id: bellId,
         message: message.content,

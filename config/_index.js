@@ -8,7 +8,7 @@ import Introduction6 from "./introduction6.svg"
 import question1Url from "./question1.jpg"
 
 export default {
-  heroAlt: "Willkommen bei Wiesbaden Biebrich! Los gehts",
+  heroAlt: "Willkommen bei Wiesbaden Biebrich! Los geht’s",
   informationItems: [
     {
       name: "about",
@@ -76,7 +76,7 @@ export default {
             <strong>Alles verstanden?</strong><br/>
             Dann kann es ja losgehen
           </p>
-          <p><a class="button" href="/map">Los gehts!</a></p>
+          <p><a class="button" href="/map">Los geht’s!</a></p>
         </div>
       `,
       image: Introduction6,

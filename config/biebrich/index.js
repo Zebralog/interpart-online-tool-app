@@ -52,7 +52,7 @@ export default {
           default: "BELL-7723427353",
         },
       },
-  heroAlt: "Willkommen bei Wiesbaden Biebrich! Los gehts",
+  heroAlt: "Willkommen bei Wiesbaden Biebrich! Los geht’s",
   bellItemIntroText: "Klingelbeitrag zu ",
   genericItemIntroText: "Kommentar zu ",
   informationItems: [

@@ -23,11 +23,7 @@
       :style="buttonInlineStyle"
       @click="toggleTranslation"
     >
-      {{
-        isShowingTranslatedContent
-          ? "Originalsprache anzeigen"
-          : "ins Deutsche übersetzen"
-      }}
+      {{ translationButtonText }}
     </button>
   </div>
 </template>
@@ -63,6 +59,7 @@ export default {
     return {
       showMeta: false,
       showTranslation: false,
+      showingLanguage: null,
     }
   },
   computed: {
@@ -87,7 +84,8 @@ export default {
       return config.genericItemIntroText
     },
     isBellMessage() {
-      return this.message.isBellMessage || this.message.bell_id != 0
+      // return this.message.isBellMessage || this.message.bell_id != 0
+      return this.message.translatedContent
     },
     buttonInlineStyle() {
       return this.showTranslation
@@ -100,6 +98,28 @@ export default {
         (this.message.language != "de" && this.showTranslation)
       )
     },
+    translationButtonText() {
+      /*
+          if message.language == de
+            show german text
+            show "translate into EN" / "show original"
+          else if message.language != de
+            show translated text
+            show "translate into DE" / "show original"
+       */
+      if (this.message.language == "de") {
+        return this.showingLanguage == "de"
+          ? "ins Englisch übersetzen"
+          : "Originalsprache anzeigen"
+      } else {
+        return this.showingLanguage == this.message.language
+          ? "ins Deutsche übersetzen"
+          : "Originalsprache anzeigen"
+      }
+      // return this.message.language == "de" && this.showingLanguage == 'de'
+      //         ? "Originalsprache anzeigen"
+      //         : "ins Deutsche übersetzen"
+    },
   },
   methods: {
     toggleMetaInfo() {
@@ -111,6 +131,11 @@ export default {
       }
     },
     toggleTranslation() {
+      this.showingLanguage = this.showTranslation
+        ? this.message.language
+        : this.message.language == "de"
+        ? "en"
+        : "de"
       this.showTranslation = !this.showTranslation
     },
   },
