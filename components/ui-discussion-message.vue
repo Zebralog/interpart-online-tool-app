@@ -59,7 +59,7 @@ export default {
     return {
       showMeta: false,
       showTranslation: false,
-      showingLanguage: null,
+      showingLanguage: this.message.language,
     }
   },
   computed: {
