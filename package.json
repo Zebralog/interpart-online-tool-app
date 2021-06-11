@@ -29,6 +29,7 @@
     }
   },
   "dependencies": {
+    "@nuxtjs/dotenv": "^1.4.1",
     "axios": "^0.21.0",
     "date-fns": "^2.14.0",
     "endent": "^2.0.1",
