@@ -3,17 +3,9 @@ import fs from "fs"
 
 require("dotenv").config()
 
-export default {
+let configuration = {
   server: {
     host: "0.0.0.0",
-    https: {
-      key: fs.readFileSync(
-        path.resolve(process.env.SSL_FOLDER, process.env.SSL_KEY)
-      ),
-      cert: fs.readFileSync(
-        path.resolve(process.env.SSL_FOLDER, process.env.SSL_CERT)
-      ),
-    },
   },
   build: {
     extend(config, ctx) {
@@ -59,3 +51,16 @@ export default {
   modules: ["nuxt-svg-loader", "nuxt-interpolation", "@nuxtjs/dotenv"],
   plugins: ["plugins/v-click-outside", "plugins/v-touch-events"],
 }
+
+if (process.env.SSL_FOLDER && process.env.SSL_KEY && process.env.SSL_CERT) {
+  configuration.server.https = {
+    key: fs.readFileSync(
+      path.resolve(process.env.SSL_FOLDER, process.env.SSL_KEY)
+    ),
+    cert: fs.readFileSync(
+      path.resolve(process.env.SSL_FOLDER, process.env.SSL_CERT)
+    ),
+  }
+}
+
+export default configuration
