@@ -50,7 +50,7 @@
       </template>
     </div>
 
-    <div v-if="askForMessage" class="next-steps">
+    <div class="next-steps">
       <ui-button
         class="map-button"
         tag="nuxt-link"
@@ -61,18 +61,18 @@
         Zurück zu Karte
       </ui-button>
 
-      <div>
+      <div v-if="askForMessage">
         <strong>
           Dir liegt noch etwas auf dem Herzen?
         </strong>
+        <ui-button
+          class="message-button center"
+          :icon-right="AngleRight"
+          @click="$emit('answer-selected', 'contribution')"
+        >
+          Dann teil es uns mit
+        </ui-button>
       </div>
-      <ui-button
-        class="message-button center"
-        :icon-right="AngleRight"
-        @click="$emit('answer-selected', 'contribution')"
-      >
-        Dann teil es uns mit
-      </ui-button>
     </div>
   </div>
 </template>

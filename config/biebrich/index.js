@@ -287,7 +287,7 @@ export default {
         },
       ],
       completionMessage: "",
-      askForMessage: true,
+      askForMessage: false,
       initial: {
         discussion: [],
       },
@@ -366,7 +366,7 @@ export default {
       opinionSentIcon: IconPieChartGalatea,
       opinionSentMessage:
         "<span style='font-weight: bold; text-decoration: underline;'>100</span> Personen haben bisher abgestimmt",
-      askForMessage: true,
+      askForMessage: false,
       initial: {
         discussion: [
           {
@@ -529,7 +529,7 @@ export default {
       opinionSentIcon: IconPieChartPark,
       opinionSentMessage:
         "<span style='font-weight: bold; text-decoration: underline;'>100</span> Personen haben bisher abgestimmt",
-      askForMessage: true,
+      askForMessage: false,
       socialBarPosition: "end",
       socialBarMessage: "Teile deine Abstimmung mit deinen Freunden",
       initial: {
@@ -688,7 +688,7 @@ export default {
       completionMessage: "",
       opinionSentIcon: IconPieChartPark,
       opinionSentMessage: "",
-      askForMessage: true,
+      askForMessage: false,
       socialBarPosition: "end",
       socialBarMessage: "Teile deine Abstimmung mit deinen Freunden",
       initial: {
