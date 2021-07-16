@@ -5,7 +5,7 @@ require("dotenv").config()
 
 let configuration = {
   server: {
-    host: "0.0.0.0",
+    host: process.env.SERVER_HOST || "0.0.0.0",
   },
   build: {
     extend(config, ctx) {

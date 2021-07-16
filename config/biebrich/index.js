@@ -20,6 +20,15 @@ import IconRestingPlaces from "@/config/live/ruheorte.svg"
 import { default as localConfig } from "@/config/live/local.env"
 
 export default {
+  contacts: localConfig.contacts
+    ? localConfig.contacts
+    : {
+        info: "info@company.org",
+        label: "info [at] company.org",
+        name: "Info",
+        company: "Company",
+        name_url: "https://www.company.org",
+      },
   api: localConfig.api
     ? localConfig.api
     : {
@@ -56,17 +65,11 @@ export default {
       title: "Über das Projekt",
       content: `<p>studio biebrich ist der Name der Mitmach-Formate von dem Forschungsprojekt Interpart. Das Forschungsprojekt möchte gemeinsam mit der Wiesbadener Verwaltung herausfinden, wie sich zukünftig möglichst alle Stadtbewohner und Stadtbewohnerinnen besser in Themen der Stadtentwicklung einbringen können. Denn: Für die Entwicklung unserer Stadt sind alle Meinungen wichtig!</p><p>Mehr Informationen erhälst du auf <a class="underlined" href="https://www.interpart.org/node/1217#uip-1">studio biebrich</a>.</p>`,
     },
-    // {
-    //   name: "goals",
-    //   title: "Was wollen wir erreichen?",
-    //   content:
-    //     "<p>das Wehen des Alliebenden, der uns in ewiger <strong>Wonne schwebend</strong> trägt und erhält; mein Freund!</p><p>Wenn’s dann um meine Augen dämmert, und die Welt um mich her und der Himmel.</p>",
-    // },
     {
       name: "how-to",
       title: "FAQ",
       content: `<p><strong>Wie benutze ich das Online-Tool?</strong></p>
-      <p>Bei Fragen zur Navigation, schau’ dir gerne das Intro noch einmal an oder wende dich ansonsten an unseren Support: <a class="underlined" href="mailto:franke@zebralog.de">franke [ät] zebralog.de</a>.</p>
+      <p>Bei Fragen zur Navigation, schau’ dir gerne das Intro noch einmal an oder wende dich ansonsten an unseren Support: <a class="underlined" href="mailto:${localConfig.contacts.info}">${localConfig.contacts.label}</a>.</p>
       <br>
       <p><strong>Was passiert mit meinen Ideen?</strong></p>
       <p>Das Online-Tool zeigt aktuell ausgedachte Beispiele für digitale Beteiligung in Biebrich. Das bedeutet, dass deine Abstimmung und dein Kommentar zurzeit nicht an die Stadtverwaltung weitergeleitet werden.</p>
@@ -84,49 +87,48 @@ export default {
 	<p>Herausgeber und Anbieter im Sinne des § 5 Telemediengesetz (TMG) sowie inhaltliche Verantwortung nach §55 Abs. 2 des Rundfunkstaatsvertrages (RStV):</p>
 
 	<p>
-	<strong>Zebralog GmbH</strong> <br />
-	Oranienburger Straße 87/89, HH <br />
-	10178 Berlin <br />
-	Tel.: +49 (0)30 - 221 8265 - 1 <br />
-	Fax: +49 (0)30 - 221 8265 - 99
+	<strong>${localConfig.contacts.company}</strong> <br />
+	Soundso Straße 1/2, HH <br />
+	10000 Berlin <br />
+	Tel.: +49 (0)30 - 123 4567 - 1 <br />
+	Fax: +49 (0)30 - 123 4567 - 99
 	</p>
 	<p>
-	E-Mail: <a class="underlined" href="mailto:info@zebralog.de">info [ät] zebralog.de</a> <br />
-	Internet: <a class="underlined" href='https://www.zebralog.de'>www.zebralog.de</a> <br />
-	Geschäftsführer: Matthias Trénel, Dr. Oliver Märker
+	E-Mail: <a class="underlined" href="mailto:${localConfig.contacts.info}">${localConfig.contacts.label}</a> <br />
+	Internet: <a class="underlined" href='${localConfig.contacts.company_url}'>${localConfig.contacts.company}</a> <br />
+	Geschäftsführer: Company CEO, Dr. CFO
 	</p>
 	<p>
-	HRA 42286 B, Amtsgericht Berlin <br />
-	UST-ID Nr: DE264536890 <br />
-	Vertretungsberechtigte Komplementärin: Zebralog Verwaltungs GmbH
+	HRA 12345 B, Berlin <br />
+	UST-ID Nr: DE12345678 <br />
+	Vertretungsberechtigte Komplementärin: ${localConfig.contacts.company}
 	</p>
 	<br />
 	<p>
 	<strong>Konzept, Gestaltung, Realisierung und technischer Betrieb:</strong> <br />
-	Zebralog GmbH <br />
-	Oranienburger Straße 87/89, HH <br />
-	10178 Berlin
+	${localConfig.contacts.company} GmbH <br />
+	Straße 1/2, HH <br />
+	10000 Berlin
 	</p>
 	<p>
-	Tel.: +49 (0)30 - 221 8265 - 1 <br />
-	Fax: +49 (0)30 - 221 8265 - 99 <br />
-	E-Mail: <a class="underlined" href="mailto:info@zebralog.de">info [ät] zebralog.de</a> <br />
-	Internet: <a class="underlined" href="https://www.zebralog.de">www.zebralog.de</a>
+	Tel.: +49 (0)30 - 123 4567 - 1 <br />
+	Fax: +49 (0)30 - 123 4567 - 99 <br />
+	E-Mail: <a class="underlined" href="mailto:${localConfig.contacts.info}">${localConfig.contacts.label}</a> <br />
+	Internet: <a class="underlined" href="${localConfig.contacts.company_url}">${localConfig.contacts.company}</a>
 	</p>
 	<p>
-	Geschäftsführer: Matthias Trénel, Dr. Oliver Märker <br />
-	HRA 42286 B, Amtsgericht Berlin
+	Geschäftsführer: Company CEO, Dr. CFO <br />
 	</p>
 	<p>
-	UST-ID Nr: DE264536890 <br />
-	Vertretungsberechtigte Komplementärin: Zebralog Verwaltungs GmbH <br />
+	UST-ID Nr: DE12345678 <br />
+	Vertretungsberechtigte Komplementärin: ${localConfig.contacts.company} <br />
 	Technische Umsetzung der Plattform auf Basis von Drupal.
 	</p>
 	<br />
 	<p>
 	<strong>Ansprechpartner/innen:</strong> <br />
-	Keno Franke <br />
-	E-Mail: <a class="underlined" href="mailto:franke@zebralog.de">franke [ät] zebralog.de</a>
+	${localConfig.contacts.name} <br />
+	E-Mail: <a class="underlined" href="mailto:${localConfig.contacts.info}">${localConfig.contacts.label}</a>
 	</p>
   `,
     },
