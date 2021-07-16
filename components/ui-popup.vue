@@ -86,14 +86,6 @@ export default {
         this.$nextTick(() => {
           this.$el.style.animation = "none"
 
-          // UGLY WORKAROUND: we need (https://trello.com/c/EXE80Eym) to switch the popup
-          // on the bottom of the pin;
-          // I could not properly understand how to get around the logic here,
-          // so I just brutally forced it :/
-          // @Landwehr could/should have a look here.
-
-          // const { y } = this.$el.getBoundingClientRect()
-          // this.isBottom = y < 0
           this.isBottom = true
           this.$el.style.animation = ""
           this.clickOutsideActive = true

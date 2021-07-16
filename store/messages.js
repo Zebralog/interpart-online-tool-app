@@ -1,7 +1,5 @@
 import Vue from "vue"
 import axios from "axios"
-// import { LOGGED_IN_AUTHOR, REPLY_TIMEOUT } from "@/model/constants"
-// import { LOGGED_IN_AUTHOR } from "@/model/constants"
 import config from "@/config"
 
 export const state = () => ({
@@ -39,15 +37,8 @@ export const mutations = {
   },
   add: (state, message) => {
     state.messages = [...state.messages, message]
-    // Vue.set(state, "messages", [...state.messages, message])
   },
   addDummy: (state, message) => {
-    // const bellId =
-    //   config.api.dialogsToBells[
-    //     message.dialogId in config.api.dialogsToBells
-    //       ? message.dialogId
-    //       : "default"
-    //   ]
     const bellId = message.bell_id ?? "0"
     const newMessage = { bellId, ...message }
     if (!("id" in newMessage)) {
@@ -74,7 +65,6 @@ export const actions = {
       })
         .then((resp) => {
           const token = resp.data.token
-          // localStorage.setItem("token", token)
           axios.defaults.headers.common["Authorization"] = token
           commit("auth_success", token)
           resolve(resp)
@@ -82,7 +72,6 @@ export const actions = {
         .catch((err) => {
           commit("auth_error")
           console.error(err)
-          // localStorage.removeItem("token")
           reject(err)
         })
     })
@@ -128,12 +117,6 @@ export const actions = {
   },
   add: async ({ commit, state }, message) => {
     if (state.auth.token) {
-      // const bellId =
-      //   config.api.dialogsToBells[
-      //     message.dialogId in config.api.dialogsToBells
-      //       ? message.dialogId
-      //       : "default"
-      //   ]
       const bellId = message.bell_id ?? "0"
       const newMessage = {
         bell_id: bellId,

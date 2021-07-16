@@ -16,12 +16,7 @@ import IconPieChartPark from "@/config/live/pie-chart-park-relative.svg"
 import IconMail from "@/config/live/wahlurne-02.svg"
 import IconPlayground from "@/config/live/spiel-und-sportstaette.svg"
 import IconRestingPlaces from "@/config/live/ruheorte.svg"
-// import IconStreetLight from "@/config/live/street-light.svg"
-// import IconParkWithBench from "@/config/live/park-with-bench.svg"
-// import IconGymSport from "@/config/live/gym-sport-fueralle.svg"
-// import IconElection from "@/config/live/election.svg"
 
-// const localConfig = require("@/config/live/local.env")
 import { default as localConfig } from "@/config/live/local.env"
 
 export default {
@@ -31,9 +26,9 @@ export default {
         rest: {
           messages: {
             endpoints: {
-              login: "http://195.201.238.202:4321/users/login",
-              getAll: "http://195.201.238.202:4321/messages",
-              newMessage: "http://195.201.238.202:4321/messages",
+              login: "https://api.interpart.org:4321/users/login",
+              getAll: "https://api.interpart.org:4321/messages",
+              newMessage: "https://api.interpart.org:4321/messages",
             },
             auth: {
               user: "bell3@udk.de",

@@ -84,7 +84,6 @@ export default {
       return config.genericItemIntroText
     },
     isBellMessage() {
-      // return this.message.isBellMessage || this.message.bell_id != 0
       return this.message.translatedContent
     },
     buttonInlineStyle() {
@@ -116,9 +115,6 @@ export default {
           ? "ins Deutsche übersetzen"
           : "Originalsprache anzeigen"
       }
-      // return this.message.language == "de" && this.showingLanguage == 'de'
-      //         ? "Originalsprache anzeigen"
-      //         : "ins Deutsche übersetzen"
     },
   },
   methods: {
@@ -217,11 +213,5 @@ export default {
     color: $color-text;
     margin-top: 1em;
   }
-
-  // .translation-is-active {
-  //   border-color: inherit;
-  //   background: $color-text;
-  //   color: white;
-  // }
 }
 </style>

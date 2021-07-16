@@ -20,7 +20,6 @@ export default {
   },
   computed: {
     messages() {
-      // return this.$store.getters["messages.static/all"]
       return this.$store.getters["messages/all"]
     },
     lastMessage() {

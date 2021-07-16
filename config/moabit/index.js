@@ -16,12 +16,7 @@ import IconPieChartPark from "@/config/live/pie-chart-park-relative.svg"
 import IconMail from "@/config/live/wahlurne-02.svg"
 import IconPlayground from "@/config/live/spiel-und-sportstaette.svg"
 import IconRestingPlaces from "@/config/live/ruheorte.svg"
-// import IconStreetLight from "@/config/live/street-light.svg"
-// import IconParkWithBench from "@/config/live/park-with-bench.svg"
-// import IconGymSport from "@/config/live/gym-sport-fueralle.svg"
-// import IconElection from "@/config/live/election.svg"
 
-// const localConfig = require("@/config/live/local.env")
 import { default as localConfig } from "@/config/live/local.env"
 
 export default {
@@ -31,9 +26,9 @@ export default {
         rest: {
           messages: {
             endpoints: {
-              login: "http://195.201.238.202:4321/users/login",
-              getAll: "http://195.201.238.202:4321/messages",
-              newMessage: "http://195.201.238.202:4321/messages",
+              login: "https://api.interpart.org:4321/users/login",
+              getAll: "https://api.interpart.org:4321/messages",
+              newMessage: "https://api.interpart.org:4321/messages",
             },
             auth: {
               user: "bell3@udk.de",
@@ -61,12 +56,6 @@ export default {
       title: "Über das Projekt",
       content: `<p>studio biebrich ist der Name der Mitmach-Formate von dem Forschungsprojekt Interpart. Das Forschungsprojekt möchte gemeinsam mit der Wiesbadener Verwaltung herausfinden, wie sich zukünftig möglichst alle Stadtbewohner und Stadtbewohnerinnen besser in Themen der Stadtentwicklung einbringen können. Denn: Für die Entwicklung unserer Stadt sind alle Meinungen wichtig!</p><p>Mehr Informationen erhälst du auf <a href="https://www.interpart.org/node/1217#uip-1">studio biebrich</a>.</p>`,
     },
-    // {
-    //   name: "goals",
-    //   title: "Was wollen wir erreichen?",
-    //   content:
-    //     "<p>das Wehen des Alliebenden, der uns in ewiger <strong>Wonne schwebend</strong> trägt und erhält; mein Freund!</p><p>Wenn’s dann um meine Augen dämmert, und die Welt um mich her und der Himmel.</p>",
-    // },
     {
       name: "how-to",
       title: "FAQ",

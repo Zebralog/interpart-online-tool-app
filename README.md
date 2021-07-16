@@ -36,10 +36,8 @@ The prototype is deployed via a Hetzner Cloud Server that Zebralog is currently 
 To make adjustments to the server, you need an invitation from one of our sys admins. From there, you have to create an account and then you can create servers or add SSH keys to existing servers. Login always takes place via SSH and the server IP.
 
 ## Deploying changes to the prototype
-To deploy changes to the prototype [prototyp.interpart.org (78.47.108.125)](https://prototyp.interpart.org/):
+To deploy changes:
 
-* have your local SSL public key authorized for access to server
-* log on the server as `root`: `ssh root@prototyp.interpart.org`
 * `cd /var/www/interpart-mobile-prototype/`
 * `git pull` (adjust to the needed branch / specific commit)
 * `npm run deploy`
@@ -52,4 +50,5 @@ To setup the API connection, copy the local configuration template to a local.en
 cp config/live/local.env.js.template config/live/local.env.js
 ```
 and change the relevant data accordingly.
-A repository containing the backend code (for local development) can be found [here](https://git.zebralog.net/roccazzella/interpart-db).
+
+A repository containing the backend code (for local development) can be found [here](https://github.com/Zebralog/interpart-online-tool-database).

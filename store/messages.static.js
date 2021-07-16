@@ -1,6 +1,5 @@
 import Vue from "vue"
 import { LOGGED_IN_AUTHOR, REPLY_TIMEOUT } from "@/model/constants"
-// import { LOGGED_IN_AUTHOR } from "@/model/constants"
 
 export const state = () => ({ messages: [] })
 
